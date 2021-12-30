@@ -1,0 +1,20 @@
+.service_list{
+    list-style-type : circle;
+    counter-increment: section;
+}
+.service_item{
+    width: 31%;
+    display: inline-block;
+    margin: 0 4px;
+}
+.service_item input{
+    width: 100%;
+}
+.service_list::before{
+    content: counter(section) ". ";
+}
+
+#newProduct_form button[type='submit']{
+    display: block;
+    margin: 0 auto;
+}

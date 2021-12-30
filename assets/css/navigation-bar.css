@@ -1,0 +1,23 @@
+#navigation-bar{
+    display: grid;
+    background-color: gray;
+    margin-bottom: 12px;
+}
+.list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.list_item{
+    display: inline-block;
+    padding: 8px;
+}
+.link{
+    display: block;
+    color: whitesmoke;
+}
+.stiky_nav{
+    position: sticky;
+    top: -1px;
+    z-index: 999;
+}

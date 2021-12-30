@@ -1,0 +1,13 @@
+.badge{
+    width: 10px;
+    border-radius: 8px;
+    position: relative;
+    top: -12px;
+    right: -11px;
+    padding: 1px 3px;
+    font-size: smaller;
+}
+.badge.bg-primary{
+    background-color: red;
+    color: white;
+}

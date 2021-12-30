@@ -1,0 +1,18 @@
+#footer{
+    background-color: darkgray;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 24px;
+    margin-top: 8px;
+}
+.item{
+    text-align: center;
+}
+.item .headOptin{
+    font-size: large;
+    font-weight: bold;
+}
+.item .Option{
+    font-size: small;
+    color: #4c4c4c;
+}

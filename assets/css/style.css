@@ -1,0 +1,28 @@
+@import url('templates/main.css');
+@import url('header.css');
+@import url('navigation-bar.css');
+@import url('footer.css');
+@import url('container.css');
+@import url('sidbar.css');
+@import url('grid-template.css');
+@import url('addProduct.css');
+@import url('adminpanel.css');
+@import url('drophover.css');
+@import url('Card.css');
+@import url('badge.css');
+@import url('Product.css');
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir.ttf');
+}
+:lang(fa){
+    direction: rtl;
+}
+body{
+    background-color: gainsboro;
+    margin: 0;
+}
+body,input,textarea,button,select{
+    font-family: vazir;
+}

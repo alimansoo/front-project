@@ -1,0 +1,35 @@
+.table{
+    /* display: block; */
+    border-spacing: 0;
+    border-radius: 4px;
+    width: 100%;
+    border: 1px solid ;
+    background-color: #FFFFFF;
+}
+tr,th,td{
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid ;
+    text-align:center;
+}
+.table tr{
+    height: 52px;
+    border-bottom: 1px solid ;
+    /* background-color: red; */
+}
+.table tr:last-child td,.table tr:last-child th{
+    border: none;
+}
+.table:first-child{
+    height: 56px;
+    color: inherit;
+    border-top: 1px solid ;
+}
+.table td{
+    padding: 0 16px;
+    color: inherit;
+}
+
+table tbody:first-child{
+    border: 0px;
+}

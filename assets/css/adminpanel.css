@@ -1,0 +1,37 @@
+.admintPanel{
+
+}
+.admintPanel header#header{
+    grid-template-columns: 92% 8%;
+}
+.navbar{
+    max-height: 70px;
+} 
+.nav_nav{
+
+}
+.lightnav{
+    background-color: white;
+    border-bottom: 1px solid gray;
+}
+.nav_profile,.nav_nav{
+    vertical-align: middle;
+}
+.nav_list{
+    padding: 8px 0;
+    margin: 0;
+}
+.nav_list_item{
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 24px;
+    padding: 8px;
+}
+.nav_list_item i{
+    font-size: larger;
+    color: black;
+}
+.nav_profile_items_img{
+    width: 50px;
+    border-radius: 50%;
+}

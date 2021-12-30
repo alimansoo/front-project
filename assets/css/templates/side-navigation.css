@@ -1,0 +1,34 @@
+.sidebar_nav{
+    background-color: #FFFBFE;
+}
+.sidebar_nav a{
+    text-decoration: none;
+    color: initial;
+}
+
+.sidebar_nav li{
+    list-style: none;
+}
+.sidebar_nav ul{
+    margin: 0;
+}
+.nav_list{
+    padding: 0 8px;
+    /* padding: 0 28px; */
+}
+.nav_item{
+    background-color:#FFFBFE ;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 24px;
+    font-size: medium;
+    color: #1E192B;
+}
+.nav_item:hover{
+    background-color: rgb(172,122,218,20%);
+}
+.nav_item i{
+    width: 24px;
+    color: #1E192B;
+    margin-left: 12px;
+}

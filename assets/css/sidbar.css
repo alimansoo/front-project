@@ -1,0 +1,29 @@
+#sidebar{
+    
+}
+#sidebar .nav_item i{
+    font-size: large;
+}
+#sidebar .nav_item i,a{
+    vertical-align: middle;
+}
+.light-side{
+    background-color: white;
+    color: black;
+}
+.dark-side{
+    background-color: gray;
+    color: white;
+}
+.materila_side{
+    border-radius: 24px;
+    padding: 12px 0;
+    margin: 4px;
+    overflow: hidden;
+}
+.fixed_sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0 ;
+}

@@ -1,0 +1,40 @@
+/* Text */
+.input-text{
+    width: 60%;
+    font-size: 1.15em;
+    outline: 5px solid transparent;
+    border-radius: 4px;
+    border: 2px solid gray;
+}
+.input-text:focus{
+    outline: 5px solid lightblue;
+    border: 2px solid rgb(34, 144, 180);
+}
+/* Select */
+.input-select{
+    width: 60%;
+    font-size: 1.15em;
+    outline: 5px solid transparent;
+    border-radius: 4px;
+    border: 2px solid gray;
+}
+.input-select:focus{
+    outline: 5px solid lightblue;
+    border: 2px solid rgb(34, 144, 180);
+}
+/* File */
+.input-file{
+    width: 60%;
+    font-size: 1.15em;
+    outline: 5px solid transparent;
+    border-radius: 4px;
+    border: 2px solid gray;
+}
+.input-file:focus{
+    outline: 5px solid lightblue;
+    border: 2px solid rgb(34, 144, 180);
+}
+/* Section */
+.input_sections{
+    margin: 7px 0;
+}

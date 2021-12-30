@@ -1,0 +1,39 @@
+.Card_deatail{
+    height: fit-content;
+    position: sticky;
+    top: 12px;
+}
+.Card_deatail_row{
+
+}
+.Card_deatail_row_key,.Card_deatail_row_value{
+    display: inline-block;
+}
+.Card_deatail_row_key{
+    text-align: right;
+}
+.Card_deatail_row_value{
+    text-align: left;
+}
+.Card_deatail_btn{
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+}
+.productCounter{
+    display: inline;
+    background-color: gainsboro;
+    padding: 2px;
+}
+.productCounter .productQty{
+    padding: 0 4px;
+}
+.productCounter .addQty{
+
+}
+.productCounter .minusQty{
+
+}
+.removeProduct{
+    color: black;
+}

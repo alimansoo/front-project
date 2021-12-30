@@ -1,0 +1,16 @@
+.form{
+    background-color: white;
+    width: 65%;
+    margin: 8px auto;
+    padding: 8px;   
+    border-radius: 8px;
+}
+.form_title{
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+.form_line{
+    border: none;
+    border-bottom: 1px solid ;
+}

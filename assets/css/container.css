@@ -1,0 +1,20 @@
+#container{
+    padding: 8px;
+}
+#main-container{
+    /* margin: 4px; */
+}
+.page_content{
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 5px;
+    margin-bottom: 16px;
+    color: #6a6a6a;
+}
+.page_content .page_content_title{
+    font-size: larger;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+}

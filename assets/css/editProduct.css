@@ -1,0 +1,72 @@
+@import url('./font.css');
+
+:lang(fa){
+    direction: rtl;
+}
+body{
+    background-color: rgb(201, 201, 201);
+}
+#newProduct{
+    background-color: white;
+    width: 65%;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 8px;
+}
+#form_title{
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+input:not([type='radio']),select{
+    width: 60%;
+    font-size: 1.15em;
+    outline: 5px solid transparent;
+    border-radius: 4px;
+    border: 2px solid gray;
+}
+input:not([type='radio']):focus,
+select:focus{
+    outline: 5px solid lightblue;
+    border: 2px solid rgb(34, 144, 180);
+}
+.input_sections{
+    margin: 7px 0;
+}
+.service_list{
+    list-style-type : circle;
+    counter-increment: section;
+}
+.service_item{
+    width: 31%;
+    display: inline-block;
+    margin: 0 4px;
+}
+.service_item input{
+    width: 100%;
+}
+.service_list::before{
+    content: counter(section) ". ";
+}
+.filled-tonal-button{
+    border-radius: 20px;
+    padding: 0 24px;
+    text-align: center;
+    height: 40px;
+    background-color: #E8DEF8;
+    color: #1E192B;
+    border: 0;
+}
+#newProduct_form button[type='submit']{
+    min-width: 200px;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+}
+#newProduct_form #image_preview{
+    width: 160px;
+    height: 160px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
