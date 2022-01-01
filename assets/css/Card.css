@@ -18,7 +18,7 @@
 .Card_deatail_btn{
     margin-top: 8px;
     display: block;
-    width: 100%;
+    text-align: center;
 }
 .productCounter{
     display: inline;

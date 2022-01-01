@@ -50,7 +50,7 @@
 }
 .cards-section{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     margin-top: 10px;
 }
 .filled.card i{

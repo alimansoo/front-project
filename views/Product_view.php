@@ -84,6 +84,17 @@
                 </section>
             </form>
         </section>
+
+        <section id="comment">
+            <h4>بخش نظرات این محصول</h4>
+            <form action="<?php echo $controllerroot ?>addComment_controller.php?pid=<?php echo $id ?>" method="get" id="CommentForm">
+                <label for="subjectComment">موضوع</label>
+                <input type="text" name="subject" id="subjectComment">
+                <label for="messagComment">متن نظر</label>
+                <textarea name="message" id="messagComment" cols="30" rows="10"></textarea>
+                <input type="submit" value="ثبت نظر">
+            </form>
+        </section>
         
     </main>
     
@@ -92,6 +103,7 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="<?php echo $assetsroot ?>js/templates/productView.js"></script>
-    <script src="<?php echo $baseroot;?>assets/js/main.js"></script>
+    <script src="<?php echo $assetsroot;?>js/main.js"></script>
+    <script src="<?php echo $assetsroot;?>js/Comment.js"></script>
 </body>
 </html>

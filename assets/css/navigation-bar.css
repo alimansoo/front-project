@@ -2,6 +2,7 @@
     display: grid;
     background-color: gray;
     margin-bottom: 12px;
+    height: 40px;
 }
 .list{
     margin: 0;

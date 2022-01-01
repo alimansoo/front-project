@@ -4,7 +4,8 @@
             <li class="nav_item"><i class='fas fa-tachometer-alt'></i><a href="<?php echo $controllerroot;?>Dashboard_controller.php">داشبورد</a></li>
             <li class="nav_item"><i class='fas fa-box'></i><a href="<?php echo $controllerroot;?>listProduct_controller.php">لیست محصولات</a></li>
             <li class="nav_item"><i class='fas fa-users'></i><a href="<?php echo $controllerroot;?>listUsers_controller.php">لیست کاربران</a></li>
-            <li class="nav_item"><i class='fas fa-comment'></i><a href="<?php echo $controllerroot;?>listTickets_controller.php">لیست پیام ها</a></li>
+            <li class="nav_item"><i class='fas fa-comment-alt'></i><a href="<?php echo $controllerroot;?>listTickets_controller.php">لیست پیام ها</a></li>
+            <li class="nav_item"><i class='fas fa-comment'></i><a href="<?php echo $controllerroot;?>listComment_controller.php">لیست نظر ها</a></li>
         </ul>
     </nav>
 </aside>

@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['id']) and !$_SESSION['role']==="admin") {
+    die('Not Access');
+}
+
 $baseroot = '../../';
 $assetsroot = '../../assets/';
 $viewroot = '../views/';
