@@ -1,18 +1,43 @@
-#footer{
+.footer{
     background-color: darkgray;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
     padding: 24px;
     margin-top: 8px;
 }
-.item{
+.footer.bg-dark{
+    background-color: #343a40;
+    color: white;
+}
+.footer .item{
     text-align: center;
 }
-.item .headOptin{
-    font-size: large;
+.footer .item .headOptin{
+    font-size: 1.3em;
     font-weight: bold;
 }
-.item .Option{
-    font-size: small;
+.footer .item .Option{
+    font-size: 0.9em;
     color: #4c4c4c;
+}
+.footer.bg-dark .item .Option{
+    color: #ffffff91;
+}
+
+.footer .brand{
+
+}
+.footer .brand_image{
+    width: 70px;
+}
+.footer .brand_title{
+    margin: 2px;
+    color: plum;
+    font-size: 1.7em;
+}
+.footer .row{
+    width: 100%;
+    overflow: hidden;
+}
+.footer .row .small_image{
+    width: 60px;
+    margin: 0 10px;
 }

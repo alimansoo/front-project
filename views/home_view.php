@@ -39,7 +39,7 @@
         <div class="swiper-scrollbar"></div>
         </div>
 
-        <div class="cards-section">
+        <div class="grid-display col-sm-1 col-md-2 col-lg-4">
             <?php
                 foreach($products as $product)
                 {

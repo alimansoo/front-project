@@ -11,7 +11,10 @@
     <?php include_once('header.php'); ?>    
     <?php include_once('TopNavigation.php'); ?>
     <main id="main-container">
+
         <form action="<?php echo $controllerroot ?>SaveOrder_controller.php" method="post">
+            <input type="hidden" name="price" value="<?php echo $allofPrice+$transportPrice; ?>">
+            <input type="hidden" name="transport_price" value="<?php echo $transportPrice; ?>">
             <?php 
                 $datetime = new DateTime();
                 $today = $datetime->format('Y-m-d');

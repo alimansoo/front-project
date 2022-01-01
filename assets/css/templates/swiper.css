@@ -1,7 +1,6 @@
 .swiper-slide{
   background-image: url('../assets/images/livan.jpg');
 }
-
 .swiper>.swiper-wrapper{
   width:100%;
   height:500px;
@@ -9,4 +8,19 @@
 .swiper>.swiper-wrapper>.swiper-slide{
   background-image: url('../assets/images/livan.jpg');
   border-radius: 8px;
+}
+.swiper{
+    height: 19vh;
+}
+/* Tablet */
+@media only screen and (min-width:540px)  { 
+    .swiper{
+        height: 24vh;
+    }
+}
+/* Desktop */
+@media only screen and (min-width:1000px) {
+    .swiper{
+     height: auto;
+    }
 }

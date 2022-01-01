@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['id']) and !$_SESSION['role']==="admin") {
+if (!isset($_SESSION['id']) or $_SESSION['role']!=="admin") {
     die('Not Access');
 }
 

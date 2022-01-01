@@ -1,18 +1,13 @@
-<?php
-require "__init__.php";
+<?php 
+require '__init__.php';
 
-if (!isset($_SESSION['id'])) {
-    header("Location:login_controller.php");
-}
+$allofPrice = 0;
+$transportPrice = 250000;
 
 $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 
 $query = "SELECT * FROM `cards` WHERE uid = ?";
 $result = $mysql->query($query,$_SESSION['id'])->fetchAll();
-
-$allofPrice = 0;
-
-$productsArray = array();
 
 foreach ($result as $key=>$value) {
     $query ="SELECT * FROM `product` WHERE id=?";
@@ -21,4 +16,4 @@ foreach ($result as $key=>$value) {
     $allofPrice +=$result['price'] * $result['qty'];
     $productsArray[$key] = $result;
 }
-include($baseroot."views/Card_view.php");
+include $viewroot."SalesInvoice_view.php";

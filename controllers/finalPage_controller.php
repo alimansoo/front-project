@@ -2,6 +2,7 @@
 require '__init__.php';
 
 $orderid=$_SESSION['orderid'];
+unset($_SESSION['orderid']);
 
 $status = "";
 

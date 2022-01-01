@@ -63,12 +63,22 @@
     margin-right: 8px;
     margin-left: -6px;
 }
+
 .btn{
     padding: 8px;
     border-radius: 4px;
-    font-size: larger;
+    font-size: 1.2em;
     border: 0;
-} 
+    text-align: center;
+    margin: 4px;
+}
+button.full-btn,input.full-btn{
+    display: inline;
+    width: 100%;
+}
+.full-btn{
+    display: block;
+}
 .btn-primary{
     background-color: rgb(13, 235, 235);
     color: white;

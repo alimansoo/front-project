@@ -56,7 +56,7 @@
     border-radius: 8px;
     border: 1px solid #9c9c9c;
     padding: 8px;
-    width: 60%;
+    height: fit-content;
 }
 .productView_form_order_btn{
     background-color: rgb(4, 212, 212);
@@ -66,11 +66,12 @@
     font-size: larger;
     text-align: center;
     border-radius: 8px;
-    width: 100%;
+    display: block;
 }
 .productView_form_order_heading{
     /* display: block; */
     font-size: medium;
+    margin: 4px 0;
 }
 .productView_form_order_price{
     text-align: left;

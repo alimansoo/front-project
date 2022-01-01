@@ -12,6 +12,7 @@
 }
 .filled.card{
     background-color: #E7E0EC;
+    width: 98%;
 }
 .filled.card:hover{
     background-color: rgba(28,27,31,15%);

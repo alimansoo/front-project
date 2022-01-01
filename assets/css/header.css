@@ -11,15 +11,15 @@ a{
     width: 50px;
     vertical-align: middle;
 }
-#header .site-brand .link-brand{
+.header .site-brand .link-brand{
     vertical-align: middle;
-    font-size: 2em;
+    font-size: 1.5em;
     color: black;
     font-weight: bolder;
     margin: 8px;
 }
-#header .header-action{
-    
+.header .header-action{
+    text-align: end;
 }
 .header .header-action i{
     color: black;
@@ -28,6 +28,7 @@ a{
     vertical-align: middle;
     font-size: 2em;
     padding: 4px;
+    
 }
 .header .header-action a:first-child{
     border-left: 1px solid gray;
@@ -36,8 +37,8 @@ a{
 .header{
     background-color: white;
     display: grid;
-    grid-template-columns: 92% 8%;
-    padding: 8px 24px;
+    grid-template-columns: auto auto;
+    padding: 8px;
     height: 50px;
 }
 .header{

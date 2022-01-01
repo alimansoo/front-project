@@ -1,7 +1,7 @@
 <header id="header" class="header">
         <div class="site-brand">
             <img src="<?php echo $baseroot;?>assets/images/logo.png" alt="" class="image-brand">
-            <a href="<?php echo $controllerroot;?>controllers/home_controller.php" class="link-brand">ماهرنگ</a>
+            <a href="<?php echo $controllerroot;?>home_controller.php" class="link-brand">ماهرنگ</a>
         </div>
         <div class="header-action">
             <?php

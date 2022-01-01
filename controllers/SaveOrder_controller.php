@@ -18,9 +18,9 @@ if(isset($orderReciverisme)){
 if(isset($_POST['submit'])){
     $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
     $query = "INSERT INTO `order_user`
-    (`uid`, `recive_date`, `saved_date`, `addres`, `reciver_name`, `is_pay`)
-     VALUES (?,?,?,?,?,false)";
-    $result = $mysql->query($query,$userid,$orderReciveDate,$today,$orderAddres,$orderReciver);
+    (`uid`, `recive_date`, `saved_date`, `addres`, `priceAll`,`transport_price`, `reciver_name`, `is_pay`)
+     VALUES (?,?,?,?,?,?,?,false)";
+    $result = $mysql->query($query,$userid,$orderReciveDate,$today,$orderAddres,$price,$transport_price,$orderReciver);
 
     $query = "SELECT `id` FROM `order_user` WHERE uid =? AND saved_date=?";
     $result = $mysql->query($query,$userid,$today)->fetchArray();
