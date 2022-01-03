@@ -7,7 +7,7 @@
     <title>حساب کاربری</title>
     <?php include "__init__.php"; ?>
 </head>
-<body id="body-container">
+<body id="body-container" class="grid-row-container">
     <?php include_once('header.php'); ?>    
     <?php include_once('TopNavigation.php'); ?>
     <main id="container">

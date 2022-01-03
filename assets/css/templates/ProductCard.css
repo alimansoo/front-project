@@ -14,9 +14,7 @@
     background-color: var(--primary);
     width: 98%;
 }
-.filled.card:hover .card-body{
-    opacity: 70%;
-}
+
 .card-img-top{
     width: 100%;
 }

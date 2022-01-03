@@ -55,6 +55,9 @@ footer#footer{
 .col-sm-3{
     grid-template-columns: auto auto auto;
 }
+.grid-row-container{
+    grid-template-rows: 70px 40px auto;
+}
 /* Tablet */
 @media only screen and (min-width:540px)  { 
     .col-md-1{

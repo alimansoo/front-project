@@ -15,5 +15,6 @@
             echo "<p class='successMessage'>كاربر حذف شد.</p>";
         }
     ?>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

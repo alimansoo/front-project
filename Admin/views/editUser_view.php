@@ -67,8 +67,6 @@
           </div>
         </section>
     </main>
-    <!-- <nav id="side-navigation"></nav> -->
-    <!-- <footer id="footer"></footer> -->
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

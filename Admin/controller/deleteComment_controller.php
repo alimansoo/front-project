@@ -6,5 +6,6 @@ $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "DELETE FROM `comment` WHERE id =?";
 $mysql->query($query,$_GET['id']);
 
-header("Location:listComment_controller.php");
+$output = array('status' => 200,'message' => 'کامنت حذف شد.' );
 
+echo json_encode($output);

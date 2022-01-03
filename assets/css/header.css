@@ -29,7 +29,7 @@ a{
     font-size: 2em;
     padding: 4px;  
 }
-.header .header-action .action:first-child{
+.header .header-action .action.first{
     border-left: 1px solid gray;
     padding-left: 8px;
 }

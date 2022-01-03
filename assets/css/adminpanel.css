@@ -1,5 +1,5 @@
 .admintPanel{
-
+    grid-template-rows: 60px auto;
 }
 .admintPanel header#header{
     grid-template-columns: 92% 8%;

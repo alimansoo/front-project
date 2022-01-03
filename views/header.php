@@ -8,7 +8,7 @@
                 if (Athuntication::isUser()):
             ?>
                 <div class="drophover">
-                    <i class="fas fa-user-circle drophover_first_item action"></i>
+                    <i class="fas fa-user-circle drophover_first_item action first"></i>
                     <ul class="drophover_menu left">
                         <li class="drophover_item"><a href="<?php $controllerroot; ?>UserPanel_controller.php"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></a></li>
                         <li class="drophover_item"><a href="<?php echo $controllerroot; ?>"><i class="fa fa-box"></i>سفارش های من</a></li>
@@ -18,7 +18,7 @@
             <?php
                 else:
             ?>
-                <a href="<?php $controllerroot; ?>login_controller.php"><i class="fas fa-user-circle action"></i></a>
+                <a href="<?php $controllerroot; ?>login_controller.php"><i class="fas fa-user-circle action first"></i></a>
             <?php
                 endif;
             ?>

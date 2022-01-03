@@ -40,8 +40,7 @@
                             <td>{$comment['uid']}</td>
                             <td>{$comment['subject']}</td>
                             <td>{$comment['message']}</td>
-                            <td><a href='{$controllerroot
-                            }deleteComment_controller.php?id={$comment['id']}'><i class='fas fa-trash'></i></a></td>
+                            <td><a href='{$controllerroot}deleteComment_controller.php?id={$comment['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
                             </tr>";
                         ?>
                         
@@ -54,8 +53,8 @@
         </section>
     </main>
 
-    <script src="<?php echo $assetsroot ?>js/templates/sidebar.js"></script>
-    <script src="<?php echo $baseroot;?>assets/js/drophover.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
+
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

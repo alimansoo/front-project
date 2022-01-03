@@ -41,7 +41,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان');
                             <td>{$catg[$user['catg']]}</td>
                             <td>{$price_component[$user['price_component']]}</td>
                             <td>{$user['price']}ریال</td>
-                            <td><a href='{$baseroot}removeProduct_controller.php?id={$user['id']}'><i class='fas fa-trash'></i></a></td>
+                            <td><a href='{$baseroot}removeProduct_controller.php?id={$user['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
                             <td><a href='{$baseroot}editProduct_view.php?id={$user['id']}'><i class='fas fa-edit'></i></a></td>
                             </tr>";
                         }
@@ -52,8 +52,6 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان');
         </section>
     </main>
 
-    <script src="<?php echo $assetsroot ?>js/templates/sidebar.js"></script>
-    <script src="<?php echo $baseroot;?>assets/js/drophover.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

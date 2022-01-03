@@ -11,18 +11,24 @@ function LikeProduct(e) {
     fetch(this.href)
     .then(
         function (response) {
-            return response.text();
+            return response.json();
         }
     )
     .then(
         function (data) {
-            if(IconElement.classList.contains('fas')){
-                IconElement.classList.remove('fas');
-                IconElement.classList.add('far');
-            }else if(IconElement.classList.contains('far')){
-                IconElement.classList.remove('far');
-                IconElement.classList.add('fas');
+            if (data.status === 200) {
+                if(IconElement.classList.contains('fas')){
+                    IconElement.classList.remove('fas');
+                    IconElement.classList.add('far');
+                }else if(IconElement.classList.contains('far')){
+                    IconElement.classList.remove('far');
+                    IconElement.classList.add('fas');
+                }
+                messageBoxSmall(true,data.message);
+            } else {
+                messageBoxSmall(false,data.message);
             }
+            
         }
     )
     .catch(
@@ -45,18 +51,24 @@ function BookmarkProduct(e) {
     fetch(this.href)
     .then(
         function (response) {
-            return response.text();
+            return response.json();
         }
     )
     .then(
         function (data) {
-            if(IconElement.classList.contains('fas')){
-                IconElement.classList.remove('fas');
-                IconElement.classList.add('far');
-            }else if(IconElement.classList.contains('far')){
-                IconElement.classList.remove('far');
-                IconElement.classList.add('fas');
+            if (data.status === 200) {
+                if(IconElement.classList.contains('fas')){
+                    IconElement.classList.remove('fas');
+                    IconElement.classList.add('far');
+                }else if(IconElement.classList.contains('far')){
+                    IconElement.classList.remove('far');
+                    IconElement.classList.add('fas');
+                }
+                messageBoxSmall(true,data.message)
+            } else {
+                messageBoxSmall(false,data.message)
             }
+            
         }
     )
     .catch(
@@ -78,20 +90,27 @@ function AddProductCard(e) {
     fetch(this.href)
     .then(
         function (response) {
-            return response.text();
+            return response.json();
         }
     )
     .then(
         function (data) {
-            if(Element.classList.contains('add')){
-                Element.classList.remove('add');
-                Element.classList.add('remove');
-                Element.innerText  = "حذف از سبد";
-            }else if(Element.classList.contains('remove')){
-                Element.classList.remove('remove');
-                Element.classList.add('add');
-                Element.innerText  = "افزودن به سبد";
+            if (data.status === 200) {
+                if(Element.classList.contains('add')){
+                    Element.classList.remove('add');
+                    Element.classList.add('remove');
+                    Element.innerText  = "حذف از سبد";
+                }else if(Element.classList.contains('remove')){
+                    Element.classList.remove('remove');
+                    Element.classList.add('add');
+                    Element.innerText  = "افزودن به سبد";
+                }
+                messageBoxSmall(true,data.message);
+            } else {
+                messageBoxSmall(false,data.message);
             }
+            
+            
         }
     )
     .catch(

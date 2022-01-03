@@ -1,0 +1,28 @@
+.infosmallbox{
+    background-color: gainsboro;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 4px;
+}
+.infosmallbox_icon{
+    display: inline-block;
+    background-color: aqua;
+    vertical-align: middle;
+    padding: 18px;
+    border-radius: 8px;
+}
+.infosmallbox i{
+    font-size: 1.7em;
+}
+.infosmallbox_content{
+    display: inline-block;
+    vertical-align: m;
+}
+.infosmallbox_content_head{
+    font-size: 1.2em;
+    color: black;
+}
+.infosmallbox_content_value{
+    font-size: 1em;
+}

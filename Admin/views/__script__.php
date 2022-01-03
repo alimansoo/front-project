@@ -9,4 +9,3 @@
 <script src="<?php echo $assetsroot;?>js/SmallMessageBox.js"></script>
 <script src="<?php echo $assetsroot;?>js/templates/sidebar.js"></script>
 <script src="<?php echo $assetsroot;?>js/templates/card.js"></script>
-<script src="<?php echo $assetsroot;?>js/templates/cartpage.js"></script>

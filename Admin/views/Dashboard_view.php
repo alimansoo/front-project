@@ -13,16 +13,41 @@
         <section class="grid-display col-sm-1 col-md-1 col-lg-3">
             <?php include_once('Sidebar.php'); ?>
             <section class="grid-lg-1to4">
-                <section class="page_content">
-                    <h3 class="page_content_title">اطلاعات شخصی</h3>
+                <section class="page_content grid-display col-sm-1 col-md-2 col-lg-4">
+                    <div class="infosmallbox">
+                        <div class="infosmallbox_icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="infosmallbox_content">
+                            <h5 class="infosmallbox_content_head">سود ماه اخیر</h5>
+                            <h6 class="infosmallbox_content_value">360000 ریال</h6>
+                        </div>
+                    </div>
+                    <div class="infosmallbox">
+                        <div class="infosmallbox_icon"><i class="fas fa-box"></i></div>
+                        <div class="infosmallbox_content">
+                            <h5 class="infosmallbox_content_head">سفارشات ماه اخیر</h5>
+                            <h6 class="infosmallbox_content_value">36000</h6>
+                        </div>
+                    </div>
+                    <div class="infosmallbox">
+                        <div class="infosmallbox_icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="infosmallbox_content">
+                            <h5 class="infosmallbox_content_head">کاربران جدید</h5>
+                            <h6 class="infosmallbox_content_value">360</h6>
+                        </div>
+                    </div>
+                    <div class="infosmallbox">
+                        <div class="infosmallbox_icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="infosmallbox_content">
+                            <h5 class="infosmallbox_content_head">سود ماه اخیر</h5>
+                            <h6 class="infosmallbox_content_value">360000 ریال</h6>
+                        </div>
+                    </div>
                 </section>
             </section>
         </section>
     </main>
 
-    <script src="<?php echo $assetsroot ?>js/templates/sidebar.js"></script>
-    <script src="<?php echo $baseroot;?>assets/js/drophover.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>
 

@@ -50,15 +50,16 @@ function removeProductElementEvent(e) {
     fetch(this.href)
     .then(
         function (response) {
-            return response.text();
+            return response.json();
         }
     )
     .then(
         function (data) {
-            if (data === "deletecard") {
+            if (data.status === 200) {
+                messageBoxSmall(true,data.message)
                 deleterowTable(thisElement);
-            }else{
-                console.log("errore");
+            } else {
+                messageBoxSmall(false,data.message)
             }
         }
     )

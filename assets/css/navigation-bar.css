@@ -8,6 +8,11 @@
 .navbar.bg-dark{
     background-color: var(--on-primary-container);
 }
+.pos-stiky{
+    position: sticky;
+    top: -1px;
+    z-index: 800;
+}
 .list{
     margin: 0;
     padding: 0;

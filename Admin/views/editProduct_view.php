@@ -83,26 +83,6 @@
           </section>
         </section>
     </main>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <?php include_once('__script__.php'); ?>
 </body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once('__init__.php'); ?>
-    <title>چاپ ماهرنگ</title>
-  </head>
-  <body lang="fa">
-    <div class="C-container">
-
-    </div>
-    <script src="js/jquery-3.5.1.slim.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
 </html>

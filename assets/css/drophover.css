@@ -27,6 +27,7 @@
     overflow: hidden;
     width: max-content;
     z-index: 999;
+    text-align: right !important;
 }
 .drophover_menu.left{
     /* float: left; */

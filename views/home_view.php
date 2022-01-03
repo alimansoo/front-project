@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?php echo $baseroot;?>assets/css/style.css">
     <?php include'__init__.php'; ?>
 </head>
-<body id="body-container" class="grid-100" lang="fa">
+<body id="body-container" class="grid-100 grid-row-container">
     <?php include_once('header.php'); ?>
     <?php include_once('TopNavigation.php'); ?>
 
@@ -72,7 +72,7 @@
         </div>
     </main>
     
-    
+    <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
     <?php include_once('footer.php'); ?>
     <?php include_once('__script__.php'); ?>
 </body>

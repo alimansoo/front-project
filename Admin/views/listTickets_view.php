@@ -54,8 +54,6 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان');
         </section>
     </main>
 
-    <script src="<?php echo $assetsroot ?>js/templates/sidebar.js"></script>
-    <script src="<?php echo $baseroot;?>assets/js/drophover.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>
