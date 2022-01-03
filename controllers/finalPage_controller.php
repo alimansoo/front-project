@@ -2,7 +2,7 @@
 require '__init__.php';
 
 $orderid=$_SESSION['orderid'];
-unset($_SESSION['orderid']);
+
 
 $status = "";
 
@@ -19,5 +19,8 @@ if ($_SESSION['is_payed']) {
 }else{
     $status = "failed";
 }
+
+unset($_SESSION['orderid']);
+unset($_SESSION['is_payed']);
 
 include $viewroot."finalPage_view.php";

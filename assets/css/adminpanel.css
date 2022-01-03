@@ -5,8 +5,16 @@
     grid-template-columns: 92% 8%;
 }
 .navbar{
-    max-height: 70px;
+    
 } 
+.admintPanel #SidebarIcon{
+    color: black;
+}
+.admintPanel .navbar{
+    padding: 8px 8px;
+    max-height: 60px;
+    color: black !important;
+}
 .nav_nav{
 
 }
@@ -34,4 +42,31 @@
 .nav_profile_items_img{
     width: 50px;
     border-radius: 50%;
+}
+.admintPanel .navbar ul:last-child{
+    text-align: end;
+}
+.admintPanel .navbar .action{
+    font-size: 2em;
+}
+/* Tablet */
+@media only screen and (min-width:540px)  { 
+}
+/* Desktop */
+@media only screen and (min-width:1000px) {
+    .admintPanel .sidebar{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 20vw;
+    }
+    .admintPanel .navbar{
+        margin-right: 20vw;
+        padding: 12px;
+        max-height: 60px;
+    }
+    .admintPanel .container{
+        margin-right: 20vw;
+    }
 }

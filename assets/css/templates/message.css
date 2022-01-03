@@ -1,0 +1,32 @@
+.small_modal_message{
+    
+    color: white;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px;
+    z-index: 1050;
+    min-width: 20vw;
+    width: fit-content;
+    display: none;
+    margin: 0;
+}
+.small_modal_message.success{
+    background-color: rgb(48, 179, 15);
+}
+.small_modal_message.failed{
+    background-color: rgb(179, 15, 15);
+}
+.small_modal_message.show{
+    display: block;
+}
+.small_modal_message i{
+    margin: 0px 8px;
+}
+.small_modal_message span{
+    margin: 0px 8px;
+}
+.small_modal_message i,.small_modal_message span{
+    vertical-align: middle;
+}

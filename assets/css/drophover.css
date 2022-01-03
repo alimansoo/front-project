@@ -8,7 +8,7 @@
     padding: 0;
     list-style: none;
 }
-.drophover:hover ul{
+.drophover.show ul{
     display: block;
 }
 .drophover .drophover_item a{

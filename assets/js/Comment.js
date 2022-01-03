@@ -15,12 +15,17 @@ function SaveComment(e) {
     })
     .then(
         function (response) {
-            return response.text();
+            return response.json();
         }
     )
     .then(
         function (data) {
             console.log(data);
+            if (data.status === 200) {
+                messageBoxSmall(true,data.message)
+            } else {
+                messageBoxSmall(false,data.message)
+            }
         }
     )
     .catch(
@@ -29,3 +34,5 @@ function SaveComment(e) {
         }
     )
 }
+
+//SmallmessageBox

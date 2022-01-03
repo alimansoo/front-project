@@ -11,11 +11,11 @@
     color: initial;
 }
 .filled.card{
-    background-color: #E7E0EC;
+    background-color: var(--primary);
     width: 98%;
 }
-.filled.card:hover{
-    background-color: rgba(28,27,31,15%);
+.filled.card:hover .card-body{
+    opacity: 70%;
 }
 .card-img-top{
     width: 100%;
@@ -23,20 +23,23 @@
 .card-body{
     margin-top: -8px;
     padding: 16px;
+    color: var(--on-primary) !important;
 }
 .card a{
     text-decoration: none;
+    color: inherit;
 }
 .card-title{
     font-size: 24px;
     font-weight: bold;
     margin: 0;
+    color: var(--on-primary);
 }
 .card-text{
     color: #838080;
 }
 .secondary-title{
-    color: #615c5c;
+    color: var(--on-primary);
 }
 .card .btn{
     border-radius: 24px;

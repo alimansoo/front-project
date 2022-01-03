@@ -1,8 +1,12 @@
+#SidebarIcon{
+    color: white;
+    display: inline-block;
+}
 #navigation-bar{
-    display: grid;
-    background-color: gray;
-    margin-bottom: 12px;
-    height: 40px;
+    
+}
+.navbar.bg-dark{
+    background-color: var(--on-primary-container);
 }
 .list{
     margin: 0;
@@ -21,4 +25,16 @@
     position: sticky;
     top: -1px;
     z-index: 999;
+}
+/* Tablet */
+@media only screen and (min-width:540px)  {
+    #SidebarIcon{
+        display: inline-block;
+    }
+}
+/* Desktop */
+@media only screen and (min-width:1000px) {
+    #SidebarIcon{
+        display: none;
+    }
 }

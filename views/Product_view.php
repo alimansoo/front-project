@@ -55,23 +55,33 @@
 
         <section id="comment" class="page_content">
             <h4>بخش نظرات این محصول</h4>
+            <?php foreach ($allCommentProduct as $key => $CommentProduct):?>
+                <div class="comment_user">
+                    <i class="fas fa-user-circle"></i>
+                    <h5 class="comment_user_username"><?php echo namebyid($mysql,$CommentProduct['uid']); ?></h5>
+                    <h6 class="comment_user_subject"><?php echo $CommentProduct['subject']; ?></h6>
+                    <p class="comment_user_message"><?php echo $CommentProduct['message']; ?></p>
+                </div>
+            <?php endforeach; ?>
+            <h4>اضافه کردن کامنت جدید</h4>
             <form action="<?php echo $controllerroot ?>addComment_controller.php?pid=<?php echo $id ?>" method="get" id="CommentForm">
-                <label for="subjectComment">موضوع</label>
-                <input type="text" name="subject" id="subjectComment">
-                <label for="messagComment">متن نظر</label>
-                <textarea name="message" id="messagComment" cols="30" rows="10"></textarea>
-                <input type="submit" value="ثبت نظر">
+                <div class="input_material_block">
+                    <input type="text" name="subject" id="subjectComment">
+                    <label for="subjectComment">موضوع</label>
+                </div>
+                <div class="input_material_block">
+                    <textarea name="message" id="messagComment" cols="30" rows="10"></textarea>
+                    <label for="messagComment">متن نظر</label>
+                </div>
+                <input type="submit" value="ثبت نظر" class="btn btn-primary">
             </form>
         </section>
         
     </main>
-    
-    
+
+    <p id="Small_modal_Message" class="small_modal_message success"><i class="fas fa-times"></i><span class="message">dafsdf</span></p>
+
     <?php include_once('footer.php'); ?>
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <script src="<?php echo $assetsroot ?>js/templates/productView.js"></script>
-    <script src="<?php echo $assetsroot;?>js/main.js"></script>
-    <script src="<?php echo $assetsroot;?>js/Comment.js"></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

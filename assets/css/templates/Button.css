@@ -80,10 +80,14 @@ button.full-btn,input.full-btn{
     display: block;
 }
 .btn-primary{
-    background-color: rgb(13, 235, 235);
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+.btn-success{
+    background-color: rgb(13, 235, 98);
     color: white;
 }
-.btn-primary:hover{
+.btn-success:hover,.btn-primary:hover{
     background-color: gainsboro;
     color: black;
 }

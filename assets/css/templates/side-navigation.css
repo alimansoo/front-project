@@ -1,5 +1,4 @@
 .sidebar_nav{
-    background-color: #FFFBFE;
 }
 .sidebar_nav a{
     text-decoration: none;
@@ -17,12 +16,12 @@
     /* padding: 0 28px; */
 }
 .nav_item{
-    background-color:#FFFBFE ;
     padding: 12px 20px;
     margin: 5px;
     border-radius: 24px;
     font-size: medium;
     color: #1E192B;
+    cursor: pointer;
 }
 .nav_item:hover{
     background-color: rgb(172,122,218,20%);

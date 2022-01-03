@@ -4,8 +4,8 @@
     margin-top: 8px;
 }
 .footer.bg-dark{
-    background-color: #343a40;
-    color: white;
+    background-color: var(--on-secondary-container);
+    color: var(--primary-container);
 }
 .footer .item{
     text-align: center;

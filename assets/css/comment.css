@@ -1,3 +1,28 @@
 #comment{
-    
+    margin-top: 24px;
+}
+.comment_user{
+    padding-right: 12PX;
+    margin: 8px 0;
+}
+.comment_user i{
+    display: inline-block;
+    color: black;
+    font-size: 2em;
+    vertical-align: middle;
+}
+.comment_user_username{
+    display: inline-block;
+    vertical-align: middle;
+    color: black;
+    font-size: 1em;
+}
+.comment_user_subject{
+    margin-top: 4px;
+    display: block;
+    font-size: 1em;
+}
+.comment_user_message{
+    display: block;
+    font-size: 0.95em;
 }

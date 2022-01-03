@@ -13,4 +13,6 @@ $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "INSERT INTO `comment`( `pid`, `uid`, `subject`, `message`) VALUES (?,?,?,?)";
 $result = $mysql->query($query,$productid,$userid,$subject,$message);
 
-echo "added";
+$output = array('status' => 200,'message' => 'نظر شما ثبت شد.' );
+
+echo json_encode($output);

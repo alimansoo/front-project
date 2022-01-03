@@ -7,14 +7,14 @@ a{
 #header .site-brand{
     
 }
-#header .site-brand .image-brand{
+.header .site-brand .image-brand{
     width: 50px;
     vertical-align: middle;
 }
 .header .site-brand .link-brand{
     vertical-align: middle;
     font-size: 1.5em;
-    color: black;
+    color: var(--on-secondary-container);
     font-weight: bolder;
     margin: 8px;
 }
@@ -22,15 +22,14 @@ a{
     text-align: end;
 }
 .header .header-action i{
-    color: black;
+    color: var(--on-secondary-container);
 }
-.header .header-action a{
+.header .header-action i.action{
     vertical-align: middle;
     font-size: 2em;
-    padding: 4px;
-    
+    padding: 4px;  
 }
-.header .header-action a:first-child{
+.header .header-action .action:first-child{
     border-left: 1px solid gray;
     padding-left: 8px;
 }
@@ -39,7 +38,7 @@ a{
     display: grid;
     grid-template-columns: auto auto;
     padding: 8px;
-    height: 50px;
+    height: 70px;
 }
 .header{
     

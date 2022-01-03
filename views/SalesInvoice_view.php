@@ -10,26 +10,24 @@
 <body id="body-container" class="grid-100">
     <?php include_once('header.php'); ?>    
     <?php include_once('TopNavigation.php'); ?>
-    <main id="main-container">
+    <main id="container">
         <section class="page_content">
-            <h3>فاکتور خرید شما</h3>
-            <div>هزینه کل سفارش شما:<span><?php echo $allofPrice; ?></span>ریال</div>
-            <div>هزینه حمل و نقل:<span><?php echo $transportPrice; ?></span>ریال</div>
-            <div>هزینه پرداختی:<span><?php echo $allofPrice + $transportPrice; ?></span>ریال</div>
+            <h3 class="page_content_title">فاکتور خرید شما</h3>
+            <div>هزینه کل سفارش شما : <span><?php echo $allofPrice; ?></span>ریال</div>
+            <div>هزینه حمل و نقل : <span><?php echo $transportPrice; ?></span>ریال</div>
+            <div>هزینه پرداختی : <span><?php echo $allofPrice + $transportPrice; ?></span>ریال</div>
             <br>
             <table class="table">
                 <tr>
-                <th>شناسه</th>
-                <th>تصویر</th>
-                <th>نام محصول</th>
-                <th>قیمت</th>
-                <th>تعداد</th>
+                    <th>تصویر</th>
+                    <th>نام محصول</th>
+                    <th>قیمت</th>
+                    <th>تعداد</th>
                 </tr>
                 <?php 
                 foreach ($productsArray as $product) {
                     echo "
                     <tr>
-                        <td>{$product['id']}</td>
                         <td><img src='../assets/images/products/{$product['image_src']}' alt='{$product['name']}' width='50px'/></td>
                         <td>{$product['name']}</td>
                         <td>{$product['price']}ریال</td>
@@ -41,13 +39,11 @@
             <form action="<?php echo $controllerroot ?>deatailOrder_controller.php" method="post">
                 <input type="hidden" name="priceAll" value="<?php echo $allofPrice; ?>">
                 <input type="hidden" name="transport_price" value="<?php echo $transportPrice; ?>">
-                <input type="submit" name="submit" value="تایید">
+                <input type="submit" name="submit" class="btn btn-primary" value="تایید">
             </form>
         </section>   
     </main>
     <?php include_once('footer.php'); ?>
-
-    <script src="<?php echo $assetsroot ?>js/templates/cartpage.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

@@ -1,7 +1,7 @@
 body#body-container{
     display: grid;
     min-height: 100vh;
-    background-color: gainsboro;
+    background-color: var(--primary-container);
 }
 
 header#header{
@@ -11,7 +11,7 @@ nav#navigation-bar{
     grid-column: 1/3;
 }
 main#container{
-
+    grid-column: 1/3;
 }
 aside#sidebar{
 
@@ -82,7 +82,7 @@ footer#footer{
         grid-template-columns: auto auto auto;
     }
     .col-lg-4{
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: 25% 25% 25% 25%;
     }
     .col-lg-5{
         grid-template-columns: auto auto auto auto auto;
@@ -90,7 +90,19 @@ footer#footer{
     .col-lg-6{
         grid-template-columns: auto auto auto auto auto auto;
     }
+    .col-lg-70-30{
+        grid-template-columns: 70% 30%;
+    }
     .col-lg-3-product-view{
         grid-template-columns: 39% auto 27%;
+    }
+    .grid-lg-1to3{
+        grid-column: 1/3;
+    }
+    .grid-lg-1to4{
+        grid-column: 1/4;
+    }
+    .grid-lg-2to5{
+        grid-column: 2/5;
     }
 }

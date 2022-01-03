@@ -13,15 +13,34 @@
 @import url('Product.css');
 @import url('comment.css');
 
+:root {
+    --primary : rgb(52, 60, 255);
+    --on-primary: rgb(255, 255, 255);
+    --primary-container: rgb(223, 224, 255);
+    --on-primary-container:rgb(0, 0, 111);
+
+    --secondary:rgb(92, 93, 114);
+    --on-secondry : rgb(255, 255, 255);
+    --secondary-container : rgb(225, 224, 250);
+    --on-secondary-container: rgb(25, 26, 43);
+    
+    --outline:rgb(119, 118, 128);
+    --tertiary:rgb(121, 83, 107);
+    --surface-variant :rgb(228, 225, 236);
+}
 @font-face {
     font-family: Vazir;
     src: url('../fonts/Vazir.ttf');
 }
+*{
+    box-sizing: border-box;
+}
+
 :lang(fa){
     direction: rtl;
 }
 body{
-    background-color: gainsboro;
+    background-color: var(--primary-container);
     margin: 0;
 }
 body,input,textarea,button,select{

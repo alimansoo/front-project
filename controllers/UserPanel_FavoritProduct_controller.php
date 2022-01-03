@@ -2,7 +2,7 @@
 require "__init__.php";
 $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 
-$query = "SELECT * FROM `bookmarkproduct` WHERE uid = ?";
+$query = "SELECT * FROM `likeproduct` WHERE uid = ?";
 $result = $mysql->query($query,$_SESSION['id'])->fetchAll();
 
 $productsArray = array();
@@ -13,4 +13,4 @@ foreach ($result as $key=>$value) {
     $productsArray[$key] = $result;
 }
 
-include($baseroot."views/SavedProduct_view.php");
+include($baseroot."views/UserPanel_FavoritProduct_view.php");

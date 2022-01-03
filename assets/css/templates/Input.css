@@ -38,3 +38,76 @@
 .input_sections{
     margin: 7px 0;
 }
+
+.input_material_block{
+    margin: 10px;
+    position: relative;
+}
+.input_material_block label{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: large;
+    transition: all 0.1s;
+}
+.input_material_block input{
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 22px 10px 10px 10px;
+    /* box-sizing: border-box; */
+    font-size: large;
+    color: black;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+.input_material_block textarea{
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 22px 10px 10px 10px;
+    /* box-sizing: border-box; */
+    font-size: large;
+    color: black;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+.input_material_block.active label{
+    top: 7px;
+    font-size: small;
+    color: var(--outline);
+}
+.input_material_block.active input{
+    border: 2px solid var(--outline);
+}
+.input_material_block.active textarea{
+    border: 2px solid var(--outline);
+}
+
+.input_material_block.focus label{
+    color: var(--primary);
+}
+.input_material_block.focus input{
+    border: 2px solid var(--primary);
+}
+.input_material_block.focus textarea{
+    border: 2px solid var(--primary);
+}
+/* Tablet */
+@media only screen and (min-width:540px)  { 
+    .input_material_block input{
+        width: 70%;
+    }
+    .input_material_block textarea{
+        width: 70%;
+    }
+}
+/* Desktop */
+@media only screen and (min-width:1000px) {
+    .input_material_block input{
+        width: 50%;
+    }
+    .input_material_block textarea{
+        width: 50%;
+    }
+}

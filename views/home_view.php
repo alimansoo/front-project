@@ -74,9 +74,6 @@
     
     
     <?php include_once('footer.php'); ?>
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <script src="<?php echo $baseroot;?>assets/js/main.js"></script>
-    <script src="<?php echo $baseroot;?>assets/js/templates/card.js"></script>
+    <?php include_once('__script__.php'); ?>
 </body>
 </html>

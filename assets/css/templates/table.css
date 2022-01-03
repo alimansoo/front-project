@@ -15,7 +15,6 @@ tr,th,td{
 .table tr{
     height: 52px;
     border-bottom: 1px solid ;
-    /* background-color: red; */
 }
 .table tr:last-child td,.table tr:last-child th{
     border: none;
@@ -26,10 +25,35 @@ tr,th,td{
     border-top: 1px solid ;
 }
 .table td{
-    padding: 0 16px;
+    padding: 0 2px;
     color: inherit;
+    font-size: 0.8em;
 }
-
+.table th{
+    font-size: 0.8em;
+}
 table tbody:first-child{
     border: 0px;
+}
+/* Tablet */
+@media only screen and (min-width:540px)  { 
+    .table td{
+        padding: 0 8px;
+        color: inherit;
+        font-size: 0.9em;
+    }
+    .table th{
+        font-size: 1.1em;
+    }
+}
+/* Desktop */
+@media only screen and (min-width:1000px) {
+    .table td{
+        padding: 0 16px;
+        color: inherit;
+        font-size: 1.1em;
+    }
+    .table th{
+        font-size: 1.3em;
+    }
 }

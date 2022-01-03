@@ -1,41 +1,32 @@
-<header id="header" class="navbar lightnav grid-display">
-            <nav class="navbar_nav">
-                <ul class="nav_list">
-                    <li class="nav_list_item"><a href=""><i class="fas fa-ellipsis-v"></i></a></li>
-
-                    <li class="nav_list_item"><a href="">
-                        <div class="drophover">
-                            <i class="far fa-comments"></i>
-                            <span class="badge bg-primary">3</span>
-                            <ul class="drophover_menu right">
-                                <li class="drophover_item"> علی منصوری</li>
-                                <li class="drophover_item"><a href="<?php echo $controllerroot; ?>exit_controller.php"><i class="fas fa-sign-out-alt"></i>خروج</li>
-                            </ul>
-                        </div>
-                        
-                    </li>
-                    <li class="nav_list_item"><a href="">
-                        <div class="drophover">
-                            <i class="far fa-comment-alt"></i>
-                            <span class="badge bg-primary">3</span>
-                            <ul class="drophover_menu right">
-                                <li class="drophover_item"> علی منصوری</li>
-                                <li class="drophover_item"><a href="<?php echo $controllerroot; ?>exit_controller.php"><i class="fas fa-sign-out-alt"></i>خروج</li>
-                            </ul>
-                        </div>
-                        
-                    </li>
-                    
-                    <li class="nav_list_item"><a href=""><i class="far fa-comment-alt"></i></a></li>
+<nav id="navigation-bar" class="navbar navbar_nav lightnav grid-display grid-50-50">
+    <ul class="list">
+        <li class="list_item" id="SidebarIcon"><i class='fas fa-bars'></i></li>
+        <li class="nav_list_item">
+            <div class="drophover">
+                <i class="far fa-comment-alt"></i>
+                <span class="badge bg-primary">3</span>
+                <ul class="drophover_menu right">
+                    <li class="drophover_item"> تیکت های جدید </li>
                 </ul>
-            </nav>
-            <nav class="nav_profile"> 
-                <div class="nav_profile_items drophover">
-                    <img class="nav_profile_items_img" src="<?php echo $assetsroot; ?>images/users/user.jpg" alt="ProfileImage"> 
-                    <ul class="profile_list drophover_menu left">
-                        <li class="profile_list_item drophover_item"> علی منصوری</li>
-                        <li class="profile_list_item drophover_item"><a href="<?php echo $controllerroot; ?>exit_controller.php"><i class="fas fa-sign-out-alt"></i>خروج</a></li>
-                    </ul>
-                </div>
-            </nav>
-</header>
+            </div>
+        </li>
+        <li class="nav_list_item">
+            <div class="drophover">
+                <i class="far fa-comment"></i>
+                <span class="badge bg-primary">2</span>
+                <ul class="drophover_menu right">
+                    <li class="drophover_item"> کامنت های جدید </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <ul class="list">
+        <div class="drophover">
+            <i class="fas fa-user-circle drophover_first_item action"></i>
+            <ul class="drophover_menu left">
+                <li class="drophover_item"><a href="<?php $controllerroot; ?>UserPanel_controller.php"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></a></li>
+                <li class="drophover_item"><a href="<?php echo $controllerroot; ?>exit_controller.php"><i class="fas fa-sign-out-alt"></i>خروج</a></li>
+            </ul>
+        </div>
+    </ul>
+</nav>
