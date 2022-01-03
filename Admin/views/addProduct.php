@@ -7,17 +7,17 @@
     <title>حساب کاربری</title>
     <?php include"__init__.php"; ?>
 </head>
-<body id="body-container" class="admintPanel ">
+<body id="body-container" class="admintPanel grid-20-80">
     <!-- include Sidebar -->
-    <!-- <?php include "Sidebar.php"; ?> -->
+    <?php include "Sidebar.php"; ?>
     <main id="main-container">
         <!-- include Header -->
-        <!-- <?php include "Header.php"; ?> -->
+        <?php include "Header.php"; ?>
         <section id="container">
             <div class="form">
                 <div class="form_title">فرم اضافه کردن محصول</div>
                 <hr class="form_line">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="" method="post">
                     <div class="input_sections">
                         <label for="product_name">نام محصول:</label>
                         <br>
@@ -92,4 +92,21 @@
     </main>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require_once('__init__.php'); ?>
+    <title>چاپ ماهرنگ</title>
+  </head>
+  <body lang="fa">
+    <div class="C-container">
+        
+    </div>
+  </body>
 </html>

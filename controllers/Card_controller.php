@@ -10,6 +10,8 @@ $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "SELECT * FROM `cards` WHERE uid = ?";
 $result = $mysql->query($query,$_SESSION['id'])->fetchAll();
 
+
+
 $allofPrice = 0;
 
 $productsArray = array();

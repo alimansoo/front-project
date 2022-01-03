@@ -14,7 +14,7 @@
             <?php include_once('Sidebar.php'); ?>
             <section class="grid-lg-1to4">
                 <section class="page_content">
-                <a class="filled-tonal-button" href="<?php echo $controllerroot;?>addUser_controller.php">اضافه کردن کاربر+</a>
+                <a class="btn btn-primary" href="<?php echo $controllerroot;?>addUser_controller.php">اضافه کردن کاربر+</a>
                     <table class="table">
                         <tr>
                             <th>شناسه</th>

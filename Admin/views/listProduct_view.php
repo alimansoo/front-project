@@ -1,6 +1,6 @@
 <?php 
 $price_component = array('metric' => 'متری','pices' => 'دونه ای');
-$catg = array('bnr' => 'بنر','lva' => 'لیوان');
+$catg = array('bnr' => 'بنر','lva' => 'لیوان','gls'=>'لیوان');
 ?>
 <!DOCTYPE html>
 <html lang="fa">
@@ -18,7 +18,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان');
             <?php include_once('Sidebar.php'); ?>
             <section class="grid-lg-1to4">
                 <section class="page_content">
-                    <a  href="<?php echo $baseroot;?>addProduct.php">اضافه کردن محصول+</a>
+                    <a  href="<?php echo $controllerroot;?>addProduct_controller.php" class="btn btn-primary">اضافه کردن محصول+</a>
                     <br>
                     <table class="table">
                         <tr>

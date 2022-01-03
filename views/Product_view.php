@@ -54,7 +54,7 @@
         </section>
 
         <section id="comment" class="page_content">
-            <h4>بخش نظرات این محصول</h4>
+            <h4 class="page_content_title">بخش نظرات این محصول</h4>
             <?php foreach ($allCommentProduct as $key => $CommentProduct):?>
                 <div class="comment_user">
                     <i class="fas fa-user-circle"></i>
@@ -63,7 +63,7 @@
                     <p class="comment_user_message"><?php echo $CommentProduct['message']; ?></p>
                 </div>
             <?php endforeach; ?>
-            <h4>اضافه کردن کامنت جدید</h4>
+            <h4 class="page_content_title">اضافه کردن کامنت جدید</h4>
             <form action="<?php echo $controllerroot ?>addComment_controller.php?pid=<?php echo $id ?>" method="get" id="CommentForm">
                 <div class="input_material_block">
                     <input type="text" name="subject" id="subjectComment">

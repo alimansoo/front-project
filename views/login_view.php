@@ -23,8 +23,10 @@
                     <input type="password" name="password" id="password" class="login_input">
                     <label for="password">رمز عبور :</label>
                 </div>
-                <button type="submit" name="submit" class="filled-tonal-button">ورود</button>
+                <button type="submit" name="submit" class="btn btn-primary">ورود</button>
+                <a href="<?php echo $controllerroot ?>reqister_controller.php" class="btn btn-primary">ثبت نام</a>
             </form>
+            
         </section>   
     </main>
     <?php include_once('footer.php'); ?>

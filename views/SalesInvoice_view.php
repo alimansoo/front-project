@@ -39,7 +39,7 @@
             <form action="<?php echo $controllerroot ?>deatailOrder_controller.php" method="post">
                 <input type="hidden" name="priceAll" value="<?php echo $allofPrice; ?>">
                 <input type="hidden" name="transport_price" value="<?php echo $transportPrice; ?>">
-                <input type="submit" name="submit" class="btn btn-primary" value="تایید">
+                <input type="submit" name="submit" class="btn btn-primary" value=" تایید فاکتور">
             </form>
         </section>   
     </main>

@@ -4,6 +4,9 @@
 .comment_user{
     padding-right: 12PX;
     margin: 8px 0;
+    border: 1px solid var(--outline);
+    padding: 8px;
+    border-radius: 8px;
 }
 .comment_user i{
     display: inline-block;

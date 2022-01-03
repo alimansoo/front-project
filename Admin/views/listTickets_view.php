@@ -18,7 +18,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان');
             <?php include_once('Sidebar.php'); ?>
             <section class="grid-lg-1to4">
                 <section class="page_content">
-                   <a  href="<?php echo $controllerroot;?>addTicket_controller.php">اضافه کردن درخواست+</a>
+                   <a  href="<?php echo $controllerroot;?>addTicket_controller.php" class="btn btn-primary">اضافه کردن درخواست+</a>
                     <table class="table">
                             <tr>
                             <th>شناسه</th>

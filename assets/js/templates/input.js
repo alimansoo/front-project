@@ -10,6 +10,12 @@ for (let textarea_block of textarea_blockList) {
     textarea_block.addEventListener("blur",removeclass)
     textarea_block.addEventListener("keyup",addclass)
 }
+let select_blockList = document.querySelectorAll(".input_material_block select");
+for (let select_block of select_blockList) {
+    select_block.addEventListener("focus",addclass)
+    select_block.addEventListener("blur",removeclass)
+    select_block.addEventListener("keyup",addclass)
+}
 function addclass(e) {
         let blockElement = this.closest(".input_material_block");
         blockElement.classList.add("focus");
