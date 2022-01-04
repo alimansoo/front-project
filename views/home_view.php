@@ -71,6 +71,25 @@
             ?>
         </div>
     </main>
+
+    <section class="chat"> 
+        <div class="chat_container">
+            <div class="header">
+                پشتیبانی ماهرنگ
+            </div>
+            <div id="chat_container">
+            </div>
+            <div class="footer">
+                <form action="<?php $controllerroot ?>chatController_controller.php" method="post" id="Chatform">
+                    <input type="text" name="message" id="Chatmessage">
+                    <input type="submit" value="ارسال">
+                </form>
+            </div>
+        </div>
+        <div class="chat_icon">
+            <i class="fas fa-comments"></i>
+        </div>
+    </section>
     
     <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
     <?php include_once('footer.php'); ?>

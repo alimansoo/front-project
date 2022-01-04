@@ -12,6 +12,7 @@
 @import url('badge.css');
 @import url('Product.css');
 @import url('comment.css');
+@import url('chat.css');
 
 :root {
     --primary : rgb(52, 60, 255);

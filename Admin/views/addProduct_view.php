@@ -9,10 +9,10 @@
 </head>
 <body id="body-container" class="admintPanel ">
     <!-- include Sidebar -->
-    <!-- <?php include "Sidebar.php"; ?> -->
+    <?php include "Sidebar.php"; ?>
     <main id="main-container">
         <!-- include Header -->
-        <!-- <?php include "Header.php"; ?> -->
+        <?php include "Header.php"; ?>
         <section id="container">
             <div class="form">
                 <div class="form_title">فرم اضافه کردن محصول</div>
