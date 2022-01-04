@@ -18,4 +18,3 @@ function ClosemessageBoxSmall(e) {
     let small_modal_message = document.querySelector("#Small_modal_Message");
     small_modal_message.classList.remove('show');
 }
-

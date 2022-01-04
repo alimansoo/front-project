@@ -9,6 +9,7 @@
             <li class="nav_item"><i class='fas fa-users'></i><a href="<?php echo $controllerroot;?>listUsers_controller.php">لیست کاربران</a></li>
             <li class="nav_item"><i class='fas fa-comment-alt'></i><a href="<?php echo $controllerroot;?>listTickets_controller.php">لیست پیام ها</a></li>
             <li class="nav_item"><i class='fas fa-comment'></i><a href="<?php echo $controllerroot;?>listComment_controller.php">لیست نظر ها</a></li>
+            <li class="nav_item"><i class='fas fa-comments'></i><a href="<?php echo $controllerroot;?>chat_controller.php">چت کاربران</a></li>
         </ul>
     </nav>
 </aside>

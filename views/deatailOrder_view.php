@@ -25,13 +25,15 @@
                     $datetime->modify('+1 day');
                     $tomorow2 = $datetime->format('Y-m-d');
                 ?>
-                <label for="orderReciveDate">روز تحویل سفارش</label>
-                <Select name="orderReciveDate" id="orderReciveDate">
-                    <option value="<?php echo $today; ?>">امروز</option>
-                    <option value="<?php echo $tomorow; ?>"><?php echo $tomorow; ?></option>
-                    <option value="<?php echo $tomorow1; ?>"><?php echo $tomorow1; ?></option>
-                    <option value="<?php echo $tomorow2; ?>"><?php echo $tomorow2; ?></option>
-                </Select>
+                <div class="input_material_block active">
+                    <Select name="orderReciveDate" id="orderReciveDate">
+                        <option value="<?php echo $today; ?>">امروز</option>
+                        <option value="<?php echo $tomorow; ?>"><?php echo $tomorow; ?></option>
+                        <option value="<?php echo $tomorow1; ?>"><?php echo $tomorow1; ?></option>
+                        <option value="<?php echo $tomorow2; ?>"><?php echo $tomorow2; ?></option>
+                    </Select>
+                    <label for="orderReciveDate">روز تحویل سفارش</label>
+                </div>
                 <div class="input_material_block">
                     <textarea require name="orderAddres" id="orderAddres" cols="30" rows="10"></textarea>
                     <label for="orderAddres">آدرس تحویل گیرنده</label>

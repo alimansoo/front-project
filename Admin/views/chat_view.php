@@ -27,7 +27,7 @@
             </div>
         </div>
     </section>
-    
+    <script src="<?php echo $assetsroot;?>js/chatAdmin.js"></script>
     <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
     <?php include_once('__script__.php'); ?>
 </body>

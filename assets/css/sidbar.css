@@ -2,19 +2,20 @@
     
 }
 .sidebar{
-    display: none;
     overflow: hidden;
-    
     border-radius: 8px;
-    padding: 8px 4px;
+    width: 0;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: 1000;
+    transition-delay: 0.2s ;
+    transition: all 0.5s;
 }
 .sidebar.show{
-    display: block;
+    padding: 8px 4px;
+    width: 70vw;
 }
 .backsidebar{
     display: none;
@@ -60,11 +61,16 @@
     .backsidebar{
         display: none;
     }
+    .sidebar.show{
+        padding: 8px 4px;
+        width: 50vw;
+    }
 }
 /* Desktop */
 @media only screen and (min-width:1000px) {
     .sidebar{
-        display: block;
+        padding: 8px 4px;
+        width: auto;
         position: static;
         background-color: var(--on-primary);
         border-radius: 8px;

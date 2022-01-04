@@ -41,7 +41,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان','gls'=>'لیوان');
                             <td>{$catg[$user['catg']]}</td>
                             <td>{$price_component[$user['price_component']]}</td>
                             <td>{$user['price']}ریال</td>
-                            <td><a href='{$baseroot}removeProduct_controller.php?id={$user['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
+                            <td><a href='{$controllerroot}removeProduct_controller.php?id={$user['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
                             <td><a href='{$baseroot}editProduct_view.php?id={$user['id']}'><i class='fas fa-edit'></i></a></td>
                             </tr>";
                         }

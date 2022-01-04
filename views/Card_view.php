@@ -32,8 +32,8 @@
                             <tr>
                                 <td><img src='../assets/images/products/{$product['image_src']}' alt='{$product['name']}' width='50px'/></td>
                                 <td>{$product['name']}</td>
-                                <td>{$product['price']}ریال</td>
-                                <td>
+                                <td class='priceProduct'><span>{$product['price']}</span>ریال</td>
+                                <td class='quantityProduct'>
                                     <div class='productCounter'>
                                         <a href='{$controllerroot}changeProductQty_controller.php?subject=add&pid={$product['id']}' class='addQty'>+</a>
                                             <span class='productQty'>{$product['qty']}</span>
@@ -49,7 +49,7 @@
                 </section>
                 <section class="page_content Card_deatail">
                     <h3 class="page_content_title">سبد خرید</h3>
-                    <div class="Card_deatail_row grid-display grid-50-50">
+                    <div class="Card_deatail_row grid-display grid-50-50 PriceAll">
                         <div class="Card_deatail_row_key">قیمت کل محصولات:</div>
                         <div class="Card_deatail_row_value"><?php echo $allofPrice;?><span class="price_componant">ریال</span></div>
                     </div>

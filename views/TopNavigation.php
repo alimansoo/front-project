@@ -5,4 +5,12 @@
         <li class="list_item"><a href="<?php echo $controllerroot ?>Products_controller.php" class="link">محصولات</a></li>
         <li class="list_item"><a href="" class="link">تماس با ما</a></li>
     </ul>
+    <ul class="list">
+        <li class="list_item">
+            <input type = "search" list = "searchResult" placeholder="جستجو..">
+			<datalist id = "searchResult">
+                
+			</datalist>
+        </li>
+    </ul>
 </nav>
