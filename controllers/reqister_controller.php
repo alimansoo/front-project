@@ -2,7 +2,8 @@
 require '__init__.php';
 
 if (!isset($_POST['submit'])) {
-    include_once($viewroot.'reqister_view.php');
+    $filename = explode('_',basename(__FILE__))[0];
+    include $viewroot.$filename.'_view.php';
 }else {
 
     $cdb = new db($dbhost,$dbusername,$dbpassword,$dbname);

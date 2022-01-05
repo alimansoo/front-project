@@ -4,8 +4,8 @@ $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "SELECT * FROM `product`";
 $products = $mysql->query($query)->fetchAll();
 
-include $baseroot.'views/home_view.php';
-// include_view($baseroot,'home_view.php');
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';
 
 function isLike($mysql,$id)
 {

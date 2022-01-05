@@ -12,6 +12,21 @@ $controllerroot = '../controller/';
 
 // error_reporting(E_ALL & ~E_NOTICE);
 
+function includeThisView($viewroot,$filename){
+    echo $viewroot;
+
+    $filename = explode('_',basename($filename))[0];
+
+    include_once($viewroot.$filename.'_view.php');
+}
+
+function includeView($view) {
+
+    global $viewroot;
+
+    include $viewroot.$view.'_view.php';
+}
+
 
 $plugins = glob($baseroot.'*_plugin.php');
 

@@ -13,4 +13,5 @@ foreach ($result as $key=>$value) {
     $productsArray[$key] = $result;
 }
 
-include($baseroot."views/UserPanel_SavedProduct_view.php");
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';

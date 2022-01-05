@@ -4,7 +4,8 @@ require_once("__init__.php");
 if (!isset($_POST['submit'])) 
 //View
 {
-    include_once('../views/addProduct_view.php');
+    $filename = explode('_',basename(__FILE__))[0];
+    include $viewroot.$filename.'_view.php';
 }
 else 
 //Controller

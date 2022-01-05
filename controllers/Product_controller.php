@@ -33,4 +33,5 @@ $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "SELECT * FROM `comment` WHERE pid=?";
 $allCommentProduct = $mysql->query($query,$id)->fetchAll();
 
-include $viewroot.'Product_view.php';
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';

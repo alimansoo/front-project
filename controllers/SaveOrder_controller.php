@@ -39,5 +39,7 @@ if(isset($_POST['submit'])){
         $result = $mysql->query($query,$array['id']);
     }
     $status="success";
-    include $viewroot."SaveOrder_view.php";
+    
+    $filename = explode('_',basename(__FILE__))[0];
+    include $viewroot.$filename.'_view.php';
 }

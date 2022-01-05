@@ -1,4 +1,5 @@
 <?php
 require "__init__.php";
 
-include_once($viewroot.'chat_view.php');
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';

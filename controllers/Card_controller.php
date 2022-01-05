@@ -23,4 +23,5 @@ foreach ($result as $key=>$value) {
     $allofPrice +=$result['price'] * $result['qty'];
     $productsArray[$key] = $result;
 }
-include($baseroot."views/Card_view.php");
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';

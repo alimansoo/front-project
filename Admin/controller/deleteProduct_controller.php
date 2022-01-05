@@ -16,4 +16,5 @@ if (isset($result['id'])) {
     $status = "product not found";
 }
 
-include_once($viewroot."deleteProduct_view.php");
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';

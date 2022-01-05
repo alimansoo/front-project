@@ -7,17 +7,19 @@
 }
 .infosmallbox_icon{
     display: inline-block;
-    background-color: aqua;
+    background-color: rgb(255, 0, 0);
     vertical-align: middle;
     padding: 18px;
     border-radius: 8px;
 }
 .infosmallbox i{
     font-size: 1.7em;
+    color: white;
 }
 .infosmallbox_content{
     display: inline-block;
     vertical-align: m;
+    margin-right: 4px;
 }
 .infosmallbox_content_head{
     font-size: 1.2em;

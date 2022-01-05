@@ -10,4 +10,5 @@ if ($mysql->query($query)) {
     $users = $mysql->query($query)->fetchAll();
 }
 
-include_once($viewroot.'listProduct_view.php');
+$filename = explode('_',basename(__FILE__))[0];
+    include $viewroot.$filename.'_view.php';

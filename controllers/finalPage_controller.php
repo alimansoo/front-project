@@ -23,4 +23,5 @@ if ($_SESSION['is_payed']) {
 unset($_SESSION['orderid']);
 unset($_SESSION['is_payed']);
 
-include $viewroot."finalPage_view.php";
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';

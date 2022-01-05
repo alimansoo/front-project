@@ -9,4 +9,5 @@ $result = $mysql->query($query,$_SESSION['id'])->fetchAll();
 $allofPrice = $_POST['priceAll'];
 $transportPrice = $_POST['transport_price'];
 
-include($viewroot."deatailOrder_view.php");
+$filename = explode('_',basename(__FILE__))[0];
+include $viewroot.$filename.'_view.php';
