@@ -6,7 +6,7 @@ $output =   array('status'=>0);
 
 $searchq = $_GET['q'];
 if ($searchq !== "") {     
-    $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+    $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
     $query = "SELECT * FROM `product` WHERE name LIKE '%".$searchq."%';";
     $result = $mysql->query($query)->fetchArray();

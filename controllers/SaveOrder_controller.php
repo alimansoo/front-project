@@ -16,7 +16,7 @@ if(isset($orderReciverisme)){
 }
 
 if(isset($_POST['submit'])){
-    $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+    $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
     $query = "INSERT INTO `order_user`
     (`uid`, `recive_date`, `saved_date`, `addres`, `priceAll`,`transport_price`, `reciver_name`, `is_pay`)
      VALUES (?,?,?,?,?,?,?,false)";

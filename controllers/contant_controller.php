@@ -1,7 +1,7 @@
 <?php
 require_once("__init__.php");
 
-$cdb = new db($dbhost,$dbusername,$dbpassword,$dbname);
+$cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 $query = "INSERT INTO 
 ticket(title,subject,name,email,text)
 VALUES('{$_POST["title"]}',{$_POST["subject"]},'{$_POST["name"]}','{$_POST["email"]}','{$_POST["text"]}')";

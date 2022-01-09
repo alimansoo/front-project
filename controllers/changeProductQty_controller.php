@@ -8,7 +8,7 @@ $productqty=0;
 $cartid;
 $output = array();
 
-$mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+$mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
 $query = "SELECT * FROM `cards` WHERE uid = ? AND pid=?";
 $result = $mysql->query($query,$userid,$productid)->fetchArray();

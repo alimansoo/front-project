@@ -4,7 +4,7 @@ require '__init__.php';
 $allofPrice = 0;
 $transportPrice = 250000;
 
-$mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+$mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
 $query = "SELECT * FROM `cards` WHERE uid = ?";
 $result = $mysql->query($query,$_SESSION['id'])->fetchAll();

@@ -6,7 +6,7 @@ if (!isset($_POST['submit'])) {
     include $viewroot.$filename.'_view.php';
 }else {
 
-    $cdb = new db($dbhost,$dbusername,$dbpassword,$dbname);
+    $cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
     
     $query = "INSERT INTO `user`
     ( `firstname`, `lastname`, `email`, `city`, `phone`,`password`, `role`)

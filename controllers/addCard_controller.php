@@ -8,7 +8,7 @@ if (isset($_SESSION['id'])) {
 
     $id = $_GET['id'];
 
-    $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+    $mysql =  new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
     $query = "SELECT * FROM `cards` WHERE pid = ? AND uid = ?";
     $result = $mysql->query($query,$id,$_SESSION['id'])->fetchArray();

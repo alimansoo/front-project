@@ -8,7 +8,7 @@ require "__init__.php";
 $output = array();
 
 if (isset($_SESSION['id'])) {
-    $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+    $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
     if (isset($_POST['submit'])) {
 
         $chatmessage = $_POST['chatmessage'];

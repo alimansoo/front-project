@@ -9,7 +9,7 @@ if (isset($_SESSION['id'])) {
     $subject = $_REQUEST['subject'];
     $message = $_REQUEST['message'];
 
-    $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
+    $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
     $query = "INSERT INTO `comment`( `pid`, `uid`, `subject`, `message`) VALUES (?,?,?,?)";
     $result = $mysql->query($query,$productid,$userid,$subject,$message);

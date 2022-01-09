@@ -12,13 +12,18 @@ $controllerroot = '../controller/';
 
 // error_reporting(E_ALL & ~E_NOTICE);
 
-function includeThisView($viewroot,$filename){
-    echo $viewroot;
+class view{
+    static function includeThisView($viewroot,$filename){
 
-    $filename = explode('_',basename($filename))[0];
-
-    include_once($viewroot.$filename.'_view.php');
+        echo $viewroot;
+    
+        $filename = explode('_',basename($filename))[0];
+    
+        include_once($viewroot.$filename.'_view.php');
+    }
 }
+
+
 
 function includeView($view) {
 

@@ -6,17 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ماهرنگ</title>
     <link rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo $baseroot;?>assets/css/style.css">
     <?php include'__init__.php'; ?>
 </head>
 <body id="body-container" class="grid-100 grid-row-container">
     <?php include_once('header.php'); ?>
     <?php include_once('TopNavigation.php'); ?>
-
-    <!-- <aside id="sidebar">
-        فیلتر محصولات
-    </aside> -->
     
     <main id="container">
         <div class="swiper">
@@ -80,7 +74,7 @@
             <div id="chat_container">
             </div>
             <div class="footer">
-                <form action="<?php $controllerroot ?>chatController_controller.php" method="post" id="Chatform">
+                <form action="<?php controllerroot ?>chatController_controller.php" method="post" id="Chatform">
                     <input type="text" name="message" id="Chatmessage">
                     <input type="submit" value="ارسال">
                 </form>
