@@ -6,10 +6,15 @@ $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 $query = "SELECT * FROM `order_user` WHERE uid = ?";
 $result = $mysql->query($query,$_SESSION['id'])->fetchAll();
 
+// echo "<pre>";
+// var_dump($result);
+// echo "</pre>";
+
 $i = 0;
 $AllofMyOrder = array();
 foreach ($result as $key => $value) {
     $array = array();
+    $array['id'] = $value['id'];
     $array['recive_date'] = $value['recive_date'];
     $array['priceAll'] = $value['priceAll'];
 
@@ -28,6 +33,7 @@ foreach ($result as $key => $value) {
     }
     $array['products_image'] = $productImage;
     $AllofMyOrder[$i] = $array;
+    $i++;
 }
 
 $filename = explode('_',basename(__FILE__))[0];

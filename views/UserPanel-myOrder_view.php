@@ -15,31 +15,33 @@
             <?php include_once('UserPanelSidebar.php'); ?>
             <section class="grid-lg-2to5">
                 <section class="page_content">
-                    <h3 class="page_content_title">محصول لایک شده </h3>
-                        <table class="table">
-                            <tr>
-                                <th>شناسه</th>
-                                <th>تصویر</th>
-                                <th>نام محصول</th>
-                                <th>دسته بندی محصول</th>
-                                <th>قیمت</th>
-                                <th></th>
-                            </tr>
+                    <h3 class="page_content_title">سفارشات من </h3>
+                    <?php 
+                    foreach ($AllofMyOrder as $myOrder) : 
+                    ?>
+                        <div class='orderRow'>
+                            <div></div>
+                            <div class='orderRow_header'>
+                                <p>تاریخ تحویل سفارش :<span class='date'><?php echo $myOrder['recive_date']; ?></span></p>
+                                <p>قیمت سفارش :<span><?php echo $myOrder['priceAll']; ?></span> ریال </p>
+                            </div>
+                            <div class='orderRow_content'>
                                 <?php 
-                                foreach ($productsArray as $product) {
-                                    echo "
-                                    <tr>
-                                        <td>{$product['id']}</td>
-                                        <td><img src='../assets/images/products/{$product['image_src']}' alt='{$product['name']}' width='50px'/></td>
-                                        <td>{$product['name']}</td>
-                                        <td>{$product['catg']}</td>
-                                        <td>{$product['price']}ریال</td>
-                                        <td><a href='{$baseroot}controllers/likeProduct_controller.php?id={$product['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
-                                    </tr>";
-                                    }
-                                    ?>
-                        </table>
-                        </section>    
+                                foreach ($myOrder['products_image'] as $productimage) : 
+                                ?>
+                                    <img class='productImg' src='<?php echo $assetsroot."images/products/".$productimage ?>'>
+                                <?php
+                                endforeach;
+                                ?>
+                            </div>
+                            <div class='orderRow_footer'>
+                                <a href="<?php echo $controllerroot."UserPanel-detailOrder_controller.php?id=".$myOrder['id'] ?>"> مشاهده سفارش <i class="fas fa-angle-left"></i></a>
+                            </div>
+                        </div>
+                    <?php
+                    endforeach;
+                    ?>
+                </section>    
             </section>
         </section>
     </main>

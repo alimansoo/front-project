@@ -67,4 +67,7 @@
     #SidebarIcon{
         display: none;
     }
+    .navbar{
+        z-index: 1001 !important;
+    }
 }

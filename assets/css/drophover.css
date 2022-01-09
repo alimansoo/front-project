@@ -26,7 +26,7 @@
     /* top: ; */
     overflow: hidden;
     width: max-content;
-    z-index: 999;
+    z-index: 1002;
     text-align: right !important;
 }
 .drophover_menu.left{
