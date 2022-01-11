@@ -1,20 +1,43 @@
-datalist.show{
-    display: block;
+datalist{
+    display: none;
+    text-align: right;
     position: absolute;
     background-color: white;
     border: 1px solid gray;
     border-radius: 8px;
-    left: 10px;
+    left: 5px;
+    width: fit-content;
+    min-width: 50vw;
+}
+datalist.show{
+    display: block;
+
 }
 datalist div{
     padding: 8px;
 }
 datalist img{
     width: 40px;
+    height: 40px;
     border-radius: 4px;
     vertical-align: middle;
     margin-left: 4px;
+    border: 1px solid var(--outline);
 }
 datalist a{
     font-size: 1.2em;
+    color: blue;
+    margin-right: 4px;
+}
+/* Tablet */
+@media only screen and (min-width:540px)  { 
+    datalist{
+        min-width: 30vw;
+    }
+}
+/* Desktop */
+@media only screen and (min-width:1000px) {
+    datalist{
+        min-width: 15vw;
+    }
 }

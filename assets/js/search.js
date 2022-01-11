@@ -1,6 +1,5 @@
 let searchInput = document.querySelector('input[type=search]');
 if (searchInput) {
-    console.log("mojod");
     searchInput.addEventListener('keyup',SearchProduct)
 }
 function SearchProduct(e) {
@@ -13,7 +12,6 @@ function SearchProduct(e) {
     )
     .then(
         function (data) {
-            // console.log(data);
             if (data.status === 1) {
                 console.log("render");
                 RenderSearchResut(data);
@@ -35,16 +33,18 @@ function RenderSearchResut(jsonObject) {
     let searchResult = document.querySelector('#searchResult');
     searchResult.classList.add('show');
     searchResult.innerHTML = "";
-    let option = document.createElement('div')
+    for (let product of jsonObject.data) {
+        let option = document.createElement('div')
 
-    let linkElement = document.createElement('a')
-    linkElement.href = jsonObject.link;
-    linkElement.innerText = jsonObject.name;
+        let linkElement = document.createElement('a')
+        linkElement.href = product.link;
+        linkElement.innerText = product.name;
 
-    let image = document.createElement('img')
-    image.src = jsonObject.image;
+        let image = document.createElement('img')
+        image.src = product.image;
 
-    option.appendChild(image);
-    option.appendChild(linkElement);
-    searchResult.appendChild(option);
+        option.appendChild(image);
+        option.appendChild(linkElement);
+        searchResult.appendChild(option);
+    }
 }

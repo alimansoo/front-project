@@ -1,4 +1,4 @@
-var myInterval = setInterval(resiverMessage, 1000)
+// var myInterval = setInterval(resiverMessage, 1000)
 var userid;
 //status 600 ===> یک پیام جدید وجود دارد
 //       500 ===> پیام شما ثبت شد.
@@ -92,4 +92,26 @@ function anyChat(message) {
 
     parentnode.appendChild(chatnode);
     chat_container.appendChild(parentnode);
+}
+
+let Allchat_contants = document.querySelectorAll('.chat_contant');
+if (Allchat_contants.length > 0) {
+    for (let chat_contant of Allchat_contants) {
+        chat_contant.addEventListener('click',ShowChatContainer);
+    }
+}
+function ShowChatContainer(e) {
+    //hide All container
+    let Allchat_contants = document.querySelectorAll('.chat_container');
+    for (let chat_contant of Allchat_contants) {
+        chat_contant.classList.remove('show');
+    }
+    //find id
+    let thisId = this.id.replace("chat_contant", "");
+    console.log(thisId);
+    //find container
+    let thisContainerId = 'chat_container'+thisId;
+    console.log(thisContainerId);
+    let thisContainer = document.querySelector('#'+thisContainerId);
+    thisContainer.classList.add('show');
 }

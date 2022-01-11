@@ -73,7 +73,7 @@
         width: auto;
         position: static;
         background-color: var(--on-primary);
-        border-radius: 8px;
+        border-radius: 16px;
         padding: 8px 4px;
     }
 }

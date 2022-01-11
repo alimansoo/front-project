@@ -28,21 +28,7 @@
                         </tr>
                         <?php 
                         foreach ($productsArray as $product) {
-                            echo "
-                            <tr>
-                                <td><img src='../assets/images/products/{$product['image_src']}' alt='{$product['name']}' width='50px'/></td>
-                                <td>{$product['name']}</td>
-                                <td class='priceProduct'><span>{$product['price']}</span>ریال</td>
-                                <td class='quantityProduct'>
-                                    <div class='productCounter'>
-                                        <a href='{$controllerroot}changeProductQty_controller.php?subject=add&pid={$product['id']}' class='addQty'>+</a>
-                                            <span class='productQty'>{$product['qty']}</span>
-                                        <a href='{$controllerroot}changeProductQty_controller.php?subject=minus&pid={$product['id']}' class='minusQty'>-</a></div>
-                                </td>
-                                <td>
-                                    <a class='removeProduct' href='{$controllerroot}addCard_controller.php?id={$product['id']}'><i class='fas fa-trash'></i></a>
-                                </td>
-                            </tr>";
+                            include assetsroot.'templates/Card.php';
                         }  
                         ?>
                     </table>
@@ -61,7 +47,7 @@
                         <div class="Card_deatail_row_key">قیمت پرداختی:</div>
                         <div class="Card_deatail_row_value"><?php echo $allofPrice;?><span class="price_componant">ریال</span></div>
                     </div>
-                    <a href="<?php echo $controllerroot ?>SalesInvoice_controller.php" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
+                    <a href="<?php echo controllerroot;?>SalesInvoice_controller.php" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
                 </section>
             <?php endif; ?>
         </section>

@@ -26,6 +26,15 @@
     transition-delay: 0.2s;
     transition: all 0.3s;
 }
+.admin-chat-container{
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+    overflow-y: auto;
+}
+.admin-chat-container.show{
+    display: block;
+}
 .chat_container.show{
     border: 2px solid;
     height: 70vh;
@@ -42,7 +51,8 @@
     height: 80%;
     overflow-x: auto;
 }
-.chat_container .chat-element{
+
+.chat-element{
     display: inline-block;
     border-radius: 12px;
     padding: 4px 8px;

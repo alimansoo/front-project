@@ -8,6 +8,9 @@
 .sidebar_nav li{
     list-style: none;
 }
+.text-align-center{
+    text-align: center;
+}
 .sidebar_nav ul{
     margin: 0;
 }

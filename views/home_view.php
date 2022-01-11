@@ -60,7 +60,7 @@
                         $cardclass = "remove";
                     }
 
-                    include '../assets/templates/ProductCard.php';
+                    include assetsroot.'templates/ProductCard.php';
                 }
             ?>
         </div>

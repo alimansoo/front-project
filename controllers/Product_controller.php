@@ -1,9 +1,9 @@
 <?php 
-require '__init__.php';
+require "__init__.php";
+$mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
 $id = $_GET['id'];
 
-$mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 $query = "SELECT * FROM `product` WHERE id=?";
 $product = $mysql->query($query,$id)->fetchArray();
 
@@ -29,7 +29,6 @@ function namebyid($mysql,$id)
     return $user['firstname']." ".$user['lastname'];
 }
 
-$mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 $query = "SELECT * FROM `comment` WHERE pid=?";
 $allCommentProduct = $mysql->query($query,$id)->fetchAll();
 

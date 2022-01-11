@@ -3,6 +3,9 @@
     border-radius: 8px;
     margin: 12px 0;
 }
+.orderRow:last-child{
+    margin-bottom: 0;
+}
 .orderRow_header{
     border-bottom: 1px solid var(--outline);
     padding: 8px;
