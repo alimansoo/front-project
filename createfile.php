@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     foreach ($files as $key=>$file) {
         $handle = fopen($file, "w");
         if($key == "c"){
-            fwrite($handle,"<?php \nrequire '__init__.php';");
+            fwrite($handle,"<?php \nrequire 'controllers/__init__.php';");
         }else if($key == "v"){
             fwrite($handle,"<?php \n require '__init__.php';");
         }

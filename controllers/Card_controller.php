@@ -1,6 +1,4 @@
 <?php
-require "__init__.php";
-
 if (!isset($_SESSION['id'])) {
     header("Location:login_controller.php");
 }

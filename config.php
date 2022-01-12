@@ -1,10 +1,11 @@
 <?php
+
 session_start();
 
-define('baseroot', '../');
-define('assetsroot', '../assets/');
-define('viewroot', '../views/');
-define('controllerroot', '../controllers/');
+define('baseroot', '');
+define('assetsroot', 'assets/');
+define('viewroot', 'views/');
+define('controllerroot', 'controllers/');
 
 
 $baseroot = baseroot;

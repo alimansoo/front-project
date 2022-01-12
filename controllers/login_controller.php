@@ -1,6 +1,4 @@
 <?php
-require_once("__init__.php");
-
 if (!isset($_POST['submit'])) {
     $filename = explode('_',basename(__FILE__))[0];
     include $viewroot.$filename.'_view.php';
@@ -20,10 +18,10 @@ if (!isset($_POST['submit'])) {
         $_SESSION['back_status'] = 200;
         switch ($_SESSION['role']) {
             case 'user':
-                header("Location:UserPanel_controller.php");
+                header("Location:{$base_url}userpanel/");
                 break;
             case 'admin':
-                header("Location:{$baseroot}Admin/controller/Dashboard_controller.php");
+                header("Location:{$base_url}admin/");
                 break;
             default:
                 echo "error";

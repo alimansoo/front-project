@@ -1,11 +1,9 @@
 <?php
-require "__init__.php";
-
 if (isset($_SESSION['id'])) {
         
     $status = '';
 
-    $id = $_GET['id'];
+    $id = $RoutingData[0];
 
     $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 

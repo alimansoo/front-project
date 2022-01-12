@@ -12,14 +12,14 @@
     <?php include_once('header.php'); ?>
     <?php include_once('TopNavigation.php'); ?>
     
-    <main id="container">
+    <main id="container" class="container">
         <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper" style="width:100%;height:400px;">
             <!-- Slides -->
-            <div class="swiper-slide" style="background-image: url('../assets/images/slides/Slide1.jpg');background-size: cover;"></div>
-            <div class="swiper-slide" style="background-image: url('../assets/images/slides/Slide2.jpg');background-size: cover;"></div>
-            <div class="swiper-slide" style="background-image: url('../assets/images/slides/Slide3.jpg');background-size: cover;"></div>
+            <div class="swiper-slide" style="background-image: url('assets/images/slides/Slide1.jpg');background-size: cover;"></div>
+            <div class="swiper-slide" style="background-image: url('assets/images/slides/Slide2.jpg');background-size: cover;"></div>
+            <div class="swiper-slide" style="background-image: url('assets/images/slides/Slide3.jpg');background-size: cover;"></div>
             ...
         </div>
         <!-- If we need pagination -->

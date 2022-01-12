@@ -1,7 +1,7 @@
 <footer id="footer" class="footer bg-dark grid-display col-sm-1 col-md-2 col-lg-5">
             <div class="item">
                 <div class="brand">
-                    <img src="<?php echo $assetsroot;?>images/logo.png" alt="" class="brand_image">
+                    <img src="<?php echo base_url; ?>assets/images/logo.png" alt="" class="brand_image">
                     <h3 class="brand_title">ماهرنگ</h3>
                 </div>
             </div>
@@ -25,9 +25,9 @@
             </div>
             <div class="item">
                 <div class="row">
-                    <img src="<?php echo $assetsroot;?>images/Enemad.jpg" alt="" class="small_image">
-                    <img src="<?php echo $assetsroot;?>images/ResanehDigital.jpg" alt="" class="small_image">
-                    <img src="<?php echo $assetsroot;?>images/Parspack.png" alt="" class="small_image">
+                    <img src="<?php echo base_url;?>assets/images/Enemad.jpg" alt="" class="small_image">
+                    <img src="<?php echo base_url;?>assets/images/ResanehDigital.jpg" alt="" class="small_image">
+                    <img src="<?php echo base_url;?>assets/images/Parspack.png" alt="" class="small_image">
                 </div>
                 <div class="item">
                 <div class="row ">

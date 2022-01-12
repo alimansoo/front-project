@@ -1,8 +1,7 @@
 <?php 
-require '__init__.php';
 
-$productid = $_GET['pid'];
-$subject = $_GET['subject'];
+$subject = $RoutingData[0];
+$productid = $RoutingData[1];
 $userid = $_SESSION['id'];
 $productqty=0;
 $cartid;
