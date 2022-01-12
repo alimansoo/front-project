@@ -31,6 +31,25 @@
     max-width: 100%;
     display: none;
     overflow-y: auto;
+    margin-bottom: 9vh;
+}
+.Chatform{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: white;
+    height: 9vh;
+    padding: 8px;  
+}
+.Chatform input[type='text']{
+    width: 85%;
+    height: 100%;
+    outline: none;
+}
+.Chatform input[type='submit']{
+    /* width: 14%; */
+    height: 100%;
 }
 .admin-chat-container.show{
     display: block;
@@ -93,5 +112,8 @@
 @media only screen and (min-width:1000px) {
     .chat_container.show{
         width: 23vw;
+    }
+    .Chatform{
+        margin-right: 20vw;
     }
 }

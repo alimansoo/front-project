@@ -29,7 +29,7 @@
                 <section class="full-container grid-display col-sm-1 col-md-1 col-lg-1">
                     <?php foreach ($AllofChat as $key1 => $value1):
                     ?>
-                        <div class="admin-chat-container chat_container" id="chat_container<?php echo $value1['id'];?>">
+                        <div class="admin-chat-container chat_messages" id="chat_container<?php echo $value1['id'];?>">
                             <?php foreach ($value1['chatarray'] as $key2 => $value2):
                                 if ($value2['state'] === 'my') {
                                     echo "<div class='my'><div class='chat-element mychat'>{$value2['message']}</div></div>";
@@ -37,6 +37,10 @@
                                     echo "<div class='any'><div class='chat-element anychat'>{$value2['message']}</div></div>";
                                 }
                             endforeach; ?>
+                            <form action="<?php echo $controllerroot ?>adminChatController_controller.php?reciver_id=<?php echo $value1['id']; ?>" method="post" class="Chatform">
+                                <input type="text" name="message" placeholder="ارسال پیام..." id="Chatmessage">
+                                <input type="submit" value="ارسال">
+                            </form>
                         </div>
                     <?php endforeach; ?>
                 </section>

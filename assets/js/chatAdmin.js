@@ -1,21 +1,23 @@
-// var myInterval = setInterval(resiverMessage, 1000)
-var userid;
+var myInterval = setInterval(resiverMessage, 1000)
+var chatContainerUser;
 //status 600 ===> یک پیام جدید وجود دارد
 //       500 ===> پیام شما ثبت شد.
 //       100 ===> هنوز لاگین نکردی
 //       550 ===> پیام جدیدی نیست
-var formChat = document.querySelector("#Chatform");
-if (formChat) {
-    formChat.addEventListener('submit',sendMessage)
-    var url = formChat.action;
+var AllformChat = document.querySelectorAll(".Chatform");
+if (AllformChat.length > 0) {
+    for (let formChat of AllformChat) {
+        formChat.addEventListener('submit',sendMessage)
+    }
 }
 function sendMessage(e) {
     e.preventDefault();
-    let message = formChat.querySelector("#Chatmessage").value;
-    var formData = new FormData();
+    let message = this.querySelector("input[type=text]").value;
+    let formData = new FormData();
     formData.append('submit', 'submit');
     formData.append('chatmessage', message);
-    fetch(url + userid,{
+    let url = this.action;
+    fetch(url,{
         method: "POST",
         body: formData
     })
@@ -44,6 +46,7 @@ function sendMessage(e) {
     
 }
 function resiverMessage() {
+    let url = '../controller/adminChatController_controller.php';
     fetch(url)
     .then(
         function (response) {
@@ -52,12 +55,9 @@ function resiverMessage() {
     )
     .then(
         function (data) {
-            
-            // console.log(data);
             switch (data.status) {
                 case 600:
-                    anyChat(data.chatmessage);
-                    userid = data.sender;
+                    anyChat(data);
                     break;
             }
         }
@@ -70,8 +70,6 @@ function resiverMessage() {
 }
 
 function myChat(message) {
-    let chat_container = document.querySelector("#chat_container");
-    chat_container.appendChild
     var parentnode = document.createElement("div");
     parentnode.className = "my";
     var chatnode = document.createElement("div");
@@ -79,19 +77,26 @@ function myChat(message) {
     chatnode.innerHTML = message
 
     parentnode.appendChild(chatnode);
-    chat_container.appendChild(parentnode);
+    chatContainerUser.appendChild(parentnode);
 }
-function anyChat(message) {
-    let chat_container = document.querySelector("#chat_container");
-    chat_container.appendChild
-    var parentnode = document.createElement("div");
-    parentnode.className = "any";
-    var chatnode = document.createElement("div");
-    chatnode.className = "chat-element anychat";
-    chatnode.innerHTML = message
+function anyChat(data) {
+    
+    let chat_container = document.querySelector("#chat_container"+data.sender);
+    if(chat_container){
+        var parentnode = document.createElement("div");
+        parentnode.className = "any";
+        var chatnode = document.createElement("div");
+        chatnode.className = "chat-element anychat";
+        chatnode.innerHTML = data.chatmessage;
 
-    parentnode.appendChild(chatnode);
-    chat_container.appendChild(parentnode);
+        parentnode.appendChild(chatnode);
+        chat_container.appendChild(parentnode);
+        
+        alert('New Chat User:'+data.sender)
+
+    }else{
+        newChat(data);
+    }
 }
 
 let Allchat_contants = document.querySelectorAll('.chat_contant');
@@ -102,16 +107,45 @@ if (Allchat_contants.length > 0) {
 }
 function ShowChatContainer(e) {
     //hide All container
-    let Allchat_contants = document.querySelectorAll('.chat_container');
+    let Allchat_contants = document.querySelectorAll('.chat_messages');
     for (let chat_contant of Allchat_contants) {
         chat_contant.classList.remove('show');
     }
     //find id
     let thisId = this.id.replace("chat_contant", "");
-    console.log(thisId);
     //find container
     let thisContainerId = 'chat_container'+thisId;
-    console.log(thisContainerId);
     let thisContainer = document.querySelector('#'+thisContainerId);
+    chatContainerUser = thisContainer;
     thisContainer.classList.add('show');
+}
+
+function newChat(data) {
+    let nav_list = document.querySelector('#sidebar ul');
+    nav_list.innerHTML+= `
+        <li class="nav_item chat_contant" id="chat_contant`+data.sender+`">
+            <i class="fas fa-user-circle"></i>`+data.sender+`
+        </li>`;
+    let full_container = document.querySelector('.full-container');
+    full_container.innerHTML += `
+    <div class="admin-chat-container chat_messages" id="chat_container`+data.sender+`">
+        <div class='any'><div class='chat-element anychat'>`+data.chatmessage+`</div></div>
+        <form action="../controller/adminChatController_controller.php?reciver_id=`+data.sender+`" method="post" class="Chatform">
+            <input type="text" name="message" placeholder="ارسال پیام..." id="Chatmessage">
+            <input type="submit" value="ارسال">
+        </form>
+    </div>`;
+    let Allchat_contants = document.querySelectorAll('.chat_contant');
+    if (Allchat_contants.length > 0) {
+        for (let chat_contant of Allchat_contants) {
+            chat_contant.addEventListener('click',ShowChatContainer);
+        }
+    }
+    var AllformChat = document.querySelectorAll(".Chatform");
+    if (AllformChat.length > 0) {
+        for (let formChat of AllformChat) {
+            formChat.addEventListener('submit',sendMessage)
+        }
+    }
+    alert('New Chat User:'+data.sender)
 }

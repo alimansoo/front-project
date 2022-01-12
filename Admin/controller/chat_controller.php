@@ -25,17 +25,19 @@ foreach ($result as $key1 => $value1) {
     $query = "SELECT * FROM `chat` WHERE `sender_id` = ? ORDER BY 'id'";
     $anychat = $mysql->query($query,$value1['sender_id'])->fetchAll();
 
+    
+
     $query = "SELECT * FROM `chat` WHERE `reciver_id` = ? ORDER BY 'id'";
     $mychat = $mysql->query($query,$value1['sender_id'])->fetchAll();
 
+    
+
     foreach ($anychat as $key2 => $value2) {
-        foreach ($mychat as $key3 => $value3) {
-            if ($value3['id'] < $value2['id']) {
-                $messages[$i] = array('state'=>'my','message'=>$value3['message']);
-                $i++;
-            }
-        }
         $messages[$i] = array('state'=>'any','message'=>$value2['message']);;
+        $i++;
+    }
+    foreach ($mychat as $key3 => $value3) {
+        $messages[$i] = array('state'=>'my','message'=>$value3['message']);
         $i++;
     }
     $PersonChat['chatarray'] = $messages;
