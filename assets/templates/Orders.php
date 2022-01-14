@@ -8,12 +8,12 @@
         <?php 
         foreach ($myOrder['products_image'] as $productimage) : 
         ?>
-            <img class='productImg' src='<?php echo assetsroot."images/products/".$productimage ?>'>
+            <img class='productImg' src='<?php echo base_url."assets/images/products/".$productimage ?>'>
         <?php
         endforeach;
         ?>
     </div>
     <div class='orderRow_footer'>
-        <a href="<?php echo controllerroot."UserPanel-detailOrder_controller.php?id=".$myOrder['id'] ?>"> مشاهده سفارش <i class="fas fa-angle-left"></i></a>
+        <a href="<?php echo base_url."order/".$myOrder['id'] ?>"> مشاهده سفارش <i class="fas fa-angle-left"></i></a>
     </div>
 </div>

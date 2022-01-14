@@ -10,7 +10,7 @@
                 <div class="drophover">
                     <i class="fas fa-user-circle drophover_first_item action first"></i>
                     <ul class="drophover_menu left">
-                        <li class="drophover_item"><a href="<?php base_url; ?>userpanel/"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></a></li>
+                        <li class="drophover_item"><a href="<?php echo base_url; ?>userpanel/"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></a></li>
                         <li class="drophover_item"><a href="<?php echo base_url; ?>userpanel/myorder/"><i class="fa fa-box"></i>سفارش های من</a></li>
                         <li class="drophover_item"><a href="<?php echo base_url; ?>exit/"><i class="fas fa-sign-out-alt"></i>خروج</a></li>
                     </ul>

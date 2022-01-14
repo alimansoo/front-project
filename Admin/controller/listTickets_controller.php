@@ -1,6 +1,4 @@
-<?php
-require "__init__.php";
-    
+<?php 
 $mysql = new db('localhost','root','','frontproject');
 
 $users;
@@ -11,7 +9,7 @@ if ($mysql->query($query)) {
 }
 
 $filename = explode('_',basename(__FILE__))[0];
-    include $viewroot.$filename.'_view.php';
+    include admin_viewroot.$filename.'_view.php';
 
 
 

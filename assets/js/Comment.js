@@ -1,6 +1,7 @@
-let CommentElement = document.querySelector("#comment");
 let CommentForm = document.querySelector("form#CommentForm");
-CommentForm.addEventListener('submit',SaveComment);
+if (CommentForm) {
+    CommentForm.addEventListener('submit',SaveComment);
+}
 function SaveComment(e) {
     e.preventDefault();
     let CommentForm = document.querySelector("form#CommentForm");

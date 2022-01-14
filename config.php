@@ -7,11 +7,10 @@ define('assetsroot', 'assets/');
 define('viewroot', 'views/');
 define('controllerroot', 'controllers/');
 
-
-$baseroot = baseroot;
-$assetsroot = assetsroot;
-$viewroot = viewroot;
-$controllerroot = controllerroot;
+define('admin_baseroot', 'admin/');
+define('admin_assetsroot', 'admin/assets/');
+define('admin_viewroot', 'admin/views/');
+define('admin_controllerroot', 'admin/controllers/');
 
 // error_reporting(E_ALL & ~E_NOTICE);
 

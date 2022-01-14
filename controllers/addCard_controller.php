@@ -22,7 +22,7 @@ if (isset($_SESSION['id'])) {
         $output = array('status' => 200,'message' => 'محصول به سبد اضافه شد.' ); 
     }
     if(isset($_GET['redirect'])){
-        header("Location:Card_controller.php");
+        header("Location:".base_url."card/");
     }
 
 }

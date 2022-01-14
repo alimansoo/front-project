@@ -18,7 +18,8 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان','gls'=>'لیوان');
             <?php include_once('Sidebar.php'); ?>
             <section class="grid-lg-1to4">
                 <section class="page_content">
-                    <a  href="<?php echo $controllerroot;?>addProduct_controller.php" class="btn btn-primary">اضافه کردن محصول+</a>
+                    <h3 class="page_content_title">لیست محصولات</h3>
+                    <a  href="<?php echo base_url;?>adminpanel/listproduct/addproduct/" class="btn btn-primary">اضافه کردن محصول+</a>
                     <br>
                     <table class="table">
                         <tr>
@@ -32,19 +33,20 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان','gls'=>'لیوان');
                         <th></th>
                         </tr>
                         <?php 
-                        foreach ($users as $user) {
-                            echo "
+                        foreach ($users as $user) :
+                        ?>
                             <tr>
-                            <td>{$user['id']}</td>
-                            <td><img src='$assetsroot/images/products/{$user['image_src']}' alt='{$user['name']}' width='50px'/></td>
-                            <td>{$user['name']}</td>
-                            <td>{$catg[$user['catg']]}</td>
-                            <td>{$price_component[$user['price_component']]}</td>
-                            <td>{$user['price']}ریال</td>
+                            <td><?php echo $user['id']; ?></td>
+                            <td><img src='<?php echo base_url ?>assets/images/products/<?php echo $user['image_src']; ?>' alt='<?php echo $user['name']; ?>' width='50px'/></td>
+                            <td><?php echo $user['name']; ?></td>
+                            <td><?php echo $user['catg']; ?></td>
+                            <td><?php echo $user['price_component']; ?></td>
+                            <td><?php echo $user['price']; ?>ریال</td>
                             <td><a href='{$controllerroot}removeProduct_controller.php?id={$user['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
                             <td><a href='{$baseroot}editProduct_view.php?id={$user['id']}'><i class='fas fa-edit'></i></a></td>
-                            </tr>";
-                        }
+                            </tr>
+                        <?php
+                        endforeach;
                         ?>
                     </table>
                 </section>

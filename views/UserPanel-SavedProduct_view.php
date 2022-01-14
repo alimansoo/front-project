@@ -10,7 +10,7 @@
 <body id="body-container" class="grid-25-75">
     <?php include_once('header.php'); ?>    
     <?php include_once('TopNavigation.php'); ?>
-    <main id="container">
+    <main id="container" class="container">
         <section class="grid-display col-sm-1 col-md-1 col-lg-4">
             <?php include_once('UserPanelSidebar.php'); ?>
             <section class="grid-lg-2to5">
@@ -26,20 +26,18 @@
                     <th></th>
                     </tr>
                     <?php 
-                    foreach ($productsArray as $product) {
-                        echo "
-                        <tr>
-                        <td>{$product['id']}</td>
-                        <td><img src='../assets/images/products/{$product['image_src']}' alt='{$product['name']}' width='50px'/></td>
-                        <td>{$product['name']}</td>
-                        <td>{$product['catg']}</td>
-                        <td>{$product['price']}ریال</td>
-                        <td><a href='{$baseroot}controllers/bookmarkProduct_controller.php?id={$product['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
-                        </tr>";
+                    foreach ($productsArray as $product) :
                     ?>
-                    
+                        <tr>
+                            <td><?php echo $product['id']; ?></td>
+                            <td><img src='<?php echo base_url; ?>/assets/images/products/<?php echo $product['image_src']; ?>' alt='<?php echo $product['name']; ?>' width='50px'/></td>
+                            <td><?php echo $product['name']; ?></td>
+                            <td><?php echo $product['catg']; ?></td>
+                            <td><?php echo $product['price']; ?>ریال</td>
+                            <td><a href='<?php echo base_url; ?>productbookmark/<?php echo $product['id']; ?>' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
+                        </tr>
                     <?php
-                    }
+                    endforeach;
                     ?>
                 </table>
                 </section>

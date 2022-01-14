@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['id'])) {
-    header("Location:login_controller.php");
+    header("Location:".base_url."login/");
 }
 
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
@@ -22,4 +22,4 @@ foreach ($result as $key=>$value) {
     $productsArray[$key] = $result;
 }
 $filename = explode('_',basename(__FILE__))[0];
-include $viewroot.$filename.'_view.php';
+include viewroot.$filename.'_view.php';

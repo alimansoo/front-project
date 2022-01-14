@@ -1,10 +1,8 @@
-<?php 
-require '__init__.php';
-
+<?php
 $status = '';
 
 if (isset($_SESSION['id'])) {
-    $productid = $_REQUEST['pid'];
+    $productid = $RoutingData[0];
     $userid = $_SESSION['id'];
     $subject = $_REQUEST['subject'];
     $message = $_REQUEST['message'];

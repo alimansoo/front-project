@@ -3,8 +3,8 @@ if (searchInput) {
     searchInput.addEventListener('keyup',SearchProduct)
 }
 function SearchProduct(e) {
-    let searchcontroller = '../controllers/searchProduct_controller.php'
-    fetch(searchcontroller+'?q='+this.value)
+    let searchcontroller = '/front-project/search/';
+    fetch(searchcontroller+this.value)
     .then(
         function (response) {
             return response.json();
@@ -13,13 +13,11 @@ function SearchProduct(e) {
     .then(
         function (data) {
             if (data.status === 1) {
-                console.log("render");
                 RenderSearchResut(data);
             }else{
                 let searchResult = document.querySelector('#searchResult');
                 searchResult.classList.remove('show');
             }
-            
         }
     )
     .catch(

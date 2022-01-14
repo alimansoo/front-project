@@ -10,7 +10,7 @@
 <body id="body-container" class="grid-25-75">
     <?php include_once('header.php'); ?>    
     <?php include_once('TopNavigation.php'); ?>
-    <main id="container">
+    <main id="container" class="container">
         <section class="grid-display col-sm-1 col-md-1 col-lg-4">
             <?php include_once('UserPanelSidebar.php'); ?>
             <section class="grid-lg-2to5">

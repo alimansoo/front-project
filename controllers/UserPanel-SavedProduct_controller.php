@@ -1,5 +1,4 @@
 <?php
-require "__init__.php";
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
 $query = "SELECT * FROM `bookmarkproduct` WHERE uid = ?";

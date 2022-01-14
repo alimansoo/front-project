@@ -1,16 +1,14 @@
 <?php
-require_once("__init__.php");
-
 if (!isset($_POST['submit'])) 
 //View
 {
     $filename = explode('_',basename(__FILE__))[0];
-    include $viewroot.$filename.'_view.php';
+    include admin_viewroot.$filename.'_view.php';
 }
 else 
 //Controller
 {
-    header("Location:{$controllerroot}listProduct_controller.php");
+    
     // $name_servic = $_POST['name_servic'];
     // $price_servic = $_POST['price_servic'];
     // $icon_servic = $_POST['icon_servic'];
@@ -24,7 +22,7 @@ else
     $cdb -> close();
 
     
-    $target_dir = "../../assets/images/products/";
+    $target_dir = base_url."assets/images/products/";
     $target_file = $target_dir . basename($_FILES["product_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -64,7 +62,7 @@ else
     }
 
     
-
+    header("Location:".base_url."adminpanel/listproduct/");
 
     // get Product Id
     // $cdb = new db('localhost','root','','frontproject');

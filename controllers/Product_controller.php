@@ -1,8 +1,7 @@
 <?php 
-require "__init__.php";
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
-$id = $_GET['id'];
+$id = $RoutingData[0];
 
 $query = "SELECT * FROM `product` WHERE id=?";
 $product = $mysql->query($query,$id)->fetchArray();
@@ -33,4 +32,4 @@ $query = "SELECT * FROM `comment` WHERE pid=?";
 $allCommentProduct = $mysql->query($query,$id)->fetchAll();
 
 $filename = explode('_',basename(__FILE__))[0];
-include $viewroot.$filename.'_view.php';
+include viewroot.$filename.'_view.php';

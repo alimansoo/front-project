@@ -14,10 +14,10 @@
     <?php include_once('header.php'); ?>
     <?php include_once('TopNavigation.php'); ?>
     
-    <main id="container">
+    <main id="container" class="container">
         <section class="grid-display col-sm-1 .col-md-1 col-lg-3-product-view productView">
             <section class="productView_image">
-                <img src="<?php echo $assetsroot."images/products/".$product['image_src']; ?>" width="90%" alt="" class="image">
+                <img src="<?php echo base_url."assets/images/products/".$product['image_src']; ?>" width="90%" alt="" class="image">
             </section>
             <section class="productView_detail">
                 <h1 class="productView_detail_title">
@@ -48,7 +48,7 @@
                     <li>قیمت ارسال سفارش در مراحل بعد محاسبه می شود.</li>
                 </ul>
                 <?php if (!$isContainCard):?>
-                    <a href="<?php echo $controllerroot ?>addCard_controller.php?id=<?php echo $id ?>&redirect=true" class="btn btn-primary full-btn">اضافه کردن به سبد خرید</a>
+                    <a href="<?php echo base_url ?>card/add/<?php echo $id ?>/?redirect=true" class="btn btn-primary full-btn">اضافه کردن به سبد خرید</a>
                 <?php endif; ?>
             </section>
         </section>
@@ -64,7 +64,7 @@
                 </div>
             <?php endforeach; ?>
             <h4 class="page_content_title">اضافه کردن کامنت جدید</h4>
-            <form action="<?php echo $controllerroot ?>addComment_controller.php?pid=<?php echo $id ?>" method="get" id="CommentForm">
+            <form action="<?php echo base_url; ?>productcomment/<?php echo $id ?>" method="get" id="CommentForm">
                 <div class="input_material_block">
                     <input type="text" name="subject" id="subjectComment">
                     <label for="subjectComment">موضوع</label>

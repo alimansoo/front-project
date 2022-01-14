@@ -18,7 +18,7 @@
 }
 .infosmallbox_content{
     display: inline-block;
-    vertical-align: m;
+    vertical-align: middle;
     margin-right: 4px;
 }
 .infosmallbox_content_head{

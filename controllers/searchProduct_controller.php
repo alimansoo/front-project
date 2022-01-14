@@ -1,11 +1,10 @@
 <?php
-require "__init__.php";
 // status 1 ==> داده موجود
 // status 0 ==> داده نیست
 $output =   array('status'=>0);
 
-$searchq = $_GET['q'];
-if ($searchq !== "") {     
+$searchq = urldecode($RoutingData[0]);
+if ($searchq !== "") {    
     $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
     $query = "SELECT * FROM `product` WHERE name LIKE '%".$searchq."%';";
@@ -13,8 +12,8 @@ if ($searchq !== "") {
     $array = array();
     foreach ($result as $key => $value) {
         if (isset($value['id'])) {
-            $link = $controllerroot."Product_controller.php?id=".$value['id'];
-            $image = $assetsroot."images/products/".$value['image_src'];
+            $link = base_url."product/".$value['id'];
+            $image = base_url."assets/images/products/".$value['image_src'];
     
             $array[$key] =   array('status'=>1,'name'=>$value['name'],'link'=> $link,'image'=>$image);
         } 
@@ -23,5 +22,4 @@ if ($searchq !== "") {
         $output =   array('status'=>1,'data'=>$array);
     }
 }
-
 echo json_encode($output);

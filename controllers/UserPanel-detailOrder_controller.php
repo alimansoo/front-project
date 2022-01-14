@@ -1,7 +1,5 @@
 <?php 
-require '__init__.php';
-
-$orderid = $_GET['id'];
+$orderid = $RoutingData[0];
 
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 

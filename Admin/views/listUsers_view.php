@@ -14,7 +14,8 @@
             <?php include_once('Sidebar.php'); ?>
             <section class="grid-lg-1to4">
                 <section class="page_content">
-                <a class="btn btn-primary" href="<?php echo $controllerroot;?>addUser_controller.php">اضافه کردن کاربر+</a>
+                <h3 class="page_content_title">لیست کاربران</h3>
+                <a class="btn btn-primary" href="<?php echo base_url;?>addUser/">اضافه کردن کاربر+</a>
                     <table class="table">
                         <tr>
                             <th>شناسه</th>
@@ -28,23 +29,20 @@
                             <th></th>
                         </tr>
                         <?php 
-                        foreach ($users as $user) {
-                            echo "
+                        foreach ($users as $user) :?>
                             <tr>
-                            <td>{$user['id']}</td>
-                            <td>{$user['firstname']}</td>
-                            <td>{$user['lastname']}</td>
-                            <td>{$user['email']}</td>
-                            <td>{$user['city']}</td>
-                            <td>{$user['phone']}</td>
-                            <td>{$user['password']}</td>
-                            <td><a href='{$controllerroot}removeUser_controller.php?id={$user['id']}'><i class='fas fa-trash'></i></a></td>
-                            <td><a href='{$controllerroot}editUser_controller.php.php?id={$user['id']}'><i class='fas fa-edit'></i></a></td>
-                            </tr>";
-                        ?>
-                        
+                                <td><?php echo $user['id']; ?></td>
+                                <td><?php echo $user['firstname']; ?></td>
+                                <td><?php echo $user['lastname']; ?></td>
+                                <td><?php echo $user['email']; ?></td>
+                                <td><?php echo $user['city']; ?></td>
+                                <td><?php echo $user['phone']; ?></td>
+                                <td><?php echo $user['password']; ?></td>
+                                <td><a href='{$controllerroot}removeUser_controller.php?id={$user['id']}'><i class='fas fa-trash'></i></a></td>
+                                <td><a href='{$controllerroot}editUser_controller.php.php?id={$user['id']}'><i class='fas fa-edit'></i></a></td>
+                            </tr>                        
                         <?php
-                        }
+                        endforeach;
                         ?>
                     </table>
                 </section>

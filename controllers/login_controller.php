@@ -1,7 +1,7 @@
 <?php
 if (!isset($_POST['submit'])) {
     $filename = explode('_',basename(__FILE__))[0];
-    include $viewroot.$filename.'_view.php';
+    include viewroot.$filename.'_view.php';
 }else {
     $cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
     
@@ -21,7 +21,7 @@ if (!isset($_POST['submit'])) {
                 header("Location:{$base_url}userpanel/");
                 break;
             case 'admin':
-                header("Location:{$base_url}admin/");
+                header("Location:{$base_url}adminpanel/");
                 break;
             default:
                 echo "error";

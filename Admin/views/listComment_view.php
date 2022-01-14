@@ -21,7 +21,7 @@
             <?php include_once('Sidebar.php'); ?>
             <section class="grid-lg-1to4">
                 <section class="page_content">
-                    <h3 class="page_content_title">اطلاعات شخصی</h3>
+                    <h3 class="page_content_title">لیست نظر ها</h3>
                     <table class="table">
                         <tr>
                             <th>شناسه</th>
@@ -30,22 +30,19 @@
                             <th>موضوع نظر</th>
                             <th>متن نظر</th>
                             <th></th>
-                        </tr>
+                        </tr> 
                         <?php 
-                        foreach ($comments as $comment) {
-                            echo "
+                        foreach ($comments as $comment) : ?>
                             <tr>
-                            <td>{$comment['id']}</td>
-                            <td>{$comment['pid']}</td>
-                            <td>{$comment['uid']}</td>
-                            <td>{$comment['subject']}</td>
-                            <td>{$comment['message']}</td>
-                            <td><a href='{$controllerroot}deleteComment_controller.php?id={$comment['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
-                            </tr>";
-                        ?>
-                        
+                                <td><?php echo $comment['id'];?></td>
+                                <td><?php echo $comment['pid'];?></td>
+                                <td><?php echo $comment['uid'];?></td>
+                                <td><?php echo $comment['subject'];?></td>
+                                <td><?php echo $comment['message'];?></td>
+                                <td><a href='{controllerroot}removeTicket_controller.php?id={$user['ID']}'><i class='fas fa-trash'></i></a></td>
+                            </tr>
                         <?php
-                        }
+                        endforeach;
                         ?>
                     </table>
                 </section>

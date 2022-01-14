@@ -15,7 +15,7 @@
             <section class="grid-lg-1to4">
                 <section class="page_content grid-display col-sm-1 col-md-1 col-lg-1">
                     <h3 class="page_content_title">اضافه کردن محصول</h3>
-                    <form action="" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
                         <div class="input_material_block">
                             <input type="text" required name="product_name" id="product_name" class="input-text">
                             <label for="product_name">نام محصول:</label>

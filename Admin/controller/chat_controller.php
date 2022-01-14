@@ -1,6 +1,4 @@
 <?php
-require "__init__.php";
-
 $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 
 $query = "SELECT `sender_id` FROM `chat` Group BY `sender_id`;";
@@ -45,4 +43,4 @@ foreach ($result as $key1 => $value1) {
 }
 
 $filename = explode('_',basename(__FILE__))[0];
-include $viewroot.$filename.'_view.php';
+include admin_viewroot.$filename.'_view.php';

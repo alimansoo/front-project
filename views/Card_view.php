@@ -10,7 +10,7 @@
 <body id="body-container" class="grid-row-container">
     <?php include_once('header.php'); ?>    
     <?php include_once('TopNavigation.php'); ?>
-    <main id="container">
+    <main id="container" class="container">
         <section class="grid-display col-sm-1 col-md-1 col-lg-3 ">
             <?php if (count($productsArray)<1):?>
                 <section class="page_content ">
