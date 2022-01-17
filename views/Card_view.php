@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حساب کاربری</title>
-    <?php include "__init__.php"; ?>
-</head>
-<body id="body-container" class="grid-row-container">
-    <?php include_once('header.php'); ?>    
-    <?php include_once('TopNavigation.php'); ?>
-    <main id="container" class="container">
+<?php 
+ob_start();
+?>
+<?php
+function get_title() {
+    return "سبد خرید";
+}
+function get_content()
+{
+    global $productsArray;    
+    global $allofPrice;    
+    global $allofPrice;    
+?>
         <section class="grid-display col-sm-1 col-md-1 col-lg-3 ">
             <?php if (count($productsArray)<1):?>
                 <section class="page_content ">
@@ -51,9 +51,16 @@
                 </section>
             <?php endif; ?>
         </section>
-    </main>
-    <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
-    <?php include_once('footer.php'); ?>
-    <?php include_once('__script__.php'); ?>
-</body>
-</html>
+<?php 
+}
+$filename = getObFileName();
+if($iscardchanged){
+    clearCatck($filename);
+}
+if (file_exists($filename)) {
+    echo readcatchedFile($filename);
+}else {
+    renderPage();
+    catchFile($filename);
+}
+?>

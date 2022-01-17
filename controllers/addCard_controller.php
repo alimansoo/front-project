@@ -12,6 +12,9 @@ if (isset($_SESSION['id'])) {
     $query = "SELECT * FROM `cards` WHERE pid = ? AND uid = ?";
     $result = $mysql->query($query,$id,$_SESSION['id'])->fetchArray();
 
+    $userquery = "UPDATE `user` SET `card_changed`=true WHERE id=?";
+    $userresult = $mysql->query($userquery,$_SESSION['id']);
+
     if (isset($result['id'])) {
         $query = "DELETE FROM `cards` WHERE id = ? ;";
         $result = $mysql->query($query,$result['id']);

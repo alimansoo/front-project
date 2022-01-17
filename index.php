@@ -1,15 +1,19 @@
 <?php
 define('base_url', '/front-project/');
-define('full_url', 'http://localhost:8012/front-project/');
+define('site_url', 'http://localhost:8012/front-project/');
+define('APP_NAME', 'ماهرنگ');
 $base_url = base_url;
 
 require 'config.php';
+require 'functions.php';
+require 'urlManager.php';
+require 'obManager.php';
 
-$request = $_SERVER['REQUEST_URI'];
-
-//Changing Url
+$request = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$request = str_replace(site_url,'',$request);
+// Changing Url
 $RoutingData;
-$url1 = base_url.'card/changeqty/';
+$url1 = 'card/changeqty/';
 if (
     substr($request,0,
         strlen($url1)
@@ -22,7 +26,7 @@ if (
     $request = $url1;
 }
 
-$url2 = base_url.'card/delete/';
+$url2 = 'card/delete/';
 if (
     substr($request,0,
         strlen($url2)
@@ -35,7 +39,7 @@ if (
     $request = $url2;
 }
 
-$url3 = base_url.'card/add/';
+$url3 = 'card/add/';
 if (
     substr($request,0,
         strlen($url3)
@@ -48,7 +52,7 @@ if (
     $request = $url3;
 }
 
-$url4 = base_url.'productlike/';
+$url4 = 'productlike/';
 if (
     substr($request,0,
         strlen($url4)
@@ -61,7 +65,7 @@ if (
     $request = $url4;
 }
 
-$url5 = base_url.'productbookmark/';
+$url5 = 'productbookmark/';
 if (
     substr($request,0,
         strlen($url5)
@@ -74,7 +78,7 @@ if (
     $request = $url5;
 }
 
-$url6 = base_url.'product/';
+$url6 = 'product/';
 if (
     substr($request,0,
         strlen($url6)
@@ -87,7 +91,7 @@ if (
     $request = $url6;
 }
 
-$url7 = base_url.'search/';
+$url7 = 'search/';
 if (
     substr($request,0,
         strlen($url7)
@@ -100,7 +104,7 @@ if (
     $request = $url7;
 }
 
-$url8 = base_url.'order/';
+$url8 = 'order/';
 if (
     substr($request,0,
         strlen($url8)
@@ -112,7 +116,7 @@ if (
         )) ;
     $request = $url8;
 }
-$url9 = base_url.'productcomment/';
+$url9 = 'productcomment/';
 if (
     substr($request,0,
         strlen($url9)
@@ -124,16 +128,15 @@ if (
         )) ;
     $request = $url9;
 }
-
 switch ($request) {
-    case base_url :
+    case get_URL() :
         require './controllers/home_controller.php';
         break;
-    case base_url.'login/' :
+    case get_URL('login') :
         require './controllers/login_controller.php';
         break;
     //card
-    case base_url.'card/' :
+    case get_URL('card') :
         require "./controllers/Card_controller.php";
         break;
     case $url1 :
@@ -164,44 +167,44 @@ switch ($request) {
         require './controllers/searchProduct_controller.php';
         break;
     //userpanel
-    case base_url.'exit/' :
+    case 'exit/' :
         require './controllers/exit_controller.php';
         break;
-    case base_url.'userpanel/' :
+    case 'userpanel/' :
         require './controllers/UserPanel_controller.php';
         break;
-    case base_url.'userpanel/like/' :
+    case 'userpanel/like/' :
         require './controllers/UserPanel-FavoritProduct_controller.php';
         break;
-    case base_url.'userpanel/bookmark/' :
+    case 'userpanel/bookmark/' :
         require './controllers/UserPanel-SavedProduct_controller.php';
         break;
-    case base_url.'userpanel/myorder/' :
+    case 'userpanel/myorder/' :
         require './controllers/UserPanel-myOrder_controller.php';
         break;
     case $url8 :
         require './controllers/UserPanel-detailOrder_controller.php';
         break;
     //adminpanel
-    case base_url.'adminpanel/' :
+    case 'adminpanel/' :
         require './admin/controller/Dashboard_controller.php';
         break;
-    case base_url.'adminpanel/listproduct/' :
+    case 'adminpanel/listproduct/' :
         require './admin/controller/listProduct_controller.php';
         break;
-    case base_url.'adminpanel/listproduct/addproduct/' :
+    case 'adminpanel/listproduct/addproduct/' :
         require './admin/controller/addProduct_controller.php';
         break;
-    case base_url.'adminpanel/listuser/' :
+    case 'adminpanel/listuser/' :
         require './admin/controller/listUsers_controller.php';
         break;
-    case base_url.'adminpanel/listtickets/' :
+    case 'adminpanel/listtickets/' :
         require './admin/controller/listTickets_controller.php';
         break;
-    case base_url.'adminpanel/listcomment/' :
+    case 'adminpanel/listcomment/' :
         require './admin/controller/listComment_controller.php';
         break;
-    case base_url.'adminpanel/chatpanel/' :
+    case 'adminpanel/chatpanel/' :
         require './admin/controller/chat_controller.php';
         break;
     //404 Erorre

@@ -6,7 +6,15 @@
                 <i class="far fa-comment-alt"></i>
                 <span class="badge bg-primary">3</span>
                 <ul class="drophover_menu right">
-                    <li class="drophover_item"> تیکت های جدید </li>
+                    <li class="drophover_header"> تیکت های جدید </li>
+                    <?php if (isset($newTicket)) :
+                        foreach ($newTicket as $key => $value):
+                        ?>
+                            <li class="drophover_item"><?php echo($value['text']) ; ?><a href=""><i class="fas fa-check"></i></a></li>
+                        <?php
+                        endforeach;
+                    endif; 
+                    ?>
                 </ul>
             </div>
         </li>
@@ -15,7 +23,15 @@
                 <i class="far fa-comment"></i>
                 <span class="badge bg-primary">2</span>
                 <ul class="drophover_menu right">
-                    <li class="drophover_item"> کامنت های جدید </li>
+                    <li class="drophover_header"> کامنت های جدید </li>
+                    <?php if (isset($newComment)) :
+                        foreach ($newComment as $key => $value):
+                        ?>
+                            <li class="drophover_item"><a href="<?php echo base_url.'adminpanel/listcomment/#comment'.$value['cid']; ?>"><?php echo($value['message']) ; ?></a><a href=""><i class="fas fa-check"></i></a></li>
+                        <?php
+                        endforeach;
+                    endif; 
+                    ?>
                 </ul>
             </div>
         </li>

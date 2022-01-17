@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ماهرنگ</title>
-    <link rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <?php include'__init__.php'; ?>
-</head>
-<body id="body-container" class="grid-100 grid-row-container">
-    <?php include_once('header.php'); ?>
-    <?php include_once('TopNavigation.php'); ?>
-    
-    <main id="container" class="container">
-        <div class="swiper">
+<?php
+function get_title() {
+    return "صفحه اصلی";
+}
+function get_content()
+{
+    global $products;
+    global $mysql;
+?>
+    <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper" style="width:100%;height:400px;">
             <!-- Slides -->
@@ -64,9 +58,8 @@
                 }
             ?>
         </div>
-    </main>
-
-    <section class="chat"> 
+        
+        <section class="chat"> 
         <div class="chat_container">
             <div class="header">
                 پشتیبانی ماهرنگ
@@ -84,9 +77,6 @@
             <i class="fas fa-comments"></i>
         </div>
     </section>
-    
-    <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
-    <?php include_once('footer.php'); ?>
-    <?php include_once('__script__.php'); ?>
-</body>
-</html>
+<?php 
+}
+renderPage();

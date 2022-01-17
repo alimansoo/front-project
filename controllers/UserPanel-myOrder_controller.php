@@ -1,7 +1,7 @@
 <?php 
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
-$query = "SELECT * FROM `order_user` WHERE uid = ?";
+$query = "SELECT * FROM `order_user` WHERE uid = ? ORDER BY id DESC";
 $result = $mysql->query($query,$_SESSION['id'])->fetchAll();
 
 // echo "<pre>";

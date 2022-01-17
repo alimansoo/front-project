@@ -33,7 +33,7 @@
                         </tr> 
                         <?php 
                         foreach ($comments as $comment) : ?>
-                            <tr>
+                            <tr id="#comment<?php echo $comment['id'];?>">
                                 <td><?php echo $comment['id'];?></td>
                                 <td><?php echo $comment['pid'];?></td>
                                 <td><?php echo $comment['uid'];?></td>

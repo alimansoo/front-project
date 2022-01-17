@@ -3,7 +3,7 @@ require '__init__.php';
 
 if (!isset($_POST['submit'])) {
     $filename = explode('_',basename(__FILE__))[0];
-    include $viewroot.$filename.'_view.php';
+    include viewroot.$filename.'_view.php';
 }else {
 
     $cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);

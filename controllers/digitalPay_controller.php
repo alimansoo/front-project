@@ -9,5 +9,5 @@ if (isset($_POST['submit'])) {
     $_SESSION['orderid'] = $orderid;
 }else {
     $filename = explode('_',basename(__FILE__))[0];
-    include $viewroot.$filename.'_view.php';
+    include viewroot.$filename.'_view.php';
 }

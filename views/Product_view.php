@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ماهرنگ</title>
-    <link rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo $baseroot;?>assets/css/style.css">
-    <?php include'__init__.php'; ?>
-</head>
-<body id="body-container" class="grid-100" lang="fa">
-    <?php include_once('header.php'); ?>
-    <?php include_once('TopNavigation.php'); ?>
-    
-    <main id="container" class="container">
-        <section class="grid-display col-sm-1 .col-md-1 col-lg-3-product-view productView">
+<?php
+function get_title() {
+    return "محصول";
+}
+function get_content()
+{
+    global $product;
+    global $isContainCard;
+    global $allCommentProduct;
+    global $id;
+    global $mysql;
+?>
+    <section class="grid-display col-sm-1 .col-md-1 col-lg-3-product-view productView">
             <section class="productView_image">
                 <img src="<?php echo base_url."assets/images/products/".$product['image_src']; ?>" width="90%" alt="" class="image">
             </section>
@@ -77,11 +72,6 @@
             </form>
         </section>
         
-    </main>
-
-    <p id="Small_modal_Message" class="small_modal_message success"><i class="fas fa-times"></i><span class="message">dafsdf</span></p>
-
-    <?php include_once('footer.php'); ?>
-    <?php include_once('__script__.php'); ?>
-</body>
-</html>
+<?php 
+}
+renderPage();

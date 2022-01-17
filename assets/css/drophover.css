@@ -37,6 +37,12 @@
     float: right;
     /* right: 10px; */
 }
+.drophover_header{
+    font-size: 1.2em;
+    border-bottom: 1px solid gray;
+    padding: 8px 12px !important;
+    text-align: center;
+}
 .drophover_item{
     color: black;
     padding: 8px;
@@ -55,6 +61,12 @@
     margin-right: 8px;
 } */
 
+.drophover_item a i{
+    margin-right: 8px;
+}
+.drophover_item a i:hover{
+    background-color: gainsboro;
+}
 .drophover_item:hover{
     background-color: rgba(128, 128, 128,10%);
 }

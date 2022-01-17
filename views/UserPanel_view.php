@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حساب کاربری</title>
-    <?php include "__init__.php"; ?>
-</head>
-<body id="body-container" class="grid-25-75">
-    <?php include_once('header.php'); ?>    
-    <?php include_once('TopNavigation.php'); ?>
-
-    
-    <main id="container" class="container">
+<?php 
+ob_start();
+?>
+<?php
+function get_title() {
+    return "صفحه حساب کاربری";
+}
+function get_content()
+{
+?>
         <section class="grid-display col-sm-1 col-md-1 col-lg-4">
             <?php include_once('UserPanelSidebar.php'); ?>
             <section class="grid-lg-2to5">
@@ -39,9 +34,13 @@
                 </section>
             </section>
         </section>
-    </main>
-    <?php include_once('footer.php'); ?>
-    <?php include_once('__script__.php'); ?>
-</body>
-</html>
-
+<?php 
+}
+$filename = getObFileName();
+if (file_exists($filename)) {
+    echo readcatchedFile($filename);
+}else {
+    renderPage();
+    catchFile($filename);
+}
+?>

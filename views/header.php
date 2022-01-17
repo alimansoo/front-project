@@ -18,12 +18,12 @@
             <?php
                 else:
             ?>
-                <a href="<?php echo base_url ?>login/"><i class="fas fa-user-circle action first"></i></a>
+                <a href="<?php echo get_Full_URL('login');?>"><i class="fas fa-user-circle action first"></i></a>
             <?php
                 endif;
             ?>
             
-            <a href="<?php echo base_url ?>card/"><i class="fa fa-shopping-cart action"></i></a>
+            <a href="<?php echo get_Full_URL('card'); ?>"><i class="fa fa-shopping-cart action"></i></a>
             
         </div>
 </header>
