@@ -9,9 +9,6 @@ if (!isset($_POST['submit'])) {
     $result = $cdb -> query($query)->fetchArray();
     $cdb -> close();
 
-    // if ($result['firstn']) {
-    
-    // }
     if (count($result)>0) {
         //set sessions
         Athuntication::loginUser($result);
@@ -35,5 +32,4 @@ if (!isset($_POST['submit'])) {
             get_Full_URL('home')
         );
     }
-
 }

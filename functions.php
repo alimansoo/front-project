@@ -20,8 +20,8 @@ function firstsection() {
     <link rel="stylesheet" href="http://localhost:8012/front-project/assets/css/style.css">
 </head>
 <body id="body-container" class="grid-100 grid-row-container">
-    <?php include_once('views/header.php'); ?>
-    <?php include_once('views/TopNavigation.php'); ?>
+    <?php include_once('assets/templates/header.php'); ?>
+    <?php include_once('assets/templates/TopNavigation.php'); ?>
     <main id="container" class="container">
 <?php
 }
@@ -29,7 +29,7 @@ function secondsection() {
     ?>
     </main>
     <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
-    <?php include_once('views/footer.php'); ?>
+    <?php include_once('assets/templates/footer.php'); ?>
     <?php include_once('views/__script__.php'); ?>
 </body>
 </html>
