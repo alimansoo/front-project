@@ -1,15 +1,16 @@
 <?php 
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
-$id = $RoutingData[0];
+$id = $_GET['pid'];
 
 $query = "SELECT * FROM `product` WHERE id=?";
 $product = $mysql->query($query,$id)->fetchArray();
 
 $isContainCard = false;
 
-function isContainCard($mysql,$id)
+function isContainCard($id)
 {
+    global $mysql;
     $query = "SELECT * FROM `cards` WHERE pid=? AND uid=?";
     $product = $mysql->query($query,$id,$_SESSION['id'])->fetchArray();
     if(isset($product['id'])){

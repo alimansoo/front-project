@@ -13,9 +13,16 @@ foreach ($pages_name_url as $key => $value) {
         $controller = $value['controller'];
     }
 }
-
-if (isset($controller) && $controller != '') {
-    include './controllers/'.$controller;
-}else{
+$adminurl = get_URL('adminpanel.dashboard');
+if (
+    substr($request,0,strlen($adminurl)) === $adminurl 
+    && isset($controller) 
+    && !is_null($controller)
+    ) {
+    include 'admin/'.controllerroot.$controller;
+}elseif (isset($controller) && $controller != '') {
+    include controllerroot.$controller;
+}
+else{
     include '404.php';
 }

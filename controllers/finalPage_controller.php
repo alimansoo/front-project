@@ -1,6 +1,4 @@
 <?php 
-require '__init__.php';
-
 $orderid=$_SESSION['orderid'];
 
 

@@ -1,6 +1,4 @@
-<?php 
-require '__init__.php';
-
+<?php
 if (!isset($_POST['submit'])) {
     $filename = explode('_',basename(__FILE__))[0];
     include viewroot.$filename.'_view.php';
@@ -28,6 +26,5 @@ if (!isset($_POST['submit'])) {
     Athuntication::loginUser($result);
 
     $cdb -> close();
-
-    header("Location:UserPanel_controller.php");
+    redirect_to(get_Full_URL('userpanel.dashboard'));
 }

@@ -67,7 +67,7 @@ function get_content()
             <div id="chat_container">
             </div>
             <div class="footer">
-                <form action="<?php controllerroot ?>chatController_controller.php" method="post" id="Chatform">
+                <form action="<?php echo get_Full_URL('userpanel.chatmanage'); ?>" method="post" id="Chatform">
                     <input type="text" name="message" id="Chatmessage">
                     <input type="submit" value="ارسال">
                 </form>

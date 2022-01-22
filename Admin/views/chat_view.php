@@ -17,7 +17,7 @@
             <aside id="sidebar" class="sidebar material_side light-side">
                 <nav class="sidebar_nav">
                     <ul class="nav_list">
-                    <li class="nav_item"><i class='fas fa-tachometer-alt'></i><a href="<?php echo base_url;?>adminpanel/">داشبورد</a></li>
+                    <li class="nav_item"><i class='fas fa-tachometer-alt'></i><a href="<?php echo get_Full_URL('adminpanel.dashboard');?>">داشبورد</a></li>
                         <?php foreach ($AllofChat as $key => $value):
                         ?>
                             <li class="nav_item chat_contant" id="chat_contant<?php echo $value['id'];?>"><i class="fas fa-user-circle"></i><?php echo $value['id'];?></li>
@@ -37,7 +37,8 @@
                                     echo "<div class='any'><div class='chat-element anychat'>{$value2['message']}</div></div>";
                                 }
                             endforeach; ?>
-                            <form action="<?php echo base_url;?>adminChatController_controller.php?reciver_id=<?php echo $value1['id']; ?>" method="post" class="Chatform">
+                            <a href="<?php echo get_Full_URL('adminpanel.chatmanage');?>" id="ChatAdminLink" class="hidden"></a>
+                            <form action="<?php echo get_Full_URL('userpanel.chatmanage');?>?reciver_id=<?php echo $value1['id']; ?>" method="post" class="Chatform">
                                 <input type="text" name="message" placeholder="ارسال پیام..." id="Chatmessage">
                                 <input type="submit" value="ارسال">
                             </form>
@@ -47,7 +48,17 @@
             </section>
         </section>
     </main>
-    <script src="<?php echo base_url;?>assets/js/chatAdmin.js"></script>
-    <?php include_once('__script__.php'); ?>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="<?php echo base_url;?>assets/js/templates/productView.js"></script>
+<script src="<?php echo base_url;?>assets/js/templates/input.js"></script>
+<script src="<?php echo base_url;?>assets/js/main.js"></script>
+<script src="<?php echo base_url;?>assets/js/Comment.js"></script>
+<script src="<?php echo base_url;?>assets/js/ajaxWorker.js"></script>
+<script src="<?php echo base_url;?>assets/js/drophover.js"></script>
+<script src="<?php echo base_url;?>assets/js/SmallMessageBox.js"></script>
+<script src="<?php echo base_url;?>assets/js/templates/sidebar.js"></script>
+<script src="<?php echo base_url;?>assets/js/chatAdmin.js"></script>
+<script src="<?php echo base_url;?>assets/js/search.js"></script>
 </body>
 </html>

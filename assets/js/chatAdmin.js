@@ -1,5 +1,6 @@
 var myInterval = setInterval(resiverMessage, 1000)
 var chatContainerUser;
+var ChatAdminLink = document.querySelector('a#ChatAdminLink').href;
 //status 600 ===> یک پیام جدید وجود دارد
 //       500 ===> پیام شما ثبت شد.
 //       100 ===> هنوز لاگین نکردی
@@ -46,8 +47,7 @@ function sendMessage(e) {
     
 }
 function resiverMessage() {
-    let url = '../controller/adminChatController_controller.php';
-    fetch(url)
+    fetch(ChatAdminLink)
     .then(
         function (response) {
             return response.json();

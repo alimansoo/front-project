@@ -1,6 +1,4 @@
-<?php 
-require '__init__.php';
-
+<?php
 $allofPrice = 0;
 $transportPrice = 250000;
 

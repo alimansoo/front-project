@@ -1,10 +1,9 @@
 <?php 
-require '__init__.php';
-
 $orderid=$_GET['orderid'];
 
 if (isset($_POST['submit'])) {
-    header("Location:finalPage_controller.php");
+    $url = get_Full_URL('order.finalpage');
+    header("Location:$url");
     $_SESSION['is_payed'] = true;
     $_SESSION['orderid'] = $orderid;
 }else {

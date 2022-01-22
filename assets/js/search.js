@@ -1,10 +1,10 @@
 let searchInput = document.querySelector('input[type=search]');
+var Searchlink = document.querySelector('#Searchlink').href;
 if (searchInput) {
     searchInput.addEventListener('keyup',SearchProduct)
 }
 function SearchProduct(e) {
-    let searchcontroller = '/front-project/search/';
-    fetch(searchcontroller+this.value)
+    fetch(Searchlink+this.value)
     .then(
         function (response) {
             return response.json();

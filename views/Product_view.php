@@ -43,7 +43,7 @@ function get_content()
                     <li>قیمت ارسال سفارش در مراحل بعد محاسبه می شود.</li>
                 </ul>
                 <?php if (!$isContainCard):?>
-                    <a href="<?php echo base_url ?>card/add/<?php echo $id ?>/?redirect=true" class="btn btn-primary full-btn">اضافه کردن به سبد خرید</a>
+                    <a href="<?php echo getProduc_AddCart_tUrl($product['id'],true); ?>" class="btn btn-primary full-btn">اضافه کردن به سبد خرید</a>
                 <?php endif; ?>
             </section>
         </section>

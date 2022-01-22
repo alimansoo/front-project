@@ -46,6 +46,7 @@ function sendMessage(e) {
                     messageBoxSmall(false,data.message)
                     break;
             }
+            console.log(data);
         }
     )
     .catch(

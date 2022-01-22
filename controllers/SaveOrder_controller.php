@@ -1,6 +1,4 @@
 <?php 
-require '__init__.php';
-
 $status="";
 
 $userid = $_SESSION['id'];
