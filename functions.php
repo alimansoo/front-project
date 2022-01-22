@@ -46,3 +46,9 @@ function renderPage()
 function include_controller($name) {
     include "./controllers/{$name}_controller.php";
 }
+function redirect_to($path){
+    if (is_null($path)) {
+        return;
+    }
+    header("Location:$path");
+}

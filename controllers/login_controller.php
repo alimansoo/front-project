@@ -18,18 +18,22 @@ if (!isset($_POST['submit'])) {
         $_SESSION['back_status'] = 200;
         switch ($_SESSION['role']) {
             case 'user':
-                header("Location:{$base_url}userpanel/");
+                redirect_to(
+                    get_Full_URL('userpanel.dashboard')
+                );
                 break;
             case 'admin':
-                header("Location:{$base_url}adminpanel/");
+                redirect_to(
+                    get_Full_URL('adminpanel.dashboard')
+                );
                 break;
             default:
-                echo "error";
+                die("error");
         }
     }else {
-        $_SESSION['back_status'] = 405;
-        echo "<p>کاربری با این اطلاعات وجود ندارد</p>";
-        echo "<a href='./home_controller.php'>خانه</a>";
+        redirect_to(
+            get_Full_URL('home')
+        );
     }
 
 }

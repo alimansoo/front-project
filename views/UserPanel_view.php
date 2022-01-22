@@ -1,5 +1,5 @@
 <?php 
-ob_start();
+// ob_start();
 ?>
 <?php
 function get_title() {
@@ -36,11 +36,11 @@ function get_content()
         </section>
 <?php 
 }
-$filename = getObFileName();
-if (file_exists($filename)) {
-    echo readcatchedFile($filename);
-}else {
+// $filename = getObFileName();
+// if (file_exists($filename)) {
+//     echo readcatchedFile($filename);
+// }else {
     renderPage();
-    catchFile($filename);
-}
+//     catchFile($filename);
+// }
 ?>

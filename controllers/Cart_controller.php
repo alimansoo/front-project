@@ -1,6 +1,8 @@
 <?php
 if (!isset($_SESSION['id'])) {
-    header("Location:".base_url."login/");
+    redirect_to(
+        get_Full_URL('login')
+    );
 }
 
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
