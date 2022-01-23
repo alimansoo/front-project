@@ -52,3 +52,32 @@ function redirect_to($path){
     }
     header("Location:$path");
 }
+function getFilename($filename){
+    return explode('_',$filename)[0];
+}
+function includethisView()
+{
+    $filename = getFilename(
+        basename(
+            debug_backtrace()[0]['file']
+        )
+    );
+    include viewroot.$filename.'_view.php';
+}
+function includeView($filename)
+{
+    include viewroot.$filename.'_view.php';
+}
+function includethisAdminView()
+{
+    $filename = getFilename(
+        basename(
+            debug_backtrace()[0]['file']
+        )
+    );
+    include admin_viewroot.$filename.'_view.php';
+}
+function includeAdminView($filename)
+{
+    include viewroot.$filename.'_view.php';
+}

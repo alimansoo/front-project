@@ -14,9 +14,6 @@ function catchFile($filename) {
 function readcatchedFile($filename) {
     return file_get_contents($filename);
 }
-function getFilename($filename){
-    return explode('_',$filename)[0];
-}
 function clearCatck($filename){
     unlink($filename);
 }

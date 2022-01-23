@@ -1,11 +1,7 @@
 <?php
 $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
-$query = "SELECT * FROM `product`";
-$products = $mysql->query($query)->fetchAll();
-
-$filename = explode('_',basename(__FILE__))[0];
-include viewroot.$filename.'_view.php';
-
+$products = getAllProduct();
+includethisView();
 function isLike($mysql,$id)
 {
     $query = "SELECT * FROM `likeproduct` WHERE pid=? AND uid=?";

@@ -5,6 +5,10 @@ define('APP_NAME', 'ماهرنگ');
 $base_url = base_url;
 
 require 'config.php';
+require "plugin/includes.php";
 require 'functions.php';
-require 'router.php';
 require 'obManager.php';
+require "db/includes.php";
+
+//router
+require 'router.php';

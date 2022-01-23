@@ -7,7 +7,7 @@
         <div class='productCounter'>
             <a href='<?php echo getProduc_ChangeQty_Url($product['id'],'add');?>' class='addQty'>+</a>
                 <span class='productQty'><?php echo $product['qty']; ?></span>
-            <a href='<?php echo base_url.'card/changeqty/minus/'.$product['id'];?>' class='minusQty'>-</a></div>
+            <a href='<?php echo getProduc_ChangeQty_Url($product['id'],'minus');?>' class='minusQty'>-</a></div>
     </td>
     <td>
         <a class='removeProduct' href='<?php echo getProduc_ChangeQty_Url($product['id'],'minus');?>'><i class='fas fa-trash'></i></a>

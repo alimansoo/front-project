@@ -34,9 +34,4 @@ foreach ($result as $key=>$value) {
     $allProduct[$key] = $array;
 }
 
-// echo "<pre>";
-// var_dump($allProduct);
-// echo "</pre>";
-
-$filename = explode('_',basename(__FILE__))[0];
-include viewroot.$filename.'_view.php';
+includethisView();
