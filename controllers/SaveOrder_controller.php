@@ -14,27 +14,12 @@ if(isset($orderReciverisme)){
 }
 
 if(isset($_POST['submit'])){
-    $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
-    $query = "INSERT INTO `order_user`
-    (`uid`, `recive_date`, `saved_date`, `addres`, `priceAll`,`transport_price`, `reciver_name`, `is_pay`)
-     VALUES (?,?,?,?,?,?,?,false)";
-    $result = $mysql->query($query,$userid,$orderReciveDate,$today,$orderAddres,$price,$transport_price,$orderReciver);
+    $orderid = insertUserOrder($userid,$orderReciveDate,$orderAddres,$price,$transport_price,$orderReciver);
 
-    $query = "SELECT `id` FROM `order_user` WHERE uid =? AND saved_date=?";
-    $result = $mysql->query($query,$userid,$today)->fetchArray();
-
-    $orderid = $result['id'];
-
-    $query = "SELECT * FROM `cards` WHERE uid=?";
-    $result = $mysql->query($query,$userid)->fetchAll();
+    $result = getAllCartByUserId($userid);
     foreach ($result as $array) {
-        
-        $query = "INSERT INTO `order_user_item`( `oid`, `pid`, `qty`)
-         VALUES (?,?,?)";
-        $result = $mysql->query($query,$orderid,$array['pid'],$array['qty']);
-
-        $query = "DELETE FROM `cards` WHERE id =?";
-        $result = $mysql->query($query,$array['id']);
+        $result = insertUserOrderItem($orderid,$array['pid'],$array['qty']);
+        deleteCartByid($array['id']);
     }
     $status="success";
     

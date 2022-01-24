@@ -1,18 +1,14 @@
-<?php 
-$orderid=$_SESSION['orderid'];
-
+<?php
+$orderid = $_SESSION['orderid'];
 
 $status = "";
 
 if ($_SESSION['is_payed']) {
     $status = "success";
     
-    $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
-    $query = "UPDATE `order_user` SET `is_pay`= true WHERE id =?";
-    $result = $mysql->query($query,$orderid);
+    $result = UserOrderPayed($orderid);
 
-    $query = "SELECT * FROM `order_user` WHERE id =?";
-    $order_deatail = $mysql->query($query,$orderid)->fetchArray();
+    $order_deatail = getUserOrderById($orderid);
 
 }else{
     $status = "failed";

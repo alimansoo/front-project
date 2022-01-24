@@ -1,6 +1,3 @@
-<?php 
-// ob_start();
-?>
 <?php
 function get_title() {
     return "سبد خرید";
@@ -13,7 +10,7 @@ function get_content()
 ?>
         <section class="grid-display col-sm-1 col-md-1 col-lg-3 ">
             <?php if (count($productsArray)<1):?>
-                <section class="page_content ">
+                <section class="page_content grid-lg-1to3">
                     محصولی در سبد خرید وجود ندارد!!
                 </section>
             <?php else: ?>
@@ -53,14 +50,5 @@ function get_content()
         </section>
 <?php 
 }
-// $filename = getObFileName();
-// if($iscardchanged){
-//     clearCatck($filename);
-// }
-// if (file_exists($filename)) {
-//     echo readcatchedFile($filename);
-// }else {
-    renderPage();
-//     catchFile($filename);
-// }
+renderPage();
 ?>

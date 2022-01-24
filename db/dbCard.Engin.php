@@ -1,45 +1,89 @@
 <?php
-
-$cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
-
+/*
+      Layer  2
+*/
 function getAllCartByUserId($uid=null) {
     global $cdb;
     if (is_null($uid)) {
         return;
     }
-    $query = "SELECT * FROM `cards` WHERE uid = ?";
-    $result = $cdb -> query($query,$uid)->fetchAll();
+    $result = getAllDataTable(
+        'cards',
+        '*',
+        array('uid'=>$uid)
+    );
     return $result;
 }
-function getCartBy($filds,$by) {
+function getCartBy_Pid_Uid($pid,$uid) {
     global $cdb;
-    if (is_array($filds)) {
-        foreach ($filds as $key => $value) {
-            $filds[$key] = '`'.$value.'`';
-        }
-        $filds = implode(',',$filds);
+    $result = getDataTable(
+        'cards',
+        '*',
+        array(
+            'pid'=>$pid,
+            'uid'=>$uid
+            )
+    );
+    if(count($result) < 0 ){
+        return false;
     }
-    if (!is_array($by)) {
-        return;
-    }
-    $where =array();
-    foreach ($by as $key => $value) {
-        if (is_int($value)) {
-            $where[]= '`'.$key."`='".$value."'";
-        } else {
-            $where[]= '`'.$key."`='".$value."'";
-        }
-        
-    }
-    $where = implode(' AND ',$where);
-    $query = "SELECT $filds FROM `cards` WHERE $where";
-    // echo $query;
-    $result = $cdb -> query($query)->fetchArray();
     return $result;
 }
-function getCartByPid_Uid($pid,$uid) {
+function getCartBy_id($cartid) {
     global $cdb;
-    $query = "SELECT * FROM `cards` WHERE `pid`=? AND `uid`=?";
-    $result = $cdb -> query($query,$pid,$uid)->fetchArray();
+    $result = getDataTable(
+        'cards',
+        '*',
+        array(
+            'id'=>$cartid
+        )
+    );
+    if(count($result) < 0 ){
+        return false;
+    }
     return $result;
+}
+function isContainCard($id)
+{
+    $result = getCartBy_Pid_Uid($id,$_SESSION['id']);
+    if(count($result) > 0 ){
+        return true;
+    }
+    return false;
+}
+function deleteCartByid($id){
+    deleteData('cards',array('id'=>$id));
+}
+function insertCard($pid,$uid)
+{
+    insertData('cards',array('uid'=>$uid,'pid'=>$pid,'qty'=>1));
+}
+function changeQtyCard($action,$cartid){
+
+    $result = getCartBy_id($cartid);
+    if (count($result) < 1) {
+        return -1;
+    }
+    // var_dump($result);
+    $productqty = $result['qty'];
+    // 
+
+    switch ($action) {
+        case 'add':
+            $productqty++;
+            break;
+        case 'minus':
+            $productqty--;
+            break;
+    }
+    if ($productqty < 1) {
+        deleteCartByid($cartid);
+        return 0;
+    }
+    updateData(
+            'cards',
+            array('qty'=>$productqty),
+            array('id'=>$cartid)
+        );
+    return $productqty;
 }

@@ -7,13 +7,6 @@ if (!isset($_SESSION['id'])) {
 
 $result = getAllCartByUserId($_SESSION['id']);
 
-// $userquery = "SELECT `card_changed` FROM `user` WHERE id=?";
-// $userresult = $mysql->query($userquery,$_SESSION['id'])->fetchArray();
-// $iscardchanged = $userresult["card_changed"];
-
-// $userquery = "UPDATE `user` SET `card_changed`=false WHERE id=?";
-// $userresult = $mysql->query($userquery,$_SESSION['id']);
-
 $allofPrice = 0;
 
 $productsArray = array();

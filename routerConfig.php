@@ -8,7 +8,7 @@ $pages_name_url = array(
     'logout' => ['url'=>'logout','controller'=>'logout_controller.php'],
     //Order
     'order.sailsinvoice' => ['url'=>'salesinvoice','controller'=>'SalesInvoice_controller.php'],
-    'order.deatailorder' => ['url'=>'deatailorder','controller'=>'deatailOrder_controller.php'],
+    'order.deatailorder' => ['url'=>'deatailorder','controller'=>'UserPanel-detailOrder_controller.php'],
     'order.saveorder' => ['url'=>'saveorder','controller'=>'SaveOrder_controller.php'],
     'order.digitalpay' => ['url'=>'digitalpay','controller'=>'digitalPay_controller.php'],
     'order.finalpage' => ['url'=>'finalpage','controller'=>'finalPage_controller.php'],
@@ -80,4 +80,7 @@ function getProduc_bookmark_Url($pid) {
 }
 function searchProduct($q='') {
     return get_Full_URL('search.product').'?q='.$q;
+}
+function getOrderDeatailUrl($oid) {
+    return get_Full_URL('order.deatailorder').'?orderid='.$oid;
 }

@@ -1,14 +1,10 @@
 <?php
-$mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
-
-$query = "SELECT * FROM `likeproduct` WHERE uid = ?";
-$result = $mysql->query($query,$_SESSION['id'])->fetchAll();
+$result = getAllLikeProductBy_Uid($_SESSION['id']);
 
 $productsArray = array();
 
 foreach ($result as $key=>$value) {
-    $query ="SELECT * FROM `product` WHERE id=?";
-    $result = $mysql->query($query,$value['pid'])->fetchArray();
+    $result = getProductById($value['pid']);
     $productsArray[$key] = $result;
 }
 

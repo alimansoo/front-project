@@ -1,34 +1,26 @@
-<?php 
-$mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
+<?php
 
-$query = "SELECT * FROM `order_user` WHERE uid = ? ORDER BY id DESC";
-$result = $mysql->query($query,$_SESSION['id'])->fetchAll();
+// $query = "SELECT * FROM `order_user` WHERE uid = ? ORDER BY id DESC";
+$result = getAllUserOrderBy_uid_DESC($_SESSION['id']);
 
-$i = 0;
 $AllofMyOrder = array();
 foreach ($result as $key => $value) {
     $array = array();
     $array['id'] = $value['id'];
     $array['recive_date'] = $value['recive_date'];
     $array['priceAll'] = $value['priceAll'];
-
-    $query = "SELECT * FROM `order_user_item` WHERE oid = ?";
-    $orderdeatail = $mysql->query($query,$value['id'])->fetchAll();
+    $orderdeatail = getAllUserOrderItmeByOrderId($value['id']);
 
     $productImage = array();
-    foreach ($orderdeatail as $key1 => $value1) {
+    if (is_array($orderdeatail)) {
+        foreach ($orderdeatail as $value1) {
 
-        $query = "SELECT image_src FROM `product` WHERE id = ?";
-        $product = $mysql->query($query,$value1['pid'])->fetchAll();
-
-        foreach ($product as $key2 => $value2) {
-            $productImage[$key1] = $value2['image_src'] ;
+            $product = getProductById($value1['pid'])['image_src'];
+    
+            $productImage[] = $product ;
         }
+        $array['products_image'] = $productImage;
+        $AllofMyOrder[] = $array;
     }
-    $array['products_image'] = $productImage;
-    $AllofMyOrder[$i] = $array;
-    $i++;
 }
-
-$filename = explode('_',basename(__FILE__))[0];
-include viewroot.$filename.'_view.php';
+includethisView();

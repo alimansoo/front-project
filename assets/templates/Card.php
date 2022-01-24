@@ -1,4 +1,3 @@
-
 <tr>
     <td><img src='<?php echo base_url.'assets/images/products/'.$product['image_src']; ?>' alt='<?php echo $product['name']; ?>' width='50px'/></td>
     <td><?php echo $product['name']; ?></td>

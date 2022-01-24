@@ -50,14 +50,12 @@ function get_content()
 
         <section id="comment" class="page_content">
             <h4 class="page_content_title">بخش نظرات این محصول</h4>
-            <?php foreach ($allCommentProduct as $key => $CommentProduct):?>
-                <div class="comment_user">
-                    <i class="fas fa-user-circle"></i>
-                    <h5 class="comment_user_username"><?php echo namebyid($mysql,$CommentProduct['uid']); ?></h5>
-                    <h6 class="comment_user_subject"><?php echo $CommentProduct['subject']; ?></h6>
-                    <p class="comment_user_message"><?php echo $CommentProduct['message']; ?></p>
-                </div>
-            <?php endforeach; ?>
+            <?php foreach ($allCommentProduct as $key => $CommentProduct):
+                $anthorName = getNameFamilyById($CommentProduct['uid']);
+                $commentTitle = $CommentProduct['subject'];
+                $commentContent = $CommentProduct['message'];
+                include "assets/templates/ProductComment.php";
+            endforeach; ?>
             <h4 class="page_content_title">اضافه کردن کامنت جدید</h4>
             <form action="<?php echo base_url; ?>productcomment/<?php echo $id ?>" method="get" id="CommentForm">
                 <div class="input_material_block">

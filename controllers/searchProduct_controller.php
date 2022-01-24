@@ -4,17 +4,14 @@
 $output =   array('status'=>0);
 
 $searchq = urldecode($_GET['q']);
-if ($searchq !== "") {    
-    $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
-
-    $query = "SELECT * FROM `product` WHERE name LIKE '%".$searchq."%';";
-    $result = $mysql->query($query)->fetchAll();
+if ($searchq !== '') {
+    $result = getAllProductLikeBy($searchq);
     $array = array();
     foreach ($result as $key => $value) {
         if (isset($value['id'])) {
             $link = getProductUrl($value['id']);
             $image = base_url."assets/images/products/".$value['image_src'];
-    
+
             $array[$key] =   array('status'=>1,'name'=>$value['name'],'link'=> $link,'image'=>$image);
         } 
     }
@@ -22,4 +19,5 @@ if ($searchq !== "") {
         $output =   array('status'=>1,'data'=>$array);
     }
 }
+
 echo json_encode($output);

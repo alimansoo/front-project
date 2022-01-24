@@ -4,7 +4,12 @@ function get_title() {
 }
 function get_content()
 {
-    global $productsArray;
+    global $priceAll;
+    global $transport_price;
+    global $addres;
+    global $recive_date;
+    global $is_pay;
+    global $allProduct;
 ?>
     <section class="grid-display col-sm-1 col-md-1 col-lg-4">
         <?php include_once('UserPanelSidebar.php'); ?>

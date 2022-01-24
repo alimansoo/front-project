@@ -1,6 +1,6 @@
 <?php
 function get_title() {
-    return "صفحه اصلی";
+    return "صفحه نهایی";
 }
 function get_content()
 {
@@ -10,7 +10,7 @@ function get_content()
         <section class="page_content">
             <p>سفارش شما به با شناسه <span><?php echo $order_deatail['id']; ?></span> ثبت شد.</p>
             <p>گیرنده سفارش <span><?php echo $order_deatail['reciver_name']; ?></span> است.</p>
-            <a href="" class="btn btn-primary">پیگیری سفارش</a>
+            <a href="<?php echo getOrderDeatailUrl($order_deatail['id']); ?>" class="btn btn-primary">پیگیری سفارش</a>
         </section>
     </section>
 <?php 
