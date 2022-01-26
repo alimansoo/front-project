@@ -5,15 +5,12 @@ if (!isset($_POST['submit'])) {
     $result = getUserBy_email($_POST['email']);
     if(!$result){
         $userId = addUser(
-            array(
-                'firstname'=>$_POST['firstname'],
-                'lastname'=>$_POST['lastname'],
-                'email'=>$_POST['email'],
-                'city'=>$_POST['citi'],
-                'phone'=>$_POST['phone'],
-                'password'=>$_POST['password'],
-                'role'=>'user',
-            )
+            $_POST['firstname'],
+            $_POST['lastname'],
+            $_POST['email'],
+            $_POST['citi'],
+            $_POST['phone'],
+            $_POST['password']
         );
         if ($userId) {
             $result = getUserBy_id($userId);

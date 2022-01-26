@@ -1,8 +1,6 @@
 <?php
 
-// $query = "SELECT * FROM `order_user` WHERE uid = ? ORDER BY id DESC";
 $result = getAllUserOrderBy_uid_DESC($_SESSION['id']);
-
 $AllofMyOrder = array();
 foreach ($result as $key => $value) {
     $array = array();

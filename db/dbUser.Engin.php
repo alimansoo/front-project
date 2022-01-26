@@ -40,10 +40,16 @@ function getUserBy_email($email) {
     }
     return $result;
 }
-function addUser($filds) {
-    if (!is_array($filds)) {
-        return;
-    }
+function addUser($firstname,$lastname,$email,$city,$phone,$password) {
+    $filds = array(
+        'firstname'=>$firstname,
+        'lastname'=>$lastname,
+        'email'=>$email,
+        'city'=>$city,
+        'phone'=>$phone,
+        'password'=>$password,
+        'role'=>'user',
+    );
     return insertData('user',$filds); 
 }
 function getNameFamilyById($uid){

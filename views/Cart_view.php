@@ -34,7 +34,7 @@ function get_content()
                     <h3 class="page_content_title">سبد خرید</h3>
                     <div class="Card_deatail_row grid-display grid-50-50 PriceAll">
                         <div class="Card_deatail_row_key">قیمت کل محصولات:</div>
-                        <div class="Card_deatail_row_value"><?php echo $allofPrice;?><span class="price_componant">ریال</span></div>
+                        <div class="Card_deatail_row_value"><?php echo number_format($allofPrice,0);?><span class="price_componant">ریال</span></div>
                     </div>
                     <div class="Card_deatail_row grid-display grid-50-50">
                         <div class="Card_deatail_row_key">تخفیف خورده:</div>
@@ -42,7 +42,7 @@ function get_content()
                     </div>
                     <div class="Card_deatail_row grid-display grid-50-50">
                         <div class="Card_deatail_row_key">قیمت پرداختی:</div>
-                        <div class="Card_deatail_row_value"><?php echo $allofPrice;?><span class="price_componant">ریال</span></div>
+                        <div class="Card_deatail_row_value"><?php echo number_format($allofPrice,0);?><span class="price_componant">ریال</span></div>
                     </div>
                     <a href="<?php echo get_Full_URL('order.sailsinvoice');?>" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
                 </section>

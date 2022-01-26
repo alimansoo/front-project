@@ -36,7 +36,7 @@ function get_content()
             </section>
             <section class="productView_form_order">
                 <h6 class="productView_form_order_heading">مبلغ نهایی سفارش شما :</h6>
-                <div class="productView_form_order_price"><?php echo $product['price']?><span class="price_component">ریال</span></div>
+                <div class="productView_form_order_price"><?php echo number_format($product['price'],0)?><span class="price_component">ریال</span></div>
                 <hr>
                 <ul>
                     <li>مبلغ نهایی بدون محاسبه مالیات است.</li>

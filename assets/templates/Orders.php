@@ -2,7 +2,7 @@
     <div></div>
     <div class='orderRow_header'>
         <p>تاریخ تحویل سفارش :<span class='date'><?php echo $myOrder['recive_date']; ?></span></p>
-        <p>قیمت سفارش :<span><?php echo $myOrder['priceAll']; ?></span> ریال </p>
+        <p>قیمت سفارش :<span><?php echo number_format($myOrder['priceAll']); ?></span> ریال </p>
     </div>
     <div class='orderRow_content'>
         <?php 

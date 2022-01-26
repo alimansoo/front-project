@@ -14,7 +14,14 @@ if(isset($orderReciverisme)){
 }
 
 if(isset($_POST['submit'])){
-    $orderid = insertUserOrder($userid,$orderReciveDate,$orderAddres,$price,$transport_price,$orderReciver);
+    $orderid = insertUserOrder(
+        $userid,
+        $orderReciveDate,
+        $orderAddres,
+        $price,
+        $transport_price,
+        $orderReciver
+    );
 
     $result = getAllCartByUserId($userid);
     foreach ($result as $array) {
