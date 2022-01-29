@@ -5,7 +5,7 @@ function get_title() {
 function get_content()
 {
     global $status;
-    global $orderid;
+    global $orderId;
 ?>
     <section class="page_content">
         <form method="post">

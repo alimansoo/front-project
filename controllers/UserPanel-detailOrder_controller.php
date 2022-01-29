@@ -1,29 +1,29 @@
 <?php 
-$orderid = $_GET['orderid'];
+$orderId = $_GET['orderId'];
 
-$result = getUserOrderById($orderid);
+$data = getUserOrderById($orderId);
 
-$priceAll = $result['priceAll'];
-$transport_price = $result['transport_price'];
-$addres = $result['addres'];
-$recive_date = $result['recive_date'];
-$is_pay = $result['is_pay'];
+$priceAll = $data['priceAll'];
+$transport_price = $data['transport_price'];
+$addres = $data['addres'];
+$recive_date = $data['recive_date'];
+$is_pay = $data['is_pay'];
 if ($is_pay) {
     $is_pay = "پرداخت شده";
 }else {
     $is_pay = "پرداخت نشده";
 }
 
-$result = getAllUserOrderItmeByOrderId($result['id']);
+$data = getAllUserOrderItmeByorderId($data['id']);
 
 
 $allProduct = array();
-foreach ($result as $key=>$value) {
+foreach ($data as $key=>$value) {
     $array = array();
-    $result1 = getProductById($value['pid']);
-    $array['name'] = $result1['name'];
-    $array['price'] = $result1['price'];
-    $array['image_src'] = $result1['image_src'];
+    $data1 = getProductById($value['pid']);
+    $array['name'] = $data1['name'];
+    $array['price'] = $data1['price'];
+    $array['image_src'] = $data1['image_src'];
     $array['qty'] = $value['qty'];
     $allProduct[$key] = $array;
 }

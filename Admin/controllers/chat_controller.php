@@ -2,17 +2,17 @@
 $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 
 $query = "SELECT `sender_id` FROM `chat` Group BY `sender_id`;";
-$result = $mysql->query($query)->fetchAll();
+$data = $mysql->query($query)->fetchAll();
 
-// $array = array_diff($result,);
+// $array = array_diff($data,);
 
 // echo "<pre>";
-// var_dump($result);
+// var_dump($data);
 // echo "</pre>";
 
 $AllofChat = array();
 
-foreach ($result as $key1 => $value1) {
+foreach ($data as $key1 => $value1) {
     if ($value1 === array("sender_id"=>0)) {
         continue;
     }

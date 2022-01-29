@@ -83,5 +83,5 @@ function searchProduct($q='') {
     return get_Full_URL('search.product').'?q='.$q;
 }
 function getOrderDeatailUrl($oid) {
-    return get_Full_URL('userpanel.deatailorder').'?orderid='.$oid;
+    return get_Full_URL('userpanel.deatailorder').'?orderId='.$oid;
 }

@@ -8,10 +8,10 @@ $id = $_GET['id'];
 $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 
 $query = "SELECT * FROM `user` WHERE id = ?";
-$result = $mysql->query($query,$id)->fetchArray();
-if (isset($result['id'])) {
+$data = $mysql->query($query,$id)->fetchArray();
+if (isset($data['id'])) {
     $query = "DELETE FROM `user` WHERE id = ?";
-    $result = $mysql->query($query,$id);
+    $data = $mysql->query($query,$id);
 }else {
     $status = "user not found";
 }

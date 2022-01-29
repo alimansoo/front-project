@@ -1,11 +1,11 @@
 <?php
-$result = getAllLikeProductBy_Uid($_SESSION['id']);
+$data = getAllLikeProductBy_Uid($_SESSION['id']);
 
-$productsArray = array();
+$AllProductArray = array();
 
-foreach ($result as $key=>$value) {
-    $result = getProductById($value['pid']);
-    $productsArray[$key] = $result;
+foreach ($data as $key=>$value) {
+    $data = getProductById($value['pid']);
+    $AllProductArray[$key] = $data;
 }
 
 includethisView();

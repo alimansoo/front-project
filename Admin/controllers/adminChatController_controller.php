@@ -15,18 +15,18 @@ if (isset($_SESSION['id'])) {
         $chatmessage = $_POST['chatmessage'];
 
         $query = "INSERT INTO `chat`(`sender_id`, `message`, `is_read`,`reciver_id`) VALUES (0,?,false,?)";
-        $result = $mysql->query($query,$chatmessage,$reciverid);
+        $data = $mysql->query($query,$chatmessage,$reciverid);
     
         $output = array('status' => 500, 'chatmessage'=>$chatmessage);
     }else{
         $query = "SELECT * FROM `chat` WHERE `is_read` = false AND `reciver_id` = 0";
-        $result = $mysql->query($query)->fetchArray();
+        $data = $mysql->query($query)->fetchArray();
 
-        if ((count($result) > 0)) {
-            $chatmessage = $result['message'];
+        if ((count($data) > 0)) {
+            $chatmessage = $data['message'];
             $query = "UPDATE `chat` SET `is_read`=true WHERE id = ?";
-            $db = $mysql->query($query,$result['id']);
-            $output = array('status' => 600, 'chatmessage'=>$chatmessage,'sender'=>$result['sender_id']);
+            $db = $mysql->query($query,$data['id']);
+            $output = array('status' => 600, 'chatmessage'=>$chatmessage,'sender'=>$data['sender_id']);
 
             
         }else {

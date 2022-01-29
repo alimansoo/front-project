@@ -22,10 +22,10 @@ function add_remove_Cart(){
 
         $id = $_GET['pid'];
 
-        $result = getCartBy_Pid_Uid($id,$_SESSION['id']);
+        $data = getCartBy_Pid_Uid($id,$_SESSION['id']);
 
-        if (isset($result['id'])) {
-            $result = deleteCartByid($result['id']);
+        if (isset($data['id'])) {
+            $data = deleteCartByid($data['id']);
             $output = array('status' => 200,'message' => 'محصول از سبد حذف شد.' );
         }else {
             insertCard($id,$_SESSION['id']);
@@ -49,15 +49,15 @@ function changeQty(){
     $userid = $_SESSION['id'];
     $cartid=null;
     $output = array();
-    $result = getCartBy_Pid_Uid($productid,$userid);
-    if (count($result) < 1) {
+    $data = getCartBy_Pid_Uid($productid,$userid);
+    if (count($data) < 1) {
         die('not fount');
     }
-    $cartid = $result['id'];
+    $cartid = $data['id'];
     
-    $result = changeQtyCard($action,$cartid);
+    $data = changeQtyCard($action,$cartid);
 
-    switch ($result) {
+    switch ($data) {
         case -1:
             die('not found');
             break;
@@ -65,7 +65,7 @@ function changeQty(){
             $output = array('subject'=>'delete');
             break;
         default:
-        $output = array('subject'=>'changed','qty'=>$result);
+        $output = array('subject'=>'changed','qty'=>$data);
             break;
     }
 
@@ -77,9 +77,9 @@ function likeProduct(){
 
         $id = $_GET['pid'];
 
-        $result = getLikeProductBy_Pid_Uid($id,$_SESSION['id']);
-        if (isset($result['id'])) {
-            $result = deleteLikeProductByid($result['id']);
+        $data = getLikeProductBy_Pid_Uid($id,$_SESSION['id']);
+        if (isset($data['id'])) {
+            $data = deleteLikeProductByid($data['id']);
             $output = array('status' => 200,'message' => 'محصول شما دیسلایک شد.' );
         }else {
             insertLikeProduct($id,$_SESSION['id']);
@@ -101,9 +101,9 @@ function bookmarkProduct(){
 
         $id = $_GET['pid'];
 
-        $result = getBookmarkProductBy_Pid_Uid($id,$_SESSION['id']);
-        if (isset($result['id'])) {
-            $result = deleteBookmarkProductByid($result['id']);
+        $data = getBookmarkProductBy_Pid_Uid($id,$_SESSION['id']);
+        if (isset($data['id'])) {
+            $data = deleteBookmarkProductByid($data['id']);
             $output = array('status' => 200,'message' => 'محصول از ذخیره خارج شد.' );
         }else {
             insertBookmarkProduct($id,$_SESSION['id']);

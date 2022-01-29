@@ -1,11 +1,11 @@
 <?php
 
-$result = getAllBookmarkProductBy_Uid($_SESSION['id']);
-$productsArray = array();
+$data = getAllBookmarkProductBy_Uid($_SESSION['id']);
+$AllProductArray = array();
 
-foreach ($result as $key=>$value) {
-    $result = getProductById($value['pid']);
-    $productsArray[$key] = $result;
+foreach ($data as $key=>$value) {
+    $data = getProductById($value['pid']);
+    $AllProductArray[$key] = $data;
 }
 
 includethisView();

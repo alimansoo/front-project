@@ -2,8 +2,8 @@
 if (!isset($_POST['submit'])) {
     includethisView();
 }else {
-    $result = getUserBy_email($_POST['email']);
-    if(!$result){
+    $data = getUserBy_email($_POST['email']);
+    if(!$data){
         $userId = addUser(
             $_POST['firstname'],
             $_POST['lastname'],
@@ -13,8 +13,8 @@ if (!isset($_POST['submit'])) {
             $_POST['password']
         );
         if ($userId) {
-            $result = getUserBy_id($userId);
-            Athuntication::loginUser($result);
+            $data = getUserBy_id($userId);
+            Athuntication::loginUser($data);
             redirect_to(
                 get_Full_URL('userpanel.dashboard')
             );

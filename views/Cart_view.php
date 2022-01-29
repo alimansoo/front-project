@@ -4,12 +4,11 @@ function get_title() {
 }
 function get_content()
 {
-    global $productsArray;    
-    global $allofPrice;    
-    global $allofPrice;    
+    global $AllProductInCart;
+    global $PriceofAll;  
 ?>
         <section class="grid-display col-sm-1 col-md-1 col-lg-3 ">
-            <?php if (count($productsArray)<1):?>
+            <?php if (count($AllProductInCart)<1):?>
                 <section class="page_content grid-lg-1to3">
                     محصولی در سبد خرید وجود ندارد!!
                 </section>
@@ -24,7 +23,7 @@ function get_content()
                         <th></th>
                         </tr>
                         <?php 
-                        foreach ($productsArray as $product) {
+                        foreach ($AllProductInCart as $product) {
                             include assetsroot.'templates/Card.php';
                         }  
                         ?>
@@ -34,7 +33,7 @@ function get_content()
                     <h3 class="page_content_title">سبد خرید</h3>
                     <div class="Card_deatail_row grid-display grid-50-50 PriceAll">
                         <div class="Card_deatail_row_key">قیمت کل محصولات:</div>
-                        <div class="Card_deatail_row_value"><?php echo number_format($allofPrice,0);?><span class="price_componant">ریال</span></div>
+                        <div class="Card_deatail_row_value"><?php echo number_format($PriceofAll,0);?><span class="price_componant">ریال</span></div>
                     </div>
                     <div class="Card_deatail_row grid-display grid-50-50">
                         <div class="Card_deatail_row_key">تخفیف خورده:</div>
@@ -42,7 +41,7 @@ function get_content()
                     </div>
                     <div class="Card_deatail_row grid-display grid-50-50">
                         <div class="Card_deatail_row_key">قیمت پرداختی:</div>
-                        <div class="Card_deatail_row_value"><?php echo number_format($allofPrice,0);?><span class="price_componant">ریال</span></div>
+                        <div class="Card_deatail_row_value"><?php echo number_format($PriceofAll,0);?><span class="price_componant">ریال</span></div>
                     </div>
                     <a href="<?php echo get_Full_URL('order.sailsinvoice');?>" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
                 </section>

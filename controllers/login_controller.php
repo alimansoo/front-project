@@ -2,13 +2,13 @@
 if (!isset($_POST['submit'])) {
     includethisView();
 }else {
-    $result = getUserBy_username_password(
+    $data = getUserBy_username_password(
         $_POST['email'],$_POST['password']
     );
 
-    if ($result) {
+    if ($data) {
         //set sessions
-        Athuntication::loginUser($result);
+        Athuntication::loginUser($data);
         switch ($_SESSION['role']) {
             case 'user':
                 redirect_to(

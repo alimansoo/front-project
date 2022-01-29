@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
     $mysql = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
 
     $query = "INSERT INTO `comment`( `pid`, `uid`, `subject`, `message`) VALUES (?,?,?,?)";
-    $result = $mysql->query($query,$productid,$userid,$subject,$message);
+    $data = $mysql->query($query,$productid,$userid,$subject,$message);
 
     $output = array('status' => 200,'message' => 'نظر شما ثبت شد.' );
 }

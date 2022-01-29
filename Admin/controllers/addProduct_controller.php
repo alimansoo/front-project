@@ -18,11 +18,11 @@ else
     $query = "INSERT INTO 
     product(name,catg,price_component,price,image_src)
     VALUES('{$_POST['product_name']}','{$_POST['product_catg']}','{$_POST['price_component']}',{$_POST['product_price']},'{$_FILES["product_image"]["name"]}')";
-    $result = $cdb -> query($query);
+    $data = $cdb -> query($query);
     $cdb -> close();
 
     
-    $target_dir = base_url."assets/images/products/";
+    $target_dir = base_url."assets/images/AllProduct/";
     $target_file = $target_dir . basename($_FILES["product_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -67,9 +67,9 @@ else
     // get Product Id
     // $cdb = new db('localhost','root','','frontproject');
     // $query = "SELECT id FROM product WHERE name = ?";
-    // $result = $cdb -> query($query,$_POST['product_name'])->fetchArray();
-    // $productId = $result['id'];
-    // print_r($result);
+    // $data = $cdb -> query($query,$_POST['product_name'])->fetchArray();
+    // $productId = $data['id'];
+    // print_r($data);
 
     //Add Services
     // for ($i=0; $i < count($name_servic); $i++) { 
@@ -79,7 +79,7 @@ else
     //     $service_query = "INSERT INTO 
     //     services(name,price,product_id,image_src)
     //     VALUES('{$name_servic[$i]}',{$price_servic[$i]},{$productId},'{$icon_servic[$i]}')";
-    //     $result = $cdb -> query($service_query);
+    //     $data = $cdb -> query($service_query);
     // }
     // if ($cdb -> error) {
     //     echo $cdb -> error;

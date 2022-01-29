@@ -4,8 +4,7 @@ function get_title() {
 }
 function get_content()
 {
-    global $products;
-    global $mysql;
+    global $AllProduct;
 ?>
     <div class="swiper">
         <div class="swiper-wrapper" style="width:100%;height:400px;">
@@ -25,7 +24,7 @@ function get_content()
     </div>
         <div class="grid-display col-sm-1 col-md-2 col-lg-4">
             <?php
-                foreach($products as $product)
+                foreach($AllProduct as $product)
                 {
                     // if(isset($_SESSION['id'])){
                     //     $islike= isLike($mysql,$product['id']);

@@ -14,7 +14,7 @@ if(isset($orderReciverisme)){
 }
 
 if(isset($_POST['submit'])){
-    $orderid = insertUserOrder(
+    $orderId = insertUserOrder(
         $userid,
         $orderReciveDate,
         $orderAddres,
@@ -23,9 +23,9 @@ if(isset($_POST['submit'])){
         $orderReciver
     );
 
-    $result = getAllCartByUserId($userid);
-    foreach ($result as $array) {
-        $result = insertUserOrderItem($orderid,$array['pid'],$array['qty']);
+    $data = getAllCartByUserId($userid);
+    foreach ($data as $array) {
+        $data = insertUserOrderItem($orderId,$array['pid'],$array['qty']);
         deleteCartByid($array['id']);
     }
     $status="success";

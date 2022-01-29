@@ -1,13 +1,13 @@
 <?php
 
-$result = getAllUserOrderBy_uid_DESC($_SESSION['id']);
+$data = getAllUserOrderBy_uid_DESC($_SESSION['id']);
 $AllofMyOrder = array();
-foreach ($result as $key => $value) {
+foreach ($data as $key => $value) {
     $array = array();
     $array['id'] = $value['id'];
     $array['recive_date'] = $value['recive_date'];
     $array['priceAll'] = $value['priceAll'];
-    $orderdeatail = getAllUserOrderItmeByOrderId($value['id']);
+    $orderdeatail = getAllUserOrderItmeByorderId($value['id']);
 
     $productImage = array();
     if (is_array($orderdeatail)) {
@@ -17,7 +17,7 @@ foreach ($result as $key => $value) {
     
             $productImage[] = $product ;
         }
-        $array['products_image'] = $productImage;
+        $array['AllProduct_image'] = $productImage;
         $AllofMyOrder[] = $array;
     }
 }

@@ -15,8 +15,8 @@ function SearchProduct(e) {
             if (data.status === 1) {
                 RenderSearchResut(data);
             }else{
-                let searchResult = document.querySelector('#searchResult');
-                searchResult.classList.remove('show');
+                let searchdata = document.querySelector('#searchdata');
+                searchdata.classList.remove('show');
             }
         }
     )
@@ -28,9 +28,9 @@ function SearchProduct(e) {
 }
 
 function RenderSearchResut(jsonObject) {
-    let searchResult = document.querySelector('#searchResult');
-    searchResult.classList.add('show');
-    searchResult.innerHTML = "";
+    let searchdata = document.querySelector('#searchdata');
+    searchdata.classList.add('show');
+    searchdata.innerHTML = "";
     for (let product of jsonObject.data) {
         let option = document.createElement('div')
 
@@ -43,6 +43,6 @@ function RenderSearchResut(jsonObject) {
 
         option.appendChild(image);
         option.appendChild(linkElement);
-        searchResult.appendChild(option);
+        searchdata.appendChild(option);
     }
 }

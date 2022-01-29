@@ -4,12 +4,12 @@ function get_title() {
 }
 function get_content()
 {
-    global $allofPrice;
+    global $PriceofAll;
     global $transportPrice;
 ?>
     <section class="page_content">
         <form action="<?php echo get_Full_URL('order.saveorder'); ?>" method="post">
-            <input type="hidden" name="price" value="<?php echo $allofPrice+$transportPrice; ?>">
+            <input type="hidden" name="price" value="<?php echo $PriceofAll+$transportPrice; ?>">
             <input type="hidden" name="transport_price" value="<?php echo $transportPrice; ?>">
             <?php 
                 $datetime = new DateTime();

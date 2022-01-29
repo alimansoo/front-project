@@ -1,20 +1,20 @@
 <?php
-$orderid = $_SESSION['orderid'];
+$orderId = $_SESSION['orderId'];
 
 $status = "";
 
 if ($_SESSION['is_payed']) {
     $status = "success";
     
-    $result = UserOrderPayed($orderid);
+    $data = userOrderPayed($orderId);
 
-    $order_deatail = getUserOrderById($orderid);
+    $deatailOrder = getUserOrderById($orderId);
 
 }else{
     $status = "failed";
 }
 
-unset($_SESSION['orderid']);
+unset($_SESSION['orderId']);
 unset($_SESSION['is_payed']);
 
 includethisView();

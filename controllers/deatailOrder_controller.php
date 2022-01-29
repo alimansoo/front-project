@@ -1,6 +1,6 @@
 <?php 
 
-$allofPrice = $_POST['priceAll'];
+$PriceofAll = $_POST['priceAll'];
 $transportPrice = $_POST['transport_price'];
 
 includethisView();

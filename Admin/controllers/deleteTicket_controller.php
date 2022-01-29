@@ -8,10 +8,10 @@ $id = $_GET['id'];
 $mysql = new db($dbhost,$dbusername,$dbpassword,$dbname);
 
 $query = "SELECT * FROM `ticket` WHERE `ID`= ? ;";
-$result = $mysql->query($query,$id)->fetchArray();
-if (isset($result['ID'])) {
+$data = $mysql->query($query,$id)->fetchArray();
+if (isset($data['ID'])) {
     $query = "DELETE FROM `ticket` WHERE ID = ?";
-    $result = $mysql->query($query,$id);
+    $data = $mysql->query($query,$id);
 }else {
     $status = "ticket not found";
 }

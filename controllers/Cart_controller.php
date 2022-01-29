@@ -5,16 +5,16 @@ if (!isset($_SESSION['id'])) {
     );
 }
 
-$result = getAllCartByUserId($_SESSION['id']);
+$data = getAllCartByUserId($_SESSION['id']);
 
-$allofPrice = 0;
+$PriceofAll = 0;
 
-$productsArray = array();
+$AllProductInCart = array();
 
-foreach ($result as $key=>$value) {
-    $result = getProductById($value['pid']);
-    $result['qty'] = $value['qty'];
-    $allofPrice +=$result['price'] * $result['qty'];
-    $productsArray[$key] = $result;
+foreach ($data as $key=>$value) {
+    $data = getProductById($value['pid']);
+    $data['qty'] = $value['qty'];
+    $PriceofAll +=$data['price'] * $data['qty'];
+    $AllProductInCart[$key] = $data;
 }
 includethisView();

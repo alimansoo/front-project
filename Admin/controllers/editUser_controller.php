@@ -7,7 +7,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 if (!isset($_POST['submit'])) 
 {
     $query = "SELECT * FROM `user` WHERE id = {$id}";
-    $result = $mysql->query($query)->fetchArray();
+    $data = $mysql->query($query)->fetchArray();
     include_once($viewroot.'editUser_view.php');
 }
 else {

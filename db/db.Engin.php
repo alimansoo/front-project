@@ -25,7 +25,7 @@ function getAllDataTable($table,$fileds,$by=null,$sorting=null,$likeby=null) {
     if(is_null($by)){
         $query = "SELECT $fileds FROM `$table`";
     }elseif (!is_array($by)) {
-        return;
+        return; 
     }else{
         $where =array();
         foreach ($by as $key => $value) {

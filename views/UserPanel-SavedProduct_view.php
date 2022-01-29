@@ -4,7 +4,7 @@ function get_title() {
 }
 function get_content()
 {
-    global $productsArray;
+    global $AllProductArray;
 ?>
     <section class="grid-display col-sm-1 col-md-1 col-lg-4">
         <?php include_once('UserPanelSidebar.php'); ?>
@@ -21,11 +21,11 @@ function get_content()
                 <th></th>
                 </tr>
                 <?php 
-                foreach ($productsArray as $product) :
+                foreach ($AllProductArray as $product) :
                 ?>
                     <tr>
                         <td><?php echo $product['id']; ?></td>
-                        <td><img src='<?php echo base_url; ?>/assets/images/products/<?php echo $product['image_src']; ?>' alt='<?php echo $product['name']; ?>' width='50px'/></td>
+                        <td><img src='<?php echo base_url; ?>/assets/images/AllProduct/<?php echo $product['image_src']; ?>' alt='<?php echo $product['name']; ?>' width='50px'/></td>
                         <td><?php echo $product['name']; ?></td>
                         <td><?php echo $product['catg']; ?></td>
                         <td><?php echo $product['price']; ?>ریال</td>

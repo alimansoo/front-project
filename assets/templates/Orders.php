@@ -6,9 +6,9 @@
     </div>
     <div class='orderRow_content'>
         <?php 
-        foreach ($myOrder['products_image'] as $productimage) : 
+        foreach ($myOrder['AllProduct_image'] as $productimage) : 
         ?>
-            <img class='productImg' src='<?php echo base_url."assets/images/products/".$productimage ?>'>
+            <img class='productImg' src='<?php echo base_url."assets/images/AllProduct/".$productimage ?>'>
         <?php
         endforeach;
         ?>

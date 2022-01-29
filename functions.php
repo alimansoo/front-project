@@ -81,3 +81,6 @@ function includeAdminView($filename)
 {
     include viewroot.$filename.'_view.php';
 }
+function getImageSource($imagename){
+    return base_url."assets/images/products/".$imagename;
+}

@@ -22,29 +22,29 @@
                 <div class="input_section">
                   <label for="firstname">نام :</label>
                   <br>
-                  <input type="text" name="firstname" id="firstname" class="edit_input" value="<?php echo $result['firstname']; ?>">
+                  <input type="text" name="firstname" id="firstname" class="edit_input" value="<?php echo $data['firstname']; ?>">
                 </div>
                 <div class="input_section">
                   <label for="lastname">نام خوانوادگی :</label>
                   <br>
-                  <input type="text" name="lastname" id="lastname" class="edit_input" value="<?php echo $result['lastname']; ?>">
+                  <input type="text" name="lastname" id="lastname" class="edit_input" value="<?php echo $data['lastname']; ?>">
                 </div>
               </div>
               <div class="input_sections">
                 <div class="input_section">
                   <label for="email">ایمیل :</label>
                   <br>
-                  <input type="email" name="email" id="email" class="edit_input" value="<?php echo $result['email']; ?>">
+                  <input type="email" name="email" id="email" class="edit_input" value="<?php echo $data['email']; ?>">
                 </div>
                 <div class="input_section">
                   <label for="city">شهر محل سکونت :</label>
                   <br>
                   <select name="city" id="city" class="edit_input">
-                    <option value="esf" <?php if ($result['city']=="esf") {echo "selected";}?>>اصفهان</option>
-                    <option value="thr" <?php if ($result['city']=="thr") {echo "selected";} ?>>تهران</option>
-                    <option value="mhd" <?php if ($result['city']=="mhd") {echo "selected";}?>>مشهد</option>
-                    <option value="shr" <?php if ($result['city']=="shr") {echo "selected";}?>>شیراز</option>
-                    <option value="tbz" <?php if ($result['city']=="tbz") {echo "selected";}?>>تبریز</option>
+                    <option value="esf" <?php if ($data['city']=="esf") {echo "selected";}?>>اصفهان</option>
+                    <option value="thr" <?php if ($data['city']=="thr") {echo "selected";} ?>>تهران</option>
+                    <option value="mhd" <?php if ($data['city']=="mhd") {echo "selected";}?>>مشهد</option>
+                    <option value="shr" <?php if ($data['city']=="shr") {echo "selected";}?>>شیراز</option>
+                    <option value="tbz" <?php if ($data['city']=="tbz") {echo "selected";}?>>تبریز</option>
                   </select>
                 </div>
               </div>
@@ -52,12 +52,12 @@
                 <div class="input_section">
                   <label for="phone">موبایل :</label>
                   <br>
-                  <input type="number" name="phone" id="phone" class="edit_input"  value="<?php echo $result['phone']; ?>">
+                  <input type="number" name="phone" id="phone" class="edit_input"  value="<?php echo $data['phone']; ?>">
                 </div>
                 <div class="input_section">
                   <label for="password">رمز عبور :</label>
                   <br>
-                  <input type="text" name="password" id="password" class="edit_input"  value="<?php echo $result['password']; ?>">
+                  <input type="text" name="password" id="password" class="edit_input"  value="<?php echo $data['password']; ?>">
                 </div>
               </div>
               <div class="input_sections">
