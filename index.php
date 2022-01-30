@@ -1,6 +1,6 @@
 <?php
 define('base_url', '/front-project/');
-define('site_url', 'http://localhost:8012/front-project/');
+define('site_url', 'http://localhost/front-project/');
 define('APP_NAME', 'ماهرنگ');
 $base_url = base_url;
 

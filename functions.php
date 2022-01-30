@@ -16,8 +16,9 @@ function firstsection() {
         }
     ?></title>
     <link rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link rel="shortcut icon" href="http://localhost:8012/front-project/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="http://localhost:8012/front-project/assets/css/style.css">
+    <link rel="shortcut icon" href="http://localhost/front-project/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://localhost/front-project/assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost/front-project/assets/css/fontawesome-free/css/all.min.css">
 </head>
 <body id="body-container" class="grid-100 grid-row-container">
     <?php include_once('assets/templates/header.php'); ?>

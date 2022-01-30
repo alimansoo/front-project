@@ -8,8 +8,8 @@
     <ul class="list">
         <li class="list_item">
             <a href="<?php echo searchProduct();?>" id="Searchlink" class="hidden"></a>
-            <input type = "search" list = "searchResult" placeholder="جستجو..">
-			<datalist id = "searchResult">  
+            <input type = "search" list = "searchdata" placeholder="جستجو..">
+			<datalist id="searchdata">  
 			</datalist>
         </li>
     </ul>

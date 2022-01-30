@@ -8,7 +8,7 @@
         <?php 
         foreach ($myOrder['AllProduct_image'] as $productimage) : 
         ?>
-            <img class='productImg' src='<?php echo base_url."assets/images/AllProduct/".$productimage ?>'>
+            <img class='productImg' src='<?php echo base_url."assets/images/products/".$productimage ?>'>
         <?php
         endforeach;
         ?>

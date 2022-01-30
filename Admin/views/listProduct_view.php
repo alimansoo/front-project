@@ -37,7 +37,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان','gls'=>'لیوان');
                         ?>
                             <tr>
                             <td><?php echo $user['id']; ?></td>
-                            <td><img src='<?php echo base_url ?>assets/images/AllProduct/<?php echo $user['image_src']; ?>' alt='<?php echo $user['name']; ?>' width='50px'/></td>
+                            <td><img src='<?php echo base_url ?>assets/images/products/<?php echo $user['image_src']; ?>' alt='<?php echo $user['name']; ?>' width='50px'/></td>
                             <td><?php echo $user['name']; ?></td>
                             <td><?php echo $user['catg']; ?></td>
                             <td><?php echo $user['price_component']; ?></td>

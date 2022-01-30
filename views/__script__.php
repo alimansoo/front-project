@@ -1,5 +1,5 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
 <script src="<?php echo base_url;?>assets/js/templates/productView.js"></script>
 <script src="<?php echo base_url;?>assets/js/templates/input.js"></script>
 <script src="<?php echo base_url;?>assets/js/main.js"></script>
