@@ -23,7 +23,10 @@
     <?php Template::Include('TopNavigation'); ?>
     <main id="container" class="container">
         <?php
-            if (function_exists("get_content")) {
+            if (function_exists("get_content_userPanel")) {
+                get_content_userPanel();
+            }
+            elseif (function_exists("get_content")) {
                 get_content();
             }
         ?>
