@@ -26,29 +26,8 @@ function get_content()
             <?php
                 foreach($AllProduct as $product)
                 {
-                    // if(isset($_SESSION['id'])){
-                    //     $islike= isLike($mysql,$product['id']);
-                    //     $isbookmark = isBookmark($mysql,$product['id']);
-                    //     $iscontaincard = isContainCard($mysql,$product['id']);
-                    // }
-
-                    $iconclassheart = 'far';
-                    // if(isset($islike) and $islike){
-                    //     $iconclassheart = 'fas';
-                    // }
-
-                    $iconclassbookmark = 'far';
-                    // if(isset($isbookmark) and $isbookmark){
-                    //     $iconclassbookmark = 'fas';
-                    // }
-
-                    $cardtext = "افزودن به سبد";
-                    $cardclass = "add";
-                    // if(isset($iscontaincard) and $iscontaincard){
-                    //     $cardtext = "حذف از سبد";
-                    //     $cardclass = "remove";
-                    // }
-                    Template::Include('ProductCard',$product);
+                    $model = new Product($product);
+                    Template::Include('ProductCard',$model);
                 }
             ?>
 

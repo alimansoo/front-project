@@ -92,6 +92,15 @@ class DBProductBookmarkEngin extends DBEngine implements DBEngineLayer2
             array('id'=>$id)
         );
     }
+    public function isContain($id){
+        $result = $this->getBy_Pid_Uid(
+            $id,$_SESSION['id']
+        );
+        if($result){
+            return true;
+        }
+        return false;
+    }
     public function add($pid,$uid)
     {
         $this->insertData(

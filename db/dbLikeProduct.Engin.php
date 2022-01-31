@@ -60,10 +60,14 @@ class DBLikeProductEngin extends DBEngine implements DBEngineLayer2
     /* 
             Custome Function
     */
-    public function Islike($pid,$uid){
-        $this->getAll(
+    public function isContain($pid,$uid){
+        $result = $this->getAll(
             array('pid'=>$pid,'uid'=>$uid)
         );
+        if(count($result) > 0 ){
+            return true;
+        }
+        return false;
     }
     
     public function getBy_Pid_Uid($pid,$uid) {

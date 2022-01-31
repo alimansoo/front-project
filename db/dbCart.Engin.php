@@ -91,9 +91,9 @@ class DBCartEngin extends DBEngine implements DBEngineLayer2
         }
         return $result;
     }
-    public function isContainCard($id){
+    public function isContain($id,$uid){
         $result = $this->getBy_Pid_Uid(
-            $id,$_SESSION['id']
+            $id,$uid
         );
         if($result){
             return true;

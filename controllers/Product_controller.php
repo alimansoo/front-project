@@ -1,9 +1,7 @@
 <?php 
 $id = $_GET['pid'];
-$dbp = new DBProductEngin();
 $dbuser = new DBUserEngin();
 $dbcomment = new DBCommentEngin();
-$product = $dbp->getById($id);
 
 $isContainCard = false;
 
@@ -12,5 +10,7 @@ if (isset($_SESSION['id'])) {
 }
 
 $allCommentProduct = $dbcomment->getAllBy_pid($id);
+
+$product = new Product($id);
 
 View::IncludeForThis();
