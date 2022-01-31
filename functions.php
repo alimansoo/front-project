@@ -1,7 +1,7 @@
 <?php
 function renderPage()
 {
-    Template::Include("MainPage");
+    Template::IncludePage("MainPage");
 }
 function include_controller($name) {
     include "./controllers/{$name}_controller.php";
