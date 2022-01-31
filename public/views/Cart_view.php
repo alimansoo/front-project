@@ -4,11 +4,10 @@ function get_title() {
 }
 function get_content()
 {
-    global $AllProductInCart;
-    global $PriceofAll;  
+    global $data;
 ?>
         <section class="grid-display col-sm-1 col-md-1 col-lg-3 ">
-            <?php if (count($AllProductInCart)<1):?>
+            <?php if (count($data)<1):?>
                 <section class="page_content grid-lg-1to3">
                     محصولی در سبد خرید وجود ندارد!!
                 </section>
@@ -22,9 +21,12 @@ function get_content()
                         <th>تعداد</th>
                         <th></th>
                         </tr>
-                        <?php 
-                        foreach ($AllProductInCart as $product) {
-                            Template::Include('Card',$product);
+                        <?php
+                        $PriceofAll = 0;
+                        foreach ($data as $cart) {
+                            $model = new Product($cart['pid']);
+                            $PriceofAll += $model->price;
+                            Template::Include('Card',$model);
                         }  
                         ?>
                     </table>
