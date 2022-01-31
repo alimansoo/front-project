@@ -1,8 +1,6 @@
 <?php
 if (!isset($_SESSION['id'])) {
-    redirect_to(
-        get_Full_URL('login')
-    );
+    Rout::redirect_to_url('login');
 }
 $dbp = new DBProductEngin();
 $dbc = new DBCartEngin();

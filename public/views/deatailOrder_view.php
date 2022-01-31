@@ -8,7 +8,7 @@ function get_content()
     global $transportPrice;
 ?>
     <section class="page_content">
-        <form action="<?php echo get_Full_URL('order.saveorder'); ?>" method="post">
+        <form action="<?php echo Rout::full_url('order.saveorder'); ?>" method="post">
             <input type="hidden" name="price" value="<?php echo $PriceofAll+$transportPrice; ?>">
             <input type="hidden" name="transport_price" value="<?php echo $transportPrice; ?>">
             <?php 

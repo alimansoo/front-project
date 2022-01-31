@@ -16,7 +16,7 @@ if (!isset($_POST['submit'])) {
             $data = getUserBy_id($userId);
             Athuntication::loginUser($data);
             redirect_to(
-                get_Full_URL('userpanel.dashboard')
+                Rout::full_url('userpanel.dashboard')
             );
         }
     }

@@ -43,7 +43,7 @@ function get_content()
                         <div class="Card_deatail_row_key">قیمت پرداختی:</div>
                         <div class="Card_deatail_row_value"><?php echo number_format($PriceofAll,0);?><span class="price_componant">ریال</span></div>
                     </div>
-                    <a href="<?php echo get_Full_URL('order.sailsinvoice');?>" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
+                    <a href="<?php echo Rout::full_url('order.sailsinvoice');?>" class="Card_deatail_btn btn btn-primary">ثبت سفارش</a>
                 </section>
             <?php endif; ?>
         </section>

@@ -3,16 +3,16 @@ $dbcart = new DBCartEngin();
 $dblike = new DBLikeProductEngin();
 $dbbookmark = new DBProductBookmarkEngin();
 switch ($router) {
-    case get_URL('product.addcart'):
+    case Rout::url('product.addcart'):
         add_remove_Cart();
         break;
-    case get_URL('product.changeqty'):
+    case Rout::url('product.changeqty'):
         changeQty();
         break;
-    case get_URL('product.like'):
+    case Rout::url('product.like'):
         likeProduct();
         break;
-    case get_URL('product.bookmark'):
+    case Rout::url('product.bookmark'):
         bookmarkProduct();
         break;
 }
@@ -34,7 +34,7 @@ function add_remove_Cart(){
             $output = array('status' => 200,'message' => 'محصول به سبد اضافه شد.' ); 
         }
         if(isset($_GET['redirect'])){
-            redirect_to(get_Full_URL('cart'));
+            Rout::redirect_to_url('cart');
         }
     }
     else {
@@ -91,7 +91,7 @@ function likeProduct(){
             $output = array('status' => 200,'message' => 'محصول لایک شد.' );
         }
         if(isset($_GET['redirect'])){
-            redirect_to(get_Full_URL('cart'));
+            Rout::redirect_to_url('cart');
         }
     }
     else {
@@ -116,7 +116,7 @@ function bookmarkProduct(){
             $output = array('status' => 200,'message' => 'محصول ذخیره شد.' );
         }
         if(isset($_GET['redirect'])){
-            redirect_to(get_Full_URL('cart'));
+            Rout::redirect_to_url('cart');
         }
     }
     else {

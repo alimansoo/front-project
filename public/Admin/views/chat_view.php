@@ -17,7 +17,7 @@
             <aside id="sidebar" class="sidebar material_side light-side">
                 <nav class="sidebar_nav">
                     <ul class="nav_list">
-                    <li class="nav_item"><i class='fas fa-tachometer-alt'></i><a href="<?php echo get_Full_URL('adminpanel.dashboard');?>">داشبورد</a></li>
+                    <li class="nav_item"><i class='fas fa-tachometer-alt'></i><a href="<?php echo Rout::full_url('adminpanel.dashboard');?>">داشبورد</a></li>
                         <?php foreach ($AllofChat as $key => $value):
                         ?>
                             <li class="nav_item chat_contant" id="chat_contant<?php echo $value['id'];?>"><i class="fas fa-user-circle"></i><?php echo $value['id'];?></li>
@@ -37,8 +37,8 @@
                                     echo "<div class='any'><div class='chat-element anychat'>{$value2['message']}</div></div>";
                                 }
                             endforeach; ?>
-                            <a href="<?php echo get_Full_URL('adminpanel.chatmanage');?>" id="ChatAdminLink" class="hidden"></a>
-                            <form action="<?php echo get_Full_URL('userpanel.chatmanage');?>?reciver_id=<?php echo $value1['id']; ?>" method="post" class="Chatform">
+                            <a href="<?php echo Rout::full_url('adminpanel.chatmanage');?>" id="ChatAdminLink" class="hidden"></a>
+                            <form action="<?php echo Rout::full_url('userpanel.chatmanage');?>?reciver_id=<?php echo $value1['id']; ?>" method="post" class="Chatform">
                                 <input type="text" name="message" placeholder="ارسال پیام..." id="Chatmessage">
                                 <input type="submit" value="ارسال">
                             </form>

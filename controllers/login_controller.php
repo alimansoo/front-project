@@ -11,15 +11,15 @@ if (!isset($_POST['submit'])) {
         Athuntication::loginUser($data);
         switch ($_SESSION['role']) {
             case 'user':
-                redirect_to_url('userpanel.dashboard');
+                Rout::redirect_to_url('userpanel.dashboard');
                 break;
             case 'admin':
-                redirect_to_url('adminpanel.dashboard');
+                Rout::redirect_to_url('adminpanel.dashboard');
                 break;
             default:
                 die("error");
         }
     }else {
-        redirect_to_url('home');
+        Rout::redirect_to_url('home');
     }
 }

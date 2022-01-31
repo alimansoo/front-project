@@ -18,7 +18,7 @@ function get_content()
                 <label for="password">رمز عبور :</label>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">ورود</button>
-            <a href="<?php echo get_Full_URL('register'); ?>" class="btn btn-primary">ثبت نام</a>
+            <a href="<?php echo Rout::full_url('register'); ?>" class="btn btn-primary">ثبت نام</a>
         </form>
         
     </section>   

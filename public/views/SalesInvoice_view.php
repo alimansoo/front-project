@@ -27,7 +27,7 @@ function get_content()
                 }  
                 ?>
             </table>
-            <form action="<?php echo get_Full_URL('order.deatailorder'); ?>" method="post">
+            <form action="<?php echo Rout::full_url('order.deatailorder'); ?>" method="post">
                 <input type="hidden" name="priceAll" value="<?php echo $PriceofAll; ?>">
                 <input type="hidden" name="transport_price" value="<?php echo $transportPrice; ?>">
                 <input type="submit" name="submit" class="btn btn-primary" value=" تایید فاکتور">

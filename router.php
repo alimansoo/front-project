@@ -13,7 +13,7 @@ foreach ($pages_name_url as $key => $value) {
         $controller = $value['controller'];
     }
 }
-$adminurl = get_URL('adminpanel.dashboard');
+$adminurl = Rout::url('adminpanel.dashboard');
 if (
     substr($request,0,strlen($adminurl)) === $adminurl 
     && isset($controller) 

@@ -1,5 +1,4 @@
 <?php
-
 $pages_name_url = array(
     'home' => ['url'=>'','controller'=>'home_controller.php'], 
     'login' => ['url'=>'login','controller'=>'login_controller.php'],
@@ -38,50 +37,29 @@ $pages_name_url = array(
     'userpanel.chatmanage' => ['url'=>'userpanel/chatmanage','controller'=>'chatController_controller.php'],
 );
 
-function get_URL($path = null)
-{
-    global $pages_name_url;
-    if (!isset($pages_name_url[$path])) {
-        return;
-    }
-    if (is_null($path)) {
-        return $pages_name_url['home']['url'];
-    }
-    return $pages_name_url[$path]['url'];
-}
-function get_Full_URL($path = null)
-{
-    global $pages_name_url;
-    if (!isset($pages_name_url[$path])) {
-        return;
-    }
-    if (is_null($path)) {
-        return site_url.$pages_name_url['home']['url'];
-    }
-    return site_url.$pages_name_url[$path]['url'];
-}
+
 function getProductUrl($pid) {
-    return get_Full_URL('product').'?pid='.$pid;
+    return Rout::full_url('product').'?pid='.$pid;
 }
 function getProduc_AddCart_tUrl($pid,$redirect = false) {
     if ($redirect) {
-        return get_Full_URL('product.addcart').'?pid='.$pid.'&redirect';
+        return Rout::full_url('product.addcart').'?pid='.$pid.'&redirect';
     } else {
-        return get_Full_URL('product.addcart').'?pid='.$pid;
+        return Rout::full_url('product.addcart').'?pid='.$pid;
     }
 }
 function getProduc_ChangeQty_Url($pid,$action) {
-    return get_Full_URL('product.changeqty').'?pid='.$pid.'&action='.$action;
+    return Rout::full_url('product.changeqty').'?pid='.$pid.'&action='.$action;
 }
 function getProduc_like_Url($pid) {
-    return get_Full_URL('product.like').'?pid='.$pid;
+    return Rout::full_url('product.like').'?pid='.$pid;
 }
 function getProduc_bookmark_Url($pid) {
-    return get_Full_URL('product.bookmark').'?pid='.$pid;
+    return Rout::full_url('product.bookmark').'?pid='.$pid;
 }
 function searchProduct($q='') {
-    return get_Full_URL('search.product').'?q='.$q;
+    return Rout::full_url('search.product').'?q='.$q;
 }
 function getOrderDeatailUrl($oid) {
-    return get_Full_URL('userpanel.deatailorder').'?orderId='.$oid;
+    return Rout::full_url('userpanel.deatailorder').'?orderId='.$oid;
 }
