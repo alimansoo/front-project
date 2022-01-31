@@ -7,7 +7,6 @@ class App
             Template::IncludePage("UserPanel");
         }else{
             Template::IncludePage("MainPage");
-            echo "residmain";
         }
     }
 }
