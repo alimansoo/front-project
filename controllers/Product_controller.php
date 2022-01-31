@@ -1,13 +1,7 @@
 <?php 
-$id = $_GET['pid'];
+$id = Data::get('pid',$_GET);
 $dbuser = new DBUserEngin();
 $dbcomment = new DBCommentEngin();
-
-$isContainCard = false;
-
-if (isset($_SESSION['id'])) {
-    // $isContainCard = isContainCard($id);
-}
 
 $allCommentProduct = $dbcomment->getAllBy_pid($id);
 
