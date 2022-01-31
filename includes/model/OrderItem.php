@@ -1,6 +1,6 @@
 <?php
 
-class Order
+class OrderItem
 {
     private $id;
     private $oid;
@@ -9,8 +9,9 @@ class Order
     public function __construct($data)
     {
         if (is_numeric($data) or is_int($data)) {
-            $dbproduct = new DBUserOrderEngin();
-            $data = $dbproduct->getById($data);
+            $dbproduct = new DBUserOrderItemEngin();
+            $data = $dbproduct->getAllByOrderId($data);
+            // var_dump($data);
         } elseif (!is_array($data)) {
             return;
         } elseif (
