@@ -27,7 +27,7 @@ function get_content()
                             $model = new Product($cart['pid']);
                             $model2 = new Cart($cart);
                             $PriceofAll += $model->price*$model2->qty;
-                            Template::Include('Card',$model,$model2);
+                            Template::Include('Card',['Product'=>$model,'Cart'=>$model2]);
                         }  
                         ?>
                     </table>

@@ -16,7 +16,7 @@ function get_content()
             <?php 
             foreach ($data as $myOrder) {
                 $model1=new Order($myOrder);
-                Template::Include('Orders',$model1);
+                Template::Include('Orders',['Order'=>$model1]);
             }
             ?>
         </section>    

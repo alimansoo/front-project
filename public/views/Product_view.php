@@ -55,7 +55,7 @@ function get_content()
                     'commenttitle'=>$CommentProduct['subject'],
                     'commentcontent'=>$CommentProduct['message']
                 );
-                Template::Include("ProductComment",$data);
+                Template::Include("ProductComment",['Comment'=>$data]);
             endforeach; ?>
             <h4 class="page_content_title">اضافه کردن کامنت جدید</h4>
             <form action="<?php echo SITE_URL; ?>productcomment?pid=<?php echo $product->id ?>" method="get" id="CommentForm">
