@@ -1,5 +1,8 @@
 <?php 
 $status="";
+$dbuserorder = new DBUserOrderEngin();
+$dbuserorderitem = new DBUserOrderItemEngin();
+$dbcart = new DBCartEngin();
 
 $userid = $_SESSION['id'];
 
@@ -14,7 +17,7 @@ if(isset($orderReciverisme)){
 }
 
 if(isset($_POST['submit'])){
-    $orderId = insertUserOrder(
+    $orderId = $dbuserorder->add(
         $userid,
         $orderReciveDate,
         $orderAddres,
@@ -23,10 +26,10 @@ if(isset($_POST['submit'])){
         $orderReciver
     );
 
-    $data = getAllCartByUserId($userid);
+    $data = $dbcart->getAllByUid($userid);
     foreach ($data as $array) {
-        $data = insertUserOrderItem($orderId,$array['pid'],$array['qty']);
-        deleteCartByid($array['id']);
+        $data = $dbuserorderitem->add($orderId,$array['pid'],$array['qty']);
+        $dbcart->deleteByid($array['id']);
     }
     $status="success";
     

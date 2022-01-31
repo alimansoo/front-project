@@ -1,10 +1,12 @@
 <?php
-$data = getAllLikeProductBy_Uid($_SESSION['id']);
+$dblike = new DBLikeProductEngin();
+$dbprdouct = new DBProductEngin();
+$data = $dblike->getAllBy_Uid($_SESSION['id']);
 
 $AllProductArray = array();
 
 foreach ($data as $key=>$value) {
-    $data = getProductById($value['pid']);
+    $data = $dbprdouct->getById($value['pid']);
     $AllProductArray[$key] = $data;
 }
 

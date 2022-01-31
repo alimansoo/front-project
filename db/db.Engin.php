@@ -73,7 +73,7 @@ abstract class DBEngine implements DBEngineLayer1
             }
             $query .= implode(',',$like);
         }
-        echo $query.'<br>';
+        // echo $query.'<br>';
         return $cdb->query($query);
     }
     public function update($table_name, $update_filed ,$where_filed)
@@ -113,7 +113,7 @@ abstract class DBEngine implements DBEngineLayer1
         }
         $where = implode(',',$where);
         $query = "UPDATE `$table_name` SET $filedsarray WHERE $where";
-        echo $query.'<br>';
+        // echo $query.'<br>';
         return $cdb->query($query);
     }
     public function insert($table_name, $insert_filed)
@@ -140,7 +140,7 @@ abstract class DBEngine implements DBEngineLayer1
         $values = '('.implode(',',$values).')';
 
         $query = "INSERT INTO `$table_name` $keys VALUES $values";
-        echo $query.'<br>';
+        // echo $query.'<br>';
         return $cdb->query($query)->lastInsertID();
     }
     public function delete($table_name, $where_filed)
@@ -163,7 +163,7 @@ abstract class DBEngine implements DBEngineLayer1
         }
         $where = implode(' AND ',$where);
         $query = "DELETE FROM `$table_name` WHERE $where";
-        echo $query.'<br>';
+        // echo $query.'<br>';
         return $cdb->query($query);
     }
 }

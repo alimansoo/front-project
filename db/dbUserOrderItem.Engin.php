@@ -73,7 +73,10 @@ class DBUserOrderItemEngin extends DBEngine implements DBEngineLayer2
         $result = $this->getAll(
             array(
                 'oid'=>$orderId
-            )
+            ),
+            null,
+            null,
+            true
         );
         if (count($result) < 1) {
             return false;

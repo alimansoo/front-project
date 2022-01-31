@@ -1,7 +1,7 @@
 <?php 
 $id = $_GET['pid'];
 $dbp = new DBProductEngin();
-$product = $dbp->GetProductById($id);
+$product = $dbp->getById($id);
 
 $isContainCard = false;
 

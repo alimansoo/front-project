@@ -25,11 +25,11 @@ function get_content()
                         ?>
                             <tr>
                                 <td><?php echo $product['id']; ?></td>
-                                <td><img src='<?php echo base_url; ?>/assets/images/AllProduct/<?php echo $product['image_src']; ?>' alt='<?php echo $product['name']; ?>' width='50px'/></td>
+                                <td><img src='<?php echo getImageSource($product['image_src']); ?>' alt='<?php echo $product['name']; ?>' width='50px'/></td>
                                 <td><?php echo $product['name']; ?></td>
                                 <td><?php echo $product['catg']; ?></td>
-                                <td><?php echo $product['price']; ?>ریال</td>
-                                <td><a href='<?php echo base_url; ?>productlike/<?php echo $product['id']; ?>' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
+                                <td><?php echo number_format($product['price'],0); ?>ریال</td>
+                                <td><a href='<?php echo getProduc_like_Url($product['id']); ?>' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
                             </tr>
                         <?php
                         endforeach;

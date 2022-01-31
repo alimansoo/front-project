@@ -6,15 +6,16 @@ if (!isset($_SESSION['id'])) {
 }
 $dbp = new DBProductEngin();
 $dbc = new DBCartEngin();
-$data = $dbc->getAllCartByUserId($_SESSION['id']);
+
+$data = $dbc->getAllByUid($_SESSION['id']);
 
 $PriceofAll = 0;
 
 $AllProductInCart = array();
 
-foreach ($data as $key=>$value) {
-    
-    $data = $dbp->GetProductById($value['pid']);
+foreach ($data as $key=>$value) 
+{
+    $data = $dbp->getById($value['pid']);
     $data['qty'] = $value['qty'];
     $PriceofAll +=$data['price'] * $data['qty'];
     $AllProductInCart[$key] = $data;

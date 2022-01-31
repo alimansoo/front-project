@@ -53,6 +53,12 @@ function redirect_to($path){
     }
     header("Location:$path");
 }
+function redirect_to_url($path)
+{
+    redirect_to(
+        get_Full_URL($path)
+    );
+}
 function getFilename($filename){
     return explode('_',$filename)[0];
 }

@@ -1,11 +1,12 @@
 <?php
 // status 1 ==> داده موجود
 // status 0 ==> داده نیست
+$dbprdouct = new DBProductEngin();
 $output =   array('status'=>0);
 
 $searchq = urldecode($_GET['q']);
 if ($searchq !== '') {
-    $data = getAllProductLikeBy($searchq);
+    $data = $dbprdouct->GetAllLikeBy($searchq);
     $array = array();
     foreach ($data as $key => $value) {
         if (isset($value['id'])) {

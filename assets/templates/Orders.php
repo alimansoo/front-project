@@ -6,9 +6,10 @@
     </div>
     <div class='orderRow_content'>
         <?php 
-        foreach ($myOrder['AllProduct_image'] as $productimage) : 
+        foreach ($myOrder['AllProduct_image'] as $product) : 
+            $productimage = $product['image_src'];
         ?>
-            <img class='productImg' src='<?php echo base_url."assets/images/products/".$productimage ?>'>
+            <img class='productImg' src='<?php echo getImageSource($productimage); ?>'>
         <?php
         endforeach;
         ?>

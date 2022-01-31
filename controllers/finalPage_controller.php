@@ -1,4 +1,5 @@
 <?php
+$dbuserordere = new DBUserOrderEngin();
 $orderId = $_SESSION['orderId'];
 
 $status = "";
@@ -6,9 +7,9 @@ $status = "";
 if ($_SESSION['is_payed']) {
     $status = "success";
     
-    $data = userOrderPayed($orderId);
+    $data = $dbuserordere->payed($orderId);
 
-    $deatailOrder = getUserOrderById($orderId);
+    $deatailOrder = $dbuserordere->getById($orderId);
 
 }else{
     $status = "failed";

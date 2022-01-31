@@ -60,6 +60,14 @@ class DBProductEngin extends DBEngine implements DBEngineLayer2
     /* 
             Custome Function
     */
+    public function getAllofThem() {
+        return $this->getAll(
+            null,
+            null,
+            null,
+            true
+        );
+    }
     public function GetAllLikeBy($q) {
         return $this->getAll(
             null,
@@ -68,7 +76,7 @@ class DBProductEngin extends DBEngine implements DBEngineLayer2
             true
         );
     }
-    public function GetById($pid)
+    public function getById($pid)
     {
         return $this->getAll(
             array('id'=> $pid)

@@ -1,31 +1,25 @@
 <?php
+$dbuser = new DBUserEngin();
 if (!isset($_POST['submit'])) {
     includethisView();
 }else {
-    $data = getUserBy_username_password(
+    $data = $dbuser->getBy_username_password(
         $_POST['email'],$_POST['password']
     );
-
     if ($data) {
         //set sessions
         Athuntication::loginUser($data);
         switch ($_SESSION['role']) {
             case 'user':
-                redirect_to(
-                    get_Full_URL('userpanel.dashboard')
-                );
+                redirect_to_url('userpanel.dashboard');
                 break;
             case 'admin':
-                redirect_to(
-                    get_Full_URL('adminpanel.dashboard')
-                );
+                redirect_to_url('adminpanel.dashboard');
                 break;
             default:
                 die("error");
         }
     }else {
-        redirect_to(
-            get_Full_URL('home')
-        );
+        redirect_to_url('home');
     }
 }

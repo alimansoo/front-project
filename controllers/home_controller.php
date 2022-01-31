@@ -1,6 +1,6 @@
 <?php
 $db = new DBProductEngin();
-$AllProduct = $db->GetAllProduct();
+$AllProduct = $db->getAllofThem();
 includethisView();
 
 function isLike($mysql,$id)
