@@ -13,7 +13,7 @@ function get_content()
                 <h3 class="page_content_title">سفارشات من </h3>
                 <?php 
                 foreach ($AllofMyOrder as $myOrder) {
-                    include Template::IncludePath('Orders.php');
+                    Template::Include('Orders',$myOrder);
                 }
                 ?>
             </section>    

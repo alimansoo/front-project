@@ -24,7 +24,7 @@ function get_content()
                         </tr>
                         <?php 
                         foreach ($AllProductInCart as $product) {
-                            include Template::IncludePath('Card.php');
+                            Template::Include('Card',$product);
                         }  
                         ?>
                     </table>

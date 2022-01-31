@@ -1,14 +1,19 @@
 <?php
 class Template
 {
-    static function Include($name){
-        if (file_exists(TEMPLATE_PATH.$name)) {
-            include TEMPLATE_PATH.$name;
+    static function Include($name,$data=null){
+        $filename = TEMPLATE_PATH.$name.'.php';
+        if (file_exists($filename)) {
+            include $filename;
         }
+        // echo $name." => ";
+        // var_dump($data);
+        // echo "<br>";
     }
     static function IncludePath($name){
-        if (file_exists(TEMPLATE_PATH.$name)) {
-            return TEMPLATE_PATH.$name;
+        $filename = TEMPLATE_PATH.$name.'.php';
+        if (file_exists($filename)) {
+            return $filename;
         }
     }
 }

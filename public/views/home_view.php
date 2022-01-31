@@ -48,12 +48,7 @@ function get_content()
                     //     $cardtext = "حذف از سبد";
                     //     $cardclass = "remove";
                     // }
-                    $productId = $product['id'];
-                    $productName = $product['name'];
-                    $productPrice = $product['price'];
-                    $productImagesrc = $product['image_src'];
-                    include Template::IncludePath('ProductCard.php');
-                    // Template::Include('ProductCard.php',$product);
+                    Template::Include('ProductCard',$product);
                 }
             ?>
 

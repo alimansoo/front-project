@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="http://localhost/front-project/assets/css/fontawesome-free/css/all.min.css">
 </head>
 <body id="body-container" class="grid-100 grid-row-container">
-    <?php Template::Include('header.php'); ?>
-    <?php Template::Include('TopNavigation.php'); ?>
+    <?php Template::Include('header'); ?>
+    <?php Template::Include('TopNavigation'); ?>
     <main id="container" class="container">
         <?php
             if (function_exists("get_content")) {
@@ -29,7 +29,7 @@
         ?>
     </main>
     <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
-    <?php Template::Include('footer.php'); ?>
+    <?php Template::Include('footer'); ?>
     <?php include_once('public/views/__script__.php'); ?>
 </body>
 </html>

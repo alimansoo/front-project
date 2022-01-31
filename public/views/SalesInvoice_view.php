@@ -23,13 +23,7 @@ function get_content()
                 </tr>
                 <?php 
                 foreach ($AllProductArray as $product) {
-                    echo "
-                    <tr>
-                        <td><img src='".site_url."assets/images/AllProduct/{$product['image_src']}' alt='{$product['name']}' width='50px'/></td>
-                        <td>{$product['name']}</td>
-                        <td>{$product['price']}ریال</td>
-                        <td>{$product['qty']}</td>
-                    </tr>";
+                    Template::Include("salesInvoice",$product);
                 }  
                 ?>
             </table>
