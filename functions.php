@@ -7,19 +7,6 @@ function include_controller($name) {
 function getFilename($filename){
     return explode('_',$filename)[0];
 }
-function includethisView()
-{
-    $filename = getFilename(
-        basename(
-            debug_backtrace()[0]['file']
-        )
-    );
-    include VIEW_PATH.$filename.'_view.php';
-}
-function includeView($filename)
-{
-    include VIEW_PATH.$filename.'_view.php';
-}
 function includethisAdminView()
 {
     $filename = getFilename(

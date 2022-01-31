@@ -33,5 +33,5 @@ if(isset($_POST['submit'])){
     }
     $status="success";
     
-    includethisView();
+    View::IncludeForThis();
 }

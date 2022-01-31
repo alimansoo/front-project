@@ -1,3 +1,3 @@
 <?php
 
-includethisView();
+View::IncludeForThis();

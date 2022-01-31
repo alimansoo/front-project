@@ -13,4 +13,4 @@ foreach ($data as $key=>$value) {
     $AllProductArray[$key] = $data;
 }
 
-includethisView();
+View::IncludeForThis();

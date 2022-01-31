@@ -30,4 +30,4 @@ foreach ($data as $key=>$value) {
     $allProduct[$key] = $array;
 }
 
-includethisView();
+View::IncludeForThis();

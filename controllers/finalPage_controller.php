@@ -18,4 +18,4 @@ if ($_SESSION['is_payed']) {
 unset($_SESSION['orderId']);
 unset($_SESSION['is_payed']);
 
-includethisView();
+View::IncludeForThis();

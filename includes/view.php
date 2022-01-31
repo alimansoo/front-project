@@ -1,10 +1,17 @@
 <?php
 class View
 {
-    static function Include($name){
-        include '';
+    static function IncludeForThis()
+    {
+        $filename = getFilename(
+            basename(
+                debug_backtrace()[0]['file']
+            )
+        );
+        include VIEW_PATH.$filename.'_view.php';
     }
-    static function IncludeThis(){
-        include '';
+    static function Include($filename)
+    {
+        include VIEW_PATH.$filename.'_view.php';
     }
 }

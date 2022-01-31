@@ -21,4 +21,4 @@ foreach ($data as $key => $value) {
     }
     $AllofMyOrder[] = $array;
 }
-includethisView();
+View::IncludeForThis();

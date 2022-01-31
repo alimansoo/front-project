@@ -13,4 +13,4 @@ if (isset($_SESSION['id'])) {
 
 $allCommentProduct = $dbcomment->getAllBy_pid($id);
 
-includethisView();
+View::IncludeForThis();

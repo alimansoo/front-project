@@ -18,4 +18,4 @@ foreach ($data as $key=>$value)
     $PriceofAll +=$data['price'] * $data['qty'];
     $AllProductInCart[$key] = $data;
 }
-includethisView();
+View::IncludeForThis();

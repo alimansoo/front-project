@@ -1,7 +1,7 @@
 <?php
 $dbuser = new DBUserEngin();
 if (!isset($_POST['submit'])) {
-    includethisView();
+    View::IncludeForThis();
 }else {
     $data = $dbuser->getBy_username_password(
         $_POST['email'],$_POST['password']

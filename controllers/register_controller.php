@@ -1,6 +1,6 @@
 <?php
 if (!isset($_POST['submit'])) {
-    includethisView();
+    View::IncludeForThis();
 }else {
     $data = getUserBy_email($_POST['email']);
     if(!$data){
