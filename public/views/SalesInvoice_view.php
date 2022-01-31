@@ -4,7 +4,7 @@ function get_title() {
 }
 function get_content()
 {
-    global $AllProductArray;
+    global $data;
     global $PriceofAll;
     global $transportPrice;
 ?>
@@ -22,8 +22,11 @@ function get_content()
                     <th>تعداد</th>
                 </tr>
                 <?php 
-                foreach ($AllProductArray as $product) {
-                    Template::Include("salesInvoice",$product);
+                foreach ($data as $cart) {
+                    $model = new Product($cart['pid']);
+                    $model2 = new Cart($cart);
+                    $PriceofAll += $model->price*$model2->qty;
+                    Template::Include("salesInvoice",$model,$model2);
                 }  
                 ?>
             </table>

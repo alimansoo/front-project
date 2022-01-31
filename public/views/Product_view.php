@@ -41,7 +41,7 @@ function get_content()
                     <li>مبلغ نهایی بدون محاسبه مالیات است.</li>
                     <li>قیمت ارسال سفارش در مراحل بعد محاسبه می شود.</li>
                 </ul>
-                <?php if (!$isContainCard):?>
+                <?php if ($product->isToCart===false):?>
                     <a href="<?php echo getProduc_AddCart_tUrl($product->id,true); ?>" class="btn btn-primary full-btn">اضافه کردن به سبد خرید</a>
                 <?php endif; ?>
             </section>
