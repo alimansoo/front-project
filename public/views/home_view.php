@@ -52,11 +52,12 @@ function get_content()
                     $productName = $product['name'];
                     $productPrice = $product['price'];
                     $productImagesrc = $product['image_src'];
-                    include assetsroot.'templates/ProductCard.php';
+                    include Template::IncludePath('ProductCard.php');
+                    // Template::Include('ProductCard.php',$product);
                 }
             ?>
 
-    <?php include "./assets/templates/ChatSection.php";?>
+    <?php Template::Include("ChatSection.php");?>
 <?php 
 }
 renderPage();

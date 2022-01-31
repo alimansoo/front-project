@@ -19,9 +19,9 @@ if (
     && isset($controller) 
     && !is_null($controller)
     ) {
-    include 'admin/'.controllerroot.$controller;
+    include 'admin/'.CONTROLLER_PATH.$controller;
 }elseif (isset($controller) && $controller != '') {
-    include controllerroot.$controller;
+    include CONTROLLER_PATH.$controller;
 }
 else{
     include '404.php';

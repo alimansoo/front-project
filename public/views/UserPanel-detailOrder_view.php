@@ -32,7 +32,7 @@ function get_content()
                         foreach ($allProduct as $product) :
                         ?>
                             <tr>
-                                <td><img src='<?php echo base_url."assets/images/products/".$product['image_src'] ?>' alt='' width='50px'/></td>
+                                <td><img src='<?php echo getImageSource($product['image_src']); ?>' alt='' width='50px'/></td>
                                 <td><?php echo $product['name'] ?></td>
                                 <td><span><?php echo $product['price'] ?></span>ریال</td>
                                 <td><?php echo $product['qty'] ?></td>

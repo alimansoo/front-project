@@ -1,5 +1,5 @@
 <section class='filled card'>
-    <img src='<?php echo assetsroot.'images/products/'.$productImagesrc; ?>' class='card-img-top' alt=''>
+    <img src='<?php echo ASSETS_PATH.'images/products/'.$productImagesrc; ?>' class='card-img-top' alt=''>
     <div class='card-body'>
         <a href='<?php echo getProduc_like_Url($productId); ?>'><i class='<?php echo $iconclassheart; ?> fa-heart'></i></a>
         <a href='<?php echo getProduc_bookmark_Url($productId); ?>'><i class='<?php echo $iconclassbookmark; ?> fa-bookmark'></i></a>

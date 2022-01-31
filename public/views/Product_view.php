@@ -4,6 +4,7 @@ function get_title() {
 }
 function get_content()
 {
+    global $dbuser;
     global $product;
     global $isContainCard;
     global $allCommentProduct;
@@ -53,10 +54,10 @@ function get_content()
         <section id="comment" class="page_content">
             <h4 class="page_content_title">بخش نظرات این محصول</h4>
             <?php foreach ($allCommentProduct as $key => $CommentProduct):
-                $anthorName = getNameFamilyById($CommentProduct['uid']);
+                $anthorName = $dbuser->getNameFamilyById($CommentProduct['uid']);
                 $commentTitle = $CommentProduct['subject'];
                 $commentContent = $CommentProduct['message'];
-                include "assets/templates/ProductComment.php";
+                include Template::IncludePath("ProductComment.php");
             endforeach; ?>
             <h4 class="page_content_title">اضافه کردن کامنت جدید</h4>
             <form action="<?php echo base_url; ?>productcomment/<?php echo $productId ?>" method="get" id="CommentForm">
