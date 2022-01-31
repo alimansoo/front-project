@@ -1,12 +1,4 @@
 <?php
-function renderPage()
-{
-    if (function_exists('user_panel') and user_panel()) {
-        Template::IncludePage("UserPanel");
-    }else{
-        Template::IncludePage("MainPage");
-    }
-}
 function include_controller($name) {
     include "./controllers/{$name}_controller.php";
 }

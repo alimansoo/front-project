@@ -47,4 +47,4 @@ function get_content()
     </section>
 <?php 
 }
-renderPage();
+App::render();

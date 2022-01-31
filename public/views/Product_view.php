@@ -77,4 +77,4 @@ function get_content()
         
 <?php 
 }
-renderPage();
+App::render();
