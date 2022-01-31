@@ -7,6 +7,7 @@ function include_controller($name) {
 function getFilename($filename){
     return explode('_',$filename)[0];
 }
+
 function includethisAdminView()
 {
     $filename = getFilename(
