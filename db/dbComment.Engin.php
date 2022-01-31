@@ -74,6 +74,17 @@ class DBCommentEngin extends DBEngine implements DBEngineLayer2
         }
         return $result;
     }
+    public function getById($id) {
+        $result = $this->getAll(
+            array(
+                'id'=>$id
+            )
+        );
+        if(count($result) < 0 ){
+            return false;
+        }
+        return $result;
+    }
     public function add($productId,$userId,$subject,$content){
         $data = array(
             'pid'=>$productId,

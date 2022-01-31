@@ -49,13 +49,9 @@ function get_content()
 
         <section id="comment" class="page_content">
             <h4 class="page_content_title">بخش نظرات این محصول</h4>
-            <?php foreach ($allCommentProduct as $key => $CommentProduct):
-                $data = array(
-                    'authorname'=>$dbuser->getNameFamilyById($CommentProduct['uid']),
-                    'commenttitle'=>$CommentProduct['subject'],
-                    'commentcontent'=>$CommentProduct['message']
-                );
-                Template::Include("ProductComment",['Comment'=>$data]);
+            <?php foreach ($allCommentProduct as $CommentProduct):
+                $model = new Comment($CommentProduct);
+                Template::Include("ProductComment",['Comment'=>$model]);
             endforeach; ?>
             <h4 class="page_content_title">اضافه کردن کامنت جدید</h4>
             <form action="<?php echo SITE_URL; ?>productcomment?pid=<?php echo $product->id ?>" method="get" id="CommentForm">

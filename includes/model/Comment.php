@@ -12,8 +12,7 @@ class Comment
     {
         if (is_numeric($data) or is_int($data)) {
             $dbproduct = new DBCommentEngin();
-            $data = $dbproduct->getAllBy_pid($data);
-            // var_dump($data);
+            $data = $dbproduct->getById($data);
         } elseif (!is_array($data)) {
             return;
         } elseif (
@@ -27,10 +26,10 @@ class Comment
             return;
         }
         $this->id=$data['id'];
-        $this->oid=$data['pid'];
-        $this->pid=$data['uid'];
-        $this->qty=$data['subject'];
-        $this->qty=$data['message'];
+        $this->pid=$data['pid'];
+        $this->uid=$data['uid'];
+        $this->subject=$data['subject'];
+        $this->message=$data['message'];
         $dbuser = new DBUserEngin();
         $this->anotherFullname = $dbuser->getNameFamilyById($this->uid);
         unset($dbuser);
