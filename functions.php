@@ -31,7 +31,7 @@ function secondsection() {
     </main>
     <p id="Small_modal_Message" class="small_modal_message"><i class="fas fa-times"></i><span class="message"></span></p>
     <?php include_once('assets/templates/footer.php'); ?>
-    <?php include_once('views/__script__.php'); ?>
+    <?php include_once('public/views/__script__.php'); ?>
 </body>
 </html>
 <?php

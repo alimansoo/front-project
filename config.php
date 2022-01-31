@@ -4,12 +4,12 @@ session_start();
 
 define('baseroot', '');
 define('assetsroot', 'assets/');
-define('viewroot', 'views/');
+define('viewroot', 'public/views/');
 define('controllerroot', 'controllers/');
 
 define('admin_baseroot', 'admin/');
 define('admin_assetsroot', 'admin/assets/');
-define('admin_viewroot', 'admin/views/');
+define('admin_viewroot', 'public/admin/views/');
 define('admin_controllerroot', 'admin/controllers/');
 
 // error_reporting(E_ALL & ~E_NOTICE);
