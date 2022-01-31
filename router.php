@@ -26,3 +26,6 @@ if (
 else{
     include '404.php';
 }
+if (function_exists('get_content')) {
+    App::render();
+}

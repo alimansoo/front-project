@@ -12,4 +12,4 @@ function get_content(){
     </section>
 <?php
 }
-App::render();
+ 

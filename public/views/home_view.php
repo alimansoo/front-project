@@ -55,4 +55,4 @@ function get_content()
     <?php Template::Include("ChatSection.php");?>
 <?php 
 }
-App::render();
+ 
