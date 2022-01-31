@@ -2,6 +2,11 @@
 class DBProductEngin extends DBEngine implements DBEngineLayer2
 {
     private $TABLE_NAME = 'product';
+    // public function __destruct()
+    // {
+    //     global $cdb;
+    //     $cdb->close();
+    // }
     public function getAll($where_filed=null, $sorting_by=null, $like_by=null,$result_all=false)
     {
         $result=$this->select(
