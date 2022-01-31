@@ -27,7 +27,7 @@ function get_content()
                 foreach($AllProduct as $product)
                 {
                     $model = new Product($product);
-                    Template::Include('ProductCard',$model);
+                    Template::Include('ProductCard',['Product'=>$model]);
                 }
             ?>
 
