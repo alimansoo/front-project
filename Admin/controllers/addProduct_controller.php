@@ -22,7 +22,7 @@ else
     $cdb -> close();
 
     
-    $target_dir = base_url."assets/images/AllProduct/";
+    $target_dir = BASE_URL."assets/images/AllProduct/";
     $target_file = $target_dir . basename($_FILES["product_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -62,7 +62,7 @@ else
     }
 
     
-    header("Location:".base_url."adminpanel/listproduct/");
+    header("Location:".BASE_URL."adminpanel/listproduct/");
 
     // get Product Id
     // $cdb = new db('localhost','root','','frontproject');

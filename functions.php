@@ -21,5 +21,5 @@ function includeAdminView($filename)
     include VIEW_PATH.$filename.'_view.php';
 }
 function getImageSource($imagename){
-    return base_url."assets/images/products/".$imagename;
+    return BASE_URL."assets/images/products/".$imagename;
 }

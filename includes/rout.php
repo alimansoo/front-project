@@ -31,8 +31,8 @@ class Rout
             return;
         }
         if (is_null($path)) {
-            return site_url.$pages_name_url['home']['url'];
+            return SITE_URL.$pages_name_url['home']['url'];
         }
-        return site_url.$pages_name_url[$path]['url'];
+        return SITE_URL.$pages_name_url[$path]['url'];
     }
 }

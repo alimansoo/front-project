@@ -1,2 +1,2 @@
-<link rel="stylesheet" href="<?php echo base_url; ?>assets/css/style.css">
-    <link rel="shortcut icon" href="<?php echo base_url; ?>assets/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>assets/images/favicon.ico" type="image/x-icon">

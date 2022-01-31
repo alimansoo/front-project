@@ -1,5 +1,5 @@
 <tr>
-    <td><img src='<?php echo base_url.'assets/images/products/'.$data['image_src']; ?>' alt='<?php echo $data['name']; ?>' width='50px'/></td>
+    <td><img src='<?php echo BASE_URL.'assets/images/products/'.$data['image_src']; ?>' alt='<?php echo $data['name']; ?>' width='50px'/></td>
     <td><?php echo $data['name']; ?></td>
     <td class='priceProduct'><span><?php echo $data['price']; ?></span>ریال</td>
     <td class='quantityProduct'>

@@ -15,7 +15,7 @@
             <section class="grid-lg-1to4">
                 <section class="page_content">
                 <h3 class="page_content_title">لیست کاربران</h3>
-                <a class="btn btn-primary" href="<?php echo base_url;?>addUser/">اضافه کردن کاربر+</a>
+                <a class="btn btn-primary" href="<?php echo BASE_URL;?>addUser/">اضافه کردن کاربر+</a>
                     <table class="table">
                         <tr>
                             <th>شناسه</th>

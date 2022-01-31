@@ -1,7 +1,7 @@
 <?php
 require 'routerConfig.php';
 $request = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-$request = str_replace(site_url,'',$request);
+$request = str_replace(SITE_URL,'',$request);
 $datapos = strpos($request,'?');
 if ($datapos) {
     $router = substr($request,0,$datapos);

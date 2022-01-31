@@ -11,7 +11,7 @@ if ($searchq !== '') {
     foreach ($data as $key => $value) {
         if (isset($value['id'])) {
             $link = getProductUrl($value['id']);
-            $image = base_url."assets/images/products/".$value['image_src'];
+            $image = BASE_URL."assets/images/products/".$value['image_src'];
 
             $array[$key] =   array('status'=>1,'name'=>$value['name'],'link'=> $link,'image'=>$image);
         } 

@@ -19,7 +19,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان','gls'=>'لیوان');
             <section class="grid-lg-1to4">
                 <section class="page_content">
                     <h3 class="page_content_title">لیست محصولات</h3>
-                    <a  href="<?php echo base_url;?>adminpanel/listproduct/addproduct/" class="btn btn-primary">اضافه کردن محصول+</a>
+                    <a  href="<?php echo BASE_URL;?>adminpanel/listproduct/addproduct/" class="btn btn-primary">اضافه کردن محصول+</a>
                     <br>
                     <table class="table">
                         <tr>
@@ -37,7 +37,7 @@ $catg = array('bnr' => 'بنر','lva' => 'لیوان','gls'=>'لیوان');
                         ?>
                             <tr>
                             <td><?php echo $user['id']; ?></td>
-                            <td><img src='<?php echo base_url ?>assets/images/products/<?php echo $user['image_src']; ?>' alt='<?php echo $user['name']; ?>' width='50px'/></td>
+                            <td><img src='<?php echo BASE_URL ?>assets/images/products/<?php echo $user['image_src']; ?>' alt='<?php echo $user['name']; ?>' width='50px'/></td>
                             <td><?php echo $user['name']; ?></td>
                             <td><?php echo $user['catg']; ?></td>
                             <td><?php echo $user['price_component']; ?></td>

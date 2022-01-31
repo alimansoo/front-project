@@ -3,5 +3,5 @@ if (Athuntication::isUser()) {
     Athuntication::logoutUser();
 }
 
-header("Location:{$base_url}");
+header("Location:{$BASE_URL}");
 

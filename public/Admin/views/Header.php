@@ -27,7 +27,7 @@
                     <?php if (isset($newComment)) :
                         foreach ($newComment as $key => $value):
                         ?>
-                            <li class="drophover_item"><a href="<?php echo base_url.'adminpanel/listcomment/#comment'.$value['cid']; ?>"><?php echo($value['message']) ; ?></a><a href=""><i class="fas fa-check"></i></a></li>
+                            <li class="drophover_item"><a href="<?php echo BASE_URL.'adminpanel/listcomment/#comment'.$value['cid']; ?>"><?php echo($value['message']) ; ?></a><a href=""><i class="fas fa-check"></i></a></li>
                         <?php
                         endforeach;
                     endif; 
