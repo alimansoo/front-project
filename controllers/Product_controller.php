@@ -1,14 +1,14 @@
 <?php 
 $id = $_GET['pid'];
-
-$product = getProductById($id);
+$dbp = new DBProductEngin();
+$product = $dbp->GetProductById($id);
 
 $isContainCard = false;
 
 if (isset($_SESSION['id'])) {
-    $isContainCard = isContainCard($id);
+    // $isContainCard = isContainCard($id);
 }
 
-$allCommentProduct = getAllCommentBy_pid($id);
+// $allCommentProduct = getAllCommentBy_pid($id);
 
 includethisView();

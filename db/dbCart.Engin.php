@@ -1,7 +1,7 @@
 <?php
-class DBUserOrderEngin extends DBEngine implements DBEngineLayer2
+class DBCartEngin extends DBEngine implements DBEngineLayer2
 {
-    private $TABLE_NAME = 'order_user';
+    private $TABLE_NAME = 'cards';
     public function getAll($where_filed=null, $sorting_by=null, $like_by=null,$result_all=false)
     {
         $result=$this->select(
@@ -60,54 +60,76 @@ class DBUserOrderEngin extends DBEngine implements DBEngineLayer2
     /* 
             Custome Function
     */
-    function getById($oid)
-    {
-        $result = $this->getAll(
-            array(
-                'id'=>$oid
-            )
-        );
-        if (count($result) < 1) {
-            return false;
-        }
-        return $result;
-    }
-    function add($userid,$reciveDate,$addres,$priceofall,$transportprice,$recivername){
-        $datetime = new DateTime();
-        $today = $datetime->format('Y-m-d H:i:s');
-        $fileds = array(
-            'uid'=>$userid,
-            'recive_date'=>$reciveDate,
-            'saved_date'=>$today,
-            'addres'=>$addres,
-            'priceAll'=>$priceofall,
-            'transport_price'=>$transportprice,
-            'reciver_name'=>$recivername,
-            'is_pay'=>false,
-        );
-        return $this->insertData($fileds);
-    }
-    function payed($oid){
-        $this->updateData(
-            array('is_pay'=>true),
-            array('id'=>$oid)
-        );
-    }
-    function getAllBy_uid_DESC($userid)
-    {
-        $result = $this->getAll(
-            array(
-                'uid'=>$userid
-            )
-            ,array(
-                'id'=>'DESC'
-            ),
+    public function getAllByUid($uid) {
+        return $this->getAll(
+            array('uid'=>$uid),
+            null,
             null,
             true
         );
-        if (count($result) < 1) {
+    }
+    public function getBy_Pid_Uid($pid,$uid) {
+        $result = $this->getAll(
+            array(
+                'pid'=>$pid,
+                'uid'=>$uid
+            )
+        );
+        if(count($result) < 0 ){
             return false;
         }
         return $result;
+    }
+    public function getBy_id($cartid) {
+        $result = $this->getAll(
+            array(
+                'id'=>$cartid
+            )
+        );
+        if(count($result) < 0 ){
+            return false;
+        }
+        return $result;
+    }
+    public function isContainCard($id){
+        $result = $this->getBy_Pid_Uid(
+            $id,$_SESSION['id']
+        );
+        if($result){
+            return true;
+        }
+        return false;
+    }
+    public function deleteByid($id){
+        $this->deleteData(array('id'=>$id));
+    }
+    public function add($pid,$uid)
+    {
+        $this->insertData(array('uid'=>$uid,'pid'=>$pid,'qty'=>1));
+    }
+    public function changeQtyCard($action,$cartid){
+        $result = $this->getBy_id($cartid);
+        if (count($result) < 1) {
+            return -1;
+        }
+        $productqty = $result['qty'];
+    
+        switch ($action) {
+            case 'add':
+                $productqty++;
+                break;
+            case 'minus':
+                $productqty--;
+                break;
+        }
+        if ($productqty < 1) {
+            $this->deleteByid($cartid);
+            return 0;
+        }
+        $this->updateData(
+                array('qty'=>$productqty),
+                array('id'=>$cartid)
+            );
+        return $productqty;
     }
 }

@@ -9,6 +9,6 @@
             <a href='<?php echo getProduc_ChangeQty_Url($product['id'],'minus');?>' class='minusQty'>-</a></div>
     </td>
     <td>
-        <a class='removeProduct' href='<?php echo getProduc_ChangeQty_Url($product['id'],'minus');?>'><i class='fas fa-trash'></i></a>
+        <a class='removeProduct' href='<?php echo getProduc_AddCart_tUrl($product['id']);?>'><i class='fas fa-trash'></i></a>
     </td>
 </tr>
