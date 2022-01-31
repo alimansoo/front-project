@@ -1,5 +1,5 @@
 <?php 
-$orderId = $_GET['orderId'];
+$orderId = Data::get('orderId',$_GET);
 $dborder = new DBUserOrderEngin();
 $dborderitem = new DBUserOrderItemEngin();
 $dbproduct = new DBProductEngin();

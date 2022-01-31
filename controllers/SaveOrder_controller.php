@@ -9,7 +9,7 @@ $userid = $_SESSION['id'];
 $datetime = new DateTime();
 $today = $datetime->format('Y-m-d H:i:s');
 foreach ($_POST as $key => $value) {
-    $$key = $value;
+    $$key = Data::get($key,$_POST);
 }
 
 if(isset($orderReciverisme)){

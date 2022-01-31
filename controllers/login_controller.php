@@ -4,12 +4,13 @@ if (!isset($_POST['submit'])) {
     View::IncludeForThis();
 }else {
     $data = $dbuser->getBy_username_password(
-        $_POST['email'],$_POST['password']
+        Data::get('email',$_POST),Data::get('password',$_POST)
     );
     if ($data) {
         //set sessions
         Athuntication::loginUser($data);
-        switch ($_SESSION['role']) {
+        $role = Data::get('role',$_SESSION);
+        switch ($role) {
             case 'user':
                 Rout::redirect_to_url('userpanel.dashboard');
                 break;

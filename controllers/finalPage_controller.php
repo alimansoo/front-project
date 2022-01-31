@@ -1,6 +1,6 @@
 <?php
 $dbuserordere = new DBUserOrderEngin();
-$orderId = $_SESSION['orderId'];
+$orderId = Data::get('orderId',$_SESSION);
 
 $status = "";
 

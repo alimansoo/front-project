@@ -1,5 +1,5 @@
 <?php 
-$orderId=$_GET['orderId'];
+$orderId=Data::get('orderId',$_GET);
 
 if (isset($_POST['submit'])) {
     $_SESSION['is_payed'] = true;

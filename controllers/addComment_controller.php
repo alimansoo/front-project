@@ -2,10 +2,10 @@
 $status = '';
 $dbcomment = new DBCommentEngin();
 if (isset($_SESSION['id'])) {
-    $productid = $_GET['pid'];
-    $userid = $_SESSION['id'];
-    $subject = $_REQUEST['subject'];
-    $message = $_REQUEST['message'];
+    $productid = Data::get('pid',$_GET);
+    $userid = Data::get('id',$_SESSION);
+    $subject = Data::get('subject',$_REQUEST);
+    $message = Data::get('message',$_REQUEST);
 
     $data = $dbcomment->add($productid,$userid,$subject,$message);
 

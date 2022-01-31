@@ -23,7 +23,7 @@ function add_remove_Cart(){
     if (isset($_SESSION['id'])) {
         $status = '';
 
-        $id = $_GET['pid'];
+        $id = Data::get('pid',$_GET);
 
         $data = $dbcart->getBy_Pid_Uid($id,$_SESSION['id']);
 
@@ -49,8 +49,8 @@ function add_remove_Cart(){
 function changeQty(){
     global $dbcart;
 
-    $action = $_GET['action'];
-    $productid = $_GET['pid'];
+    $action = Data::get('action',$_GET);
+    $productid = Data::get('pid',$_GET);
     $userid = $_SESSION['id'];
     $cartid=null;
     $output = array();
@@ -81,7 +81,7 @@ function likeProduct(){
     if (isset($_SESSION['id'])) {
         $status = '';
 
-        $id = $_GET['pid'];
+        $id = Data::get('pid',$_GET);
 
         $data = $dblike->getBy_Pid_Uid($id,$_SESSION['id']);
         if (isset($data['id'])) {
@@ -106,7 +106,7 @@ function bookmarkProduct(){
     if (isset($_SESSION['id'])) {
         $status = '';
 
-        $id = $_GET['pid'];
+        $id = Data::get('pid',$_GET);
 
         $data = $dbbookmark->getBy_Pid_Uid($id,$_SESSION['id']);
         if (isset($data['id'])) {
