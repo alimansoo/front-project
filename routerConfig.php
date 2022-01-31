@@ -5,6 +5,7 @@ $pages_name_url = array(
     'cart' => ['url'=>'cart','controller'=>'Cart_controller.php'],
     'register' => ['url'=>'register','controller'=>'register_controller.php'],
     'logout' => ['url'=>'logout','controller'=>'logout_controller.php'],
+    'addcomment' => ['url'=>'productcomment','controller'=>'addComment_controller.php'],
     //Order
     'order.sailsinvoice' => ['url'=>'salesinvoice','controller'=>'SalesInvoice_controller.php'],
     'order.deatailorder' => ['url'=>'deatailorder','controller'=>'deatailOrder_controller.php'],

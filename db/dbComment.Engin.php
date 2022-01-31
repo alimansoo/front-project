@@ -74,4 +74,13 @@ class DBCommentEngin extends DBEngine implements DBEngineLayer2
         }
         return $result;
     }
+    public function add($productId,$userId,$subject,$content){
+        $data = array(
+            'pid'=>$productId,
+            'uid'=>$userId,
+            'subject'=>$subject,
+            'message'=>$content
+        );
+        $this->insertData($data);
+    }
 }
