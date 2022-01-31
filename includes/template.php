@@ -1,7 +1,7 @@
 <?php
 class Template
 {
-    static function Include($name,$data=null){
+    static function Include($name,$data=null,$data2=null){
         $filename = TEMPLATE_PATH.$name.'.php';
         if (file_exists($filename)) {
             include $filename;

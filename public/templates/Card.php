@@ -5,7 +5,7 @@
     <td class='quantityProduct'>
         <div class='productCounter'>
             <a href='<?php echo getProduc_ChangeQty_Url($data->id,'add');?>' class='addQty'>+</a>
-                <span class='productQty'><?php echo $data->qty; ?></span>
+                <span class='productQty'><?php echo $data2->qty; ?></span>
             <a href='<?php echo getProduc_ChangeQty_Url($data->id,'minus');?>' class='minusQty'>-</a></div>
     </td>
     <td>
