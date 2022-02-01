@@ -7,7 +7,7 @@ function get_title() {
 }
 function get_content()
 {
-    global $users;
+    global $productsArray;
 ?>
     <section class="grid-lg-1to4">
         <section class="page_content">
@@ -26,19 +26,8 @@ function get_content()
                 <th></th>
                 </tr>
                 <?php 
-                foreach ($users as $user) :
-                ?>
-                    <tr>
-                    <td><?php echo $user['id']; ?></td>
-                    <td><img src='<?php echo BASE_URL ?>assets/images/products/<?php echo $user['image_src']; ?>' alt='<?php echo $user['name']; ?>' width='50px'/></td>
-                    <td><?php echo $user['name']; ?></td>
-                    <td><?php echo $user['catg']; ?></td>
-                    <td><?php echo $user['price_component']; ?></td>
-                    <td><?php echo $user['price']; ?>ریال</td>
-                    <td><a href='{$controllerroot}removeProduct_controller.php?id={$user['id']}' class='ajaxWorkerLink'><i class='fas fa-trash'></i></a></td>
-                    <td><a href='{$baseroot}editProduct_view.php?id={$user['id']}'><i class='fas fa-edit'></i></a></td>
-                    </tr>
-                <?php
+                foreach ($productsArray as $Product) :
+                    Template::Include('AdminProduct',['Product'=>$Product]);
                 endforeach;
                 ?>
             </table>

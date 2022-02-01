@@ -62,6 +62,9 @@ class Product
             case 'price':
                 return $this->price;
                 break;
+            case 'priceFormated':
+                return number_format($this->price,0);
+                break;
             case 'image_src':
                 return getImageSource($this->image_src);
                 break;
