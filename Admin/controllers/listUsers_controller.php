@@ -1,4 +1,7 @@
 <?php
-$users = getAllUser();
-$filename = explode('_',basename(__FILE__))[0];
-include admin_viewroot.$filename.'_view.php';
+function adminPanel(){
+    return true;
+}
+$dbuser = new DBUserEngin();
+$users = $dbuser->getAllofThem();
+View::IncludeForThis();

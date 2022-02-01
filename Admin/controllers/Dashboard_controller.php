@@ -1,26 +1,26 @@
 <?php
-
-$mysql = new db('localhost','root','','frontproject');
-
-$query = "SELECT * FROM `new_ticket`";
-$newTicket = $mysql->query($query)->fetchAll();
-
-foreach ($newTicket as $key => $ticket) {
-    $query = "SELECT * FROM `ticket` WHERE id=?";
-    $data = $mysql->query($query,$ticket['tid'])->fetchArray();
-    
-    $newTicket[$key]['text'] = $data['text'];
+function adminPanel(){
+    return true;
 }
+// $mysql = new db('localhost','root','','frontproject');
 
-$query = "SELECT * FROM `new_comment`";
-$newComment = $mysql->query($query)->fetchAll();
+// $query = "SELECT * FROM `new_ticket`";
+// $newTicket = $mysql->query($query)->fetchAll();
 
-foreach ($newComment as $key => $comment) {
-    $query = "SELECT * FROM `comment` WHERE id=?";
-    $data = $mysql->query($query,$comment['cid'])->fetchArray();
+// foreach ($newTicket as $key => $ticket) {
+//     $query = "SELECT * FROM `ticket` WHERE id=?";
+//     $data = $mysql->query($query,$ticket['tid'])->fetchArray();
     
-    $newComment[$key]['message'] = $data['message'];
-}
+//     $newTicket[$key]['text'] = $data['text'];
+// }
 
-$filename = explode('_',basename(__FILE__))[0];
-include admin_viewroot.$filename.'_view.php';
+// $query = "SELECT * FROM `new_comment`";
+// $newComment = $mysql->query($query)->fetchAll();
+
+// foreach ($newComment as $key => $comment) {
+//     $query = "SELECT * FROM `comment` WHERE id=?";
+//     $data = $mysql->query($query,$comment['cid'])->fetchArray();
+    
+//     $newComment[$key]['message'] = $data['message'];
+// }
+View::IncludeForThis();

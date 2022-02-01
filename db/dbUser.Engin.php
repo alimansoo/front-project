@@ -60,6 +60,19 @@ class DBUserEngin extends DBEngine implements DBEngineLayer2
     /* 
             Custome Function
     */
+    public function getAllofThem()
+    {
+        $result = $this->getAll(
+            null,
+            null,
+            null,
+            true
+        );
+        if (count($result) < 0) {
+            return false;
+        }
+        return $result;
+    }
     public function getBy_username_password($username,$password) {
         $result = $this->getAll(
             array(

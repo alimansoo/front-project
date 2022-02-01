@@ -5,10 +5,14 @@ class View
     {
         $filename = getFilename(
             basename(
-                debug_backtrace()[0]['file']
+                debug_backtrace()[0]['file'] 
             )
         );
-        include VIEW_PATH.$filename.'_view.php';
+        if (function_exists('adminPanel') and adminPanel()) {
+            include ADMIN_VIEW_PATH.$filename.'_view.php';
+        } else {
+            include VIEW_PATH.$filename.'_view.php';
+        }
     }
     static function Include($filename)
     {
