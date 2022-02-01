@@ -6,12 +6,9 @@
     </div>
     <div class='orderRow_content'>
         <?php
-        $dborderitem = new DBUserOrderItemEngin();
-        $userorderitems = $dborderitem->getAllByOrderId($Order->id);
-        foreach ($userorderitems as $orderitem) :
-            $model3=new Product($orderitem['pid']);
+        foreach ($ProductArray as $Product) :
         ?>
-            <img class='productImg' src='<?php echo $model3->image_src; ?>'>
+            <img class='productImg' src='<?php echo $Product->image_src; ?>'>
         <?php
         endforeach;
         ?>

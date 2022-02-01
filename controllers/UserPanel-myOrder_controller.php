@@ -2,23 +2,23 @@
 $dborder = new DBUserOrderEngin();
 $dborderitem = new DBUserOrderItemEngin();
 $dbproduct = new DBProductEngin();
-$data = $dborder->getAllBy_uid_DESC($_SESSION['id']);
+$orders = $dborder->getAllBy_uid_DESC($_SESSION['id']);
+$OrderArray = array();
+$OrderItemArray = array();
+$OrderItemProduct = array();
+$i=0;
+foreach ($orders as $value) {
+    $OrderArray[$i]=new Order($value);
+    $userorderitems = $dborderitem->getAllByOrderId($OrderArray[$i]->id);
+    $OrderItemOnce = array();
+    $ProductItemOnce = array();
+    foreach ($userorderitems as $key => $value) {
+        $OrderItemOnce[]= new OrderItem($value);
+        $ProductItemOnce[] = new Product($value['pid']);
+    }
+    $OrderItemArray[$i] = $OrderItemOnce;
+    $OrderItemProduct[$i] = $ProductItemOnce;
+    $i++;
+}
 
-// $AllofMyOrder = array();
-// foreach ($data as $key => $value) {
-//     $array = array();
-//     $array['id'] = $value['id'];
-//     $array['recive_date'] = $value['recive_date'];
-//     $array['priceAll'] = $value['priceAll'];
-//     $AllorderItem = $dborderitem->getAllByOrderId($value['id']);
-//     $productImage = array();
-//     foreach ($AllorderItem as $orderItem) {
-//         if (is_array($orderItem)) {
-//             $product = $dbproduct->getById($orderItem['pid']);
-//             $productImage[] = $product ;
-//         }
-//         $array['AllProduct_image'] = $productImage;
-//     }
-//     $AllofMyOrder[] = $array;
-// }
 View::IncludeForThis();
