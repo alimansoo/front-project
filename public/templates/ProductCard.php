@@ -1,10 +1,10 @@
 <section class='filled card'>
-    <img src='<?php echo $Product->image_src; ?>' class='card-img-top' alt=''>
+    <img src='<?php echo $Product->Image_Source(); ?>' class='card-img-top' alt=''>
     <div class='card-body'>
         <?php
         //Like of Product
-        if ($Product->isLike !== null) {
-            if ($Product->isLike === true) {
+        if ($Product->Is_Like() !== null) {
+            if ($Product->Is_Like() === true) {
                 ?>
                     <a href='<?php echo getProduc_like_Url($Product->id); ?>'><i class='fas fa-heart'></i></a>
                 <?php
@@ -15,8 +15,8 @@
             }
         } 
         //bookmark of Product
-        if ($Product->isBookmark !== null) {
-            if ($Product->isBookmark === true) {
+        if ($Product->Is_Bookmark() !== null) {
+            if ($Product->Is_Bookmark() === true) {
                 ?>
                     <a href='<?php echo getProduc_bookmark_Url($Product->id); ?>'><i class='fas fa-bookmark'></i></a>
                 <?php
@@ -31,13 +31,13 @@
             <a href='<?php echo getProductUrl($Product->id); ?>'><?php echo $Product->name; ?></a>
         </h5>
         <div class='secondary-title'>
-            <?php echo number_format($Product->price, 0); ?> ریال
+            <?php echo $Product->Price_Fromated(); ?> ریال
         </div>
         <p class='card-text'></p>
         <?php
         //cart of Product
-        if ($Product->isToCart !== null) {
-            if ($Product->isToCart === true) {
+        if ($Product->Is_Cart() !== null) {
+            if ($Product->Is_Cart() === true) {
             ?>
                 <a href='<?php echo getProduc_AddCart_tUrl($Product->id); ?>' class='btn btn-primary remove card_btn'>حذف از سبد</a>
             <?php
