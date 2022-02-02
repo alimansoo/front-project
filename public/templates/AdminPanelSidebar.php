@@ -9,6 +9,7 @@
             <li class="nav_item"><i class='fas fa-users'></i><a href="<?php echo Rout::full_url('adminpanel.listuser');?>">لیست کاربران</a></li>
             <li class="nav_item"><i class='fas fa-comment-alt'></i><a href="<?php echo Rout::full_url('adminpanel.listticket');?>">لیست پیام ها</a></li>
             <li class="nav_item"><i class='fas fa-comment'></i><a href="<?php echo Rout::full_url('adminpanel.listcomment');?>">لیست نظر ها</a></li>
+            <li class="nav_item"><i class='fas fa-columns'></i><a href="<?php echo Rout::full_url('adminpanel.slide');?>">اسلاید ها</a></li>
             <li class="nav_item"><i class='fas fa-comments'></i><a href="<?php echo Rout::full_url('adminpanel.chat');?>">چت کاربران</a></li>
         </ul>
     </nav>

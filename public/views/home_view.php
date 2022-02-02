@@ -5,31 +5,43 @@ function get_title() {
 function get_content()
 {
     global $AllProduct;
+    $dbslide = new DBSlideEngin();
+    $slides= $dbslide->GetAll();
 ?>
-    <div class="swiper">
-        <div class="swiper-wrapper" style="width:100%;height:400px;">
-            <div class="swiper-slide" style="background-image: url('assets/images/slides/Slide1.jpg');background-size: cover;"></div>
-            <div class="swiper-slide" style="background-image: url('assets/images/slides/Slide2.jpg');background-size: cover;"></div>
-            <div class="swiper-slide" style="background-image: url('assets/images/slides/Slide3.jpg');background-size: cover;"></div>
-            ...
-        </div>
+    <?php
+        if (count($slides) > 0) {
+        ?>
+            <div class="swiper">
+                <div class="swiper-wrapper" style="width:100%;height:400px;">
+                <?php
+                    foreach ($slides as $value) :
+                    ?>
+                        <div class="swiper-slide" style="background-image: url('<?php echo SLIDE_IMAGE_PATH.$value['image_src'] ?>');background-size: cover;"></div>
+                    <?php
+                    endforeach;
+                ?>
+                </div>
 
-        <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        <?php
+        }
+    ?>
+    
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <div class="swiper-scrollbar"></div>
-        </div>
+    <div class="grid-display col-sm-1 col-md-2 col-lg-4">
+        <?php
+            foreach($AllProduct as $product)
+            {
+                $model = new Product($product);
+                Template::Include('ProductCard',['Product'=>$model]);
+            }
+        ?>
     </div>
-        <div class="grid-display col-sm-1 col-md-2 col-lg-4">
-            <?php
-                foreach($AllProduct as $product)
-                {
-                    $model = new Product($product);
-                    Template::Include('ProductCard',['Product'=>$model]);
-                }
-            ?>
 
     <?php Template::Include("ChatSection.php");?>
 <?php 
