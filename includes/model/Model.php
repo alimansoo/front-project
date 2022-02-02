@@ -72,5 +72,37 @@ abstract class Model
         $cdb->close();
         return $return;
     }
+    public function Update()
+    {
+        $cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
+        $query = QueryBuilder::update($this->DBNAME,$this->DataBody,array('id'=>$this->id));
+        $return = null;
+        try{
+            if ($cdb->query($query)) {
+                $return = $cdb->lastInsertID();
+            }
+        }catch(\Exception $e){
+            throw new \Exception('Error: ' . $e->getMessage());
+        }
+        
+        $cdb->close();
+        return $return;
+    }
+    public function Delete()
+    {
+        $cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
+        $query = QueryBuilder::delete($this->DBNAME,array('id'=>$this->id));
+        $return = null;
+        try{
+            if ($cdb->query($query)) {
+                $return = $cdb->lastInsertID();
+            }
+        }catch(\Exception $e){
+            throw new \Exception('Error: ' . $e->getMessage());
+        }
+        
+        $cdb->close();
+        return $return;
+    }
 }
 
