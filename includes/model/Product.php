@@ -50,6 +50,6 @@ class Product extends Model
         }
     }
     static function GenerateImageName(){
-        return rand(100000,1000000).'.jpg';
+        return Randome::GenerateNumber(6).'.jpg';
     }
 }
