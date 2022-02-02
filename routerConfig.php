@@ -5,7 +5,7 @@ $pages_name_url = array(
     'cart' => ['url'=>'cart','controller'=>'Cart_controller.php'],
     'register' => ['url'=>'register','controller'=>'register_controller.php'],
     'logout' => ['url'=>'logout','controller'=>'logout_controller.php'],
-    'addcomment' => ['url'=>'productcomment','controller'=>'addComment_controller.php'],
+    'addcomment' => ['url'=>'productcomment','controller'=>'action/Comment.php'],
     //Order
     'order.sailsinvoice' => ['url'=>'salesinvoice','controller'=>'SalesInvoice_controller.php'],
     'order.deatailorder' => ['url'=>'deatailorder','controller'=>'deatailOrder_controller.php'],
@@ -18,14 +18,14 @@ $pages_name_url = array(
     'userpanel.deatailorder' => ['url'=>'userpanel/deatailorder','controller'=>'UserPanel-detailOrder_controller.php'],
     'userpanel.likeproduct' => ['url'=>'userpanel/likeproduct','controller'=>'UserPanel-FavoritProduct_controller.php'],
     'userpanel.bookmarkproduct' => ['url'=>'userpanel/bookmarkproduct','controller'=>'UserPanel-SavedProduct_controller.php'],
-    //Product
+    //Product Action
     'product' => ['url'=>'product','controller'=>'Product_controller.php'],
-    'product.addcart' => ['url'=>'product/addcart','controller'=>'Product_functions_controller.php'],
-    'product.changeqty' => ['url'=>'product/changeqty','controller'=>'Product_functions_controller.php'],
-    'product.like' => ['url'=>'product/like','controller'=>'Product_functions_controller.php'],
-    'product.bookmark' => ['url'=>'product/bookmark','controller'=>'Product_functions_controller.php'],
+    'product.addcart' => ['url'=>'product/addcart','controller'=>'action/Product.php'],
+    'product.changeqty' => ['url'=>'product/changeqty','controller'=>'action/Product.php'],
+    'product.like' => ['url'=>'product/like','controller'=>'action/Product.php'],
+    'product.bookmark' => ['url'=>'product/bookmark','controller'=>'action/Product.php'],
     //Search
-    'search.product' => ['url'=>'search','controller'=>'searchProduct_controller.php'],
+    'search.product' => ['url'=>'search','controller'=>'action/SearchProduct.php'],
     //Admin Panel
     'adminpanel.dashboard' => ['url'=>'adminpanel','controller'=>'Dashboard_controller.php'],
     'adminpanel.listproduct' => ['url'=>'adminpanel/listproduct','controller'=>'listProduct_controller.php'],
