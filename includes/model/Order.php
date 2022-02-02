@@ -11,8 +11,11 @@ class Order
     private $transport_price;
     private $reciver_name;
     private $is_pay;
-    public function __construct($data)
+    public function __construct($data=null)
     {
+        if ($data === null) {
+            return;
+        }
         if (is_numeric($data) or is_int($data)) {
             $dbproduct = new DBUserOrderEngin();
             $data = $dbproduct->getById($data);

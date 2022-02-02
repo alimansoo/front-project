@@ -3,31 +3,18 @@ $orderId = Data::get('orderId',$_GET);
 $dborder = new DBUserOrderEngin();
 $dborderitem = new DBUserOrderItemEngin();
 $dbproduct = new DBProductEngin();
-$data = $dborder->getById($orderId);
-
-$priceAll = $data['priceAll'];
-$transport_price = $data['transport_price'];
-$addres = $data['addres'];
-$recive_date = $data['recive_date'];
-$is_pay = $data['is_pay'];
-if ($is_pay) {
-    $is_pay = "پرداخت شده";
-}else {
-    $is_pay = "پرداخت نشده";
+$OrderItemArray = array();
+$OrderItemProduct = array();
+$orderitem = $dborder->getById($orderId);
+$Order = new Order();
+if ($orderitem and count($orderitem) > 0 ) {
+    $Order = new Order($orderitem);
+    $userorderitems = $dborderitem->getAllByOrderId($Order->id);
+    foreach ($userorderitems as $key => $value) {
+        $OrderItemArray[]= new OrderItem($value);
+        $OrderItemProduct[] = new Product($value['pid']);
+    }
 }
 
-$data = $dborderitem->getAllByOrderId($data['id']);
-
-
-$allProduct = array();
-foreach ($data as $key=>$value) {
-    $array = array();
-    $data1 = $dbproduct->getById($value['pid']);
-    $array['name'] = $data1['name'];
-    $array['price'] = $data1['price'];
-    $array['image_src'] = $data1['image_src'];
-    $array['qty'] = $value['qty'];
-    $allProduct[$key] = $array;
-}
 
 View::IncludeForThis();
