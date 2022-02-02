@@ -49,4 +49,7 @@ class Product extends Model
             return null;
         }
     }
+    static function GenerateImageName(){
+        return rand(100000,1000000).'.jpg';
+    }
 }

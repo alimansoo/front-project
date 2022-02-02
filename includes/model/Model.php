@@ -56,5 +56,21 @@ abstract class Model
         }
         $this->DataBody[$name] = $value;
     }
+    public function Add()
+    {
+        $cdb = new db(__dbhost__,__dbusername__,__dbpassword__,__dbname__);
+        $query = QueryBuilder::insert($this->DBNAME,$this->DataBody);
+        $return = null;
+        try{
+            if ($cdb->query($query)) {
+                $return = $cdb->lastInsertID();
+            }
+        }catch(\Exception $e){
+            throw new \Exception('Error: ' . $e->getMessage());
+        }
+        
+        $cdb->close();
+        return $return;
+    }
 }
 

@@ -19,7 +19,7 @@ if (
     && isset($controller) 
     && !is_null($controller)
     ) {
-    include 'admin/'.CONTROLLER_PATH.$controller;
+    include ADMIN_CONTROLLER_PATH.$controller;
 }elseif (isset($controller) && $controller != '') {
     include CONTROLLER_PATH.$controller;
 }

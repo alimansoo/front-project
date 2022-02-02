@@ -20,7 +20,7 @@ class View
     }
     static function IsView($filename){
         $fileArray = explode('_',$filename);
-        if ($fileArray[1] === 'view.php') {
+        if (isset($fileArray[1]) and  $fileArray[1] === 'view.php') {
             return true;
         }
         return false;

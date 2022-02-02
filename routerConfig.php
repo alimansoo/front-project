@@ -32,6 +32,7 @@ $pages_name_url = array(
     'adminpanel.listuser' => ['url'=>'adminpanel/listuser','controller'=>'listUsers_controller.php'],
     'adminpanel.listcomment' => ['url'=>'adminpanel/listcomment','controller'=>'listComment_controller.php'],
     'adminpanel.listticket' => ['url'=>'adminpanel/listticket','controller'=>'listTickets_controller.php'],
+    'adminpanel.addproduct' => ['url'=>'adminpanel/addproduct','controller'=>'addProduct_controller.php'],
     'adminpanel.chat' => ['url'=>'adminpanel/chat','controller'=>'chat_controller.php'],
     //Chat
     'adminpanel.chatmanage' => ['url'=>'adminpanel/chatmanage','controller'=>'adminChatController_controller.php'],

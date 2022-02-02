@@ -12,7 +12,7 @@ function get_content()
     <section class="grid-lg-1to4">
         <section class="page_content">
             <h3 class="page_content_title">لیست محصولات</h3>
-            <a  href="<?php echo BASE_URL;?>adminpanel/listproduct/addproduct/" class="btn btn-primary">اضافه کردن محصول+</a>
+            <a  href="<?php echo Rout::full_url('adminpanel.addproduct');?>" class="btn btn-primary">اضافه کردن محصول+</a>
             <br>
             <table class="table">
                 <tr>
