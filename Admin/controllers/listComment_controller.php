@@ -3,5 +3,5 @@ function adminPanel(){
     return true;
 }
 $dbuser = new DBCommentEngin();
-$comments = $dbuser->getAllofThem();
+$comments = $dbuser->GetAll();
 View::IncludeForThis();

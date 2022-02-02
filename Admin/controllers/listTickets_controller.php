@@ -3,7 +3,7 @@ function adminPanel(){
     return true;
 }
 $dbuser = new DBTiketEngin();
-$users = $dbuser->getAllofThem();
+$users = $dbuser->GetAll();
 View::IncludeForThis();
 
 
