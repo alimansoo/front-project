@@ -8,5 +8,6 @@ if (isset($_POST['submit'])) {
     $_SESSION['is_payed'] = true;
     $_SESSION['orderId'] = $orderId;
 }else {
+    $Order = new Order($orderId);
     View::IncludeForThis();
 }
