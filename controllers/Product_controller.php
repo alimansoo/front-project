@@ -4,7 +4,6 @@ $dbuser = new DBUserEngin();
 $dbcomment = new DBCommentEngin();
 
 $allCommentProduct = $dbcomment->getAllBy_pid($id);
-
 $product = new Product($id);
 
 View::IncludeForThis();

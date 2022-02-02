@@ -11,8 +11,11 @@ class Product
     private $isToCart=null;
     private $isLike=null;
     private $isBookmark=null;
-    public function __construct($data)
+    public function __construct($data=null)
     {
+        if ($data === null) {
+            return;
+        }
         if (is_numeric($data) or is_int($data)) {
             $dbproduct = new DBProductEngin();
             $data = $dbproduct->getById($data);
