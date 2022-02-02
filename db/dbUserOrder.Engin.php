@@ -1,68 +1,10 @@
 <?php
-class DBUserOrderEngin extends DBEngine implements DBEngineLayer2
+class DBUserOrderEngin extends DBEngine
 {
-    private $TABLE_NAME = 'order_user';
-    public function getAll($where_filed=null, $sorting_by=null, $like_by=null,$result_all=false)
-    {
-        $result=$this->select(
-            $this->TABLE_NAME,
-            '*',
-            $where_filed,
-            $sorting_by,
-            $like_by
-        );
-        if ($result_all) {
-            return $result->fetchAll();
-        } else {
-            return $result->fetchArray();
-        }
-    }
-    public function getFilds($get_filed, $where_filed=null, $sorting_by=null, $like_by=null,$result_all=false)
-    {
-        $result=$this->select(
-            $this->TABLE_NAME,
-            $get_filed,
-            $where_filed,
-            $sorting_by,
-            $like_by
-        );
-        if ($result_all) {
-            return $result->fetchAll();
-        } else {
-            return $result->fetchArray();
-        }
-    }
-    public function insertData($insert_filed)
-    {
-        $result=$this->insert(
-            $this->TABLE_NAME,
-            $insert_filed
-        );
-        return $result;
-    }
-    public function updateData($update_filed, $where_filed)
-    {
-        $result=$this->update(
-            $this->TABLE_NAME,
-            $update_filed,
-            $where_filed
-        );
-        return $result;
-    }
-    public function deleteData($where_filed,$result_all=false)
-    {
-        $result=$this->delete(
-            $this->TABLE_NAME,
-            $where_filed
-        );
-        return $result;
-    }
-    /* 
-            Custome Function
-    */
+    public $TABLE_NAME = 'order_user';
     function getById($oid)
     {
-        $result = $this->getAll(
+        $result = $this->GetAllFildes(
             array(
                 'id'=>$oid
             )
@@ -85,17 +27,17 @@ class DBUserOrderEngin extends DBEngine implements DBEngineLayer2
             'reciver_name'=>$recivername,
             'is_pay'=>false,
         );
-        return $this->insertData($fileds);
+        return $this->Insert($fileds);
     }
     function payed($oid){
-        $this->updateData(
+        $this->Update(
             array('is_pay'=>true),
             array('id'=>$oid)
         );
     }
     function getAllBy_uid_DESC($userid)
     {
-        $result = $this->getAll(
+        $result = $this->GetAllFildes(
             array(
                 'uid'=>$userid
             )

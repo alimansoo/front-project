@@ -1,4 +1,7 @@
 <?php
 $db = new DBProductEngin();
-$AllProduct = $db->getAllofThem();
+$AllProduct = $db->GetAll();
+// echo '<pre>';
+// var_dump($AllProduct);
+// echo '</pre>';
 View::IncludeForThis();

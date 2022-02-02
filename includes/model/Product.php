@@ -4,7 +4,7 @@ class Product extends Model
     public $DBNAME = 'product';
     public function Image_Source()
     {
-        return ASSETS_PATH.'images/products/'.$this->image_src;
+        return SITE_URL.ASSETS_PATH.'images/products/'.$this->image_src;
     }
     public function Price_Fromated()
     {

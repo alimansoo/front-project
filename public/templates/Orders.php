@@ -8,7 +8,7 @@
         <?php
         foreach ($ProductArray as $Product) :
         ?>
-            <img class='productImg' src='<?php echo $Product->image_src; ?>'>
+            <img class='productImg' src='<?php echo $Product->Image_Source(); ?>'>
         <?php
         endforeach;
         ?>
