@@ -1,5 +1,5 @@
 <tr>
-    <td><img src='<?php echo $Product->image_src; ?>' alt='<?php echo $Product->name; ?>' width='50px'/></td>
+    <td><img src='<?php echo $Product->Image_Source(); ?>' alt='<?php echo $Product->name; ?>' width='50px'/></td>
     <td><?php echo $Product->name; ?></td>
     <td class='priceProduct'><span><?php echo $Product->price; ?></span>ریال</td>
     <td class='quantityProduct'>

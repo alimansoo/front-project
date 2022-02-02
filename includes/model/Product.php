@@ -22,7 +22,6 @@ class Product extends Model
         }else{
             return null;
         }
-        return number_format($this->price,0);
     }
     public function Is_Bookmark()
     {
@@ -36,7 +35,6 @@ class Product extends Model
         }else{
             return null;
         }
-        return number_format($this->price,0);
     }
     public function Is_Cart()
     {
@@ -50,6 +48,5 @@ class Product extends Model
         }else{
             return null;
         }
-        return number_format($this->price,0);
     }
 }
