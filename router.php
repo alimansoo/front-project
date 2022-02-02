@@ -26,6 +26,8 @@ if (
 else{
     include '404.php';
 }
-if (function_exists('get_content')) {
+$fileIncludes = get_included_files();
+$filename = basename(end($fileIncludes));
+if (View::IsView($filename)) {
     App::render();
 }

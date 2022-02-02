@@ -12,29 +12,29 @@ $controllerroot = '../controller/';
 
 // error_reporting(E_ALL & ~E_NOTICE);
 
-class view{
-    static function includeThisView($viewroot,$filename){
+// class view{
+//     static function includeThisView($viewroot,$filename){
 
-        echo $viewroot;
+//         echo $viewroot;
     
-        $filename = explode('_',basename($filename))[0];
+//         $filename = explode('_',basename($filename))[0];
     
-        include_once($viewroot.$filename.'_view.php');
-    }
-}
+//         include_once($viewroot.$filename.'_view.php');
+//     }
+// }
 
 
 
-function includeView($view) {
+// function includeView($view) {
 
-    global $viewroot;
+//     global $viewroot;
 
-    include $viewroot.$view.'_view.php';
-}
+//     include $viewroot.$view.'_view.php';
+// }
 
 
-$plugins = glob($baseroot.'*_plugin.php');
+// $plugins = glob($baseroot.'*_plugin.php');
 
-foreach ($plugins as $plugin) {
-    include_once($plugin);
-}
+// foreach ($plugins as $plugin) {
+//     include_once($plugin);
+// }

@@ -18,4 +18,11 @@ class View
     {
         include VIEW_PATH.$filename.'_view.php';
     }
+    static function IsView($filename){
+        $fileArray = explode('_',$filename);
+        if ($fileArray[1] === 'view.php') {
+            return true;
+        }
+        return false;
+    }
 }
