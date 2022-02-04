@@ -4,27 +4,12 @@ function get_title() {
 }
 function get_content()
 {
-    global $ERORRS;
 ?>
         <section class="page_content">
             <div id="form_title">ثبت نام</div>
             <hr>
             <?php
-                if (count($ERORRS) > 0) {
-                    ?>
-                    <div class="erroremessage">
-                        <ul>
-                            <?php
-                                foreach ($ERORRS as  $value) {
-                                    ?>
-                                        <li><?php echo $value; ?></li>
-                                    <?php
-                                }
-                            ?>
-                        </ul>
-                    </div>
-                    <?php
-                }
+                Erorre::ShowErrore(); 
             ?>
             <form action="#" method="post" id="login_form">
                 <div class="input_material_block">
