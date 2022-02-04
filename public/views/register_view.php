@@ -24,7 +24,6 @@ function get_content()
                         </ul>
                     </div>
                     <?php
-                    $ERORRS = array();
                 }
             ?>
             <form action="#" method="post" id="login_form">

@@ -4,10 +4,28 @@ function get_title() {
 }
 function get_content()
 {
+    global $ERORRS;
 ?>
     <section class="page_content">
         <div id="form_title">ورود کاربر</div>
         <hr>
+        <?php
+                if (count($ERORRS) > 0) {
+                    ?>
+                    <div class="erroremessage">
+                        <ul>
+                            <?php
+                                foreach ($ERORRS as  $value) {
+                                    ?>
+                                        <li><?php echo $value; ?></li>
+                                    <?php
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <?php
+                }
+            ?>
         <form action="#" method="post" id="login_form">
             <div class="input_material_block">
                 <input type="email" name="email" id="email" class="login_input">

@@ -54,6 +54,11 @@ if (!isset($_POST['submit'])) {
         $user->phone = $phone;
         $user->password = sha1($password);
         $user->role = 'user';
-        $user->Add();
+        $userId = $user->Add();
+        $dbuser = new DBUserEngin();
+        $user = $dbuser->getBy_id($userId);
+        // var_dump($user);
+        Athuntication::loginUser($user);
+        Rout::redirect_to_url('userpanel.dashboard');
     }
 }
