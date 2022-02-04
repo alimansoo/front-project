@@ -4,10 +4,29 @@ function get_title() {
 }
 function get_content()
 {
+    global $ERORRS;
 ?>
-<section class="page_content">
+        <section class="page_content">
             <div id="form_title">ثبت نام</div>
             <hr>
+            <?php
+                if (count($ERORRS) > 0) {
+                    ?>
+                    <div class="erroremessage">
+                        <ul>
+                            <?php
+                                foreach ($ERORRS as  $value) {
+                                    ?>
+                                        <li><?php echo $value; ?></li>
+                                    <?php
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <?php
+                    $ERORRS = array();
+                }
+            ?>
             <form action="#" method="post" id="login_form">
                 <div class="input_material_block">
                     <input type="text" name="firstname" id="firstname">
@@ -22,14 +41,14 @@ function get_content()
                     <label for="email">ايميل :</label>
                 </div>
                 <div class="input_material_block active">
-                    <select name="citi" id="citi" class="register_input">
+                    <select name="city" id="city" class="register_input">
                         <option value="esf">اصفهان</option>
                         <option value="thr">تهران</option>
                         <option value="mhd">مشهد</option>
                         <option value="shr">شیراز</option>
                         <option value="tbz">تبریز</option>
                     </select>
-                    <label for="citi">شهر :</label>
+                    <label for="city">شهر :</label>
                 </div>
                 <div class="input_material_block">
                     <input type="number" name="phone" id="phone" >
