@@ -3,22 +3,19 @@ $dbuser = new DBUserEngin();
 if (!isset($_POST['submit'])) {
     View::IncludeForThis();
 }else {
-    $validation = true;
     $email = Data::get('email',$_POST);
     $password = sha1(Data::get('password',$_POST));
     if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-        $validation = false;
-        $ERORRS[]='ایمیل وارد شده صحیح نیست!';
+        Erorre::Add('ایمیل وارد شده صحیح نیست!');
     }
     $data = $dbuser->getBy_username_password(
         $email,$password
     );
     if (!$data) {
-        $validation = false;
-        $ERORRS[] ='! کاربر پیدا نشد';
+        Erorre::Add('! کاربر پیدا نشد');
     }
     
-    if (!$validation) {
+    if (Erorre::IsContain()) {
         View::IncludeForThis();
     }else{
         //set sessions

@@ -18,4 +18,15 @@ class Erorre{
             <?php
         }
     }
+    static function Add($message){
+        global $ERORRS;
+        $ERORRS[]=$message;
+    }
+    static function IsContain(){
+        global $ERORRS;
+        if ($ERORRS and count($ERORRS)>0) {
+            return true;
+        }
+        return false;
+    }
 }
