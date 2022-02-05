@@ -24,6 +24,7 @@ $pages_name_url = array(
     'product.changeqty' => ['url'=>'product/changeqty','controller'=>'action/Product.php'],
     'product.like' => ['url'=>'product/like','controller'=>'action/Product.php'],
     'product.bookmark' => ['url'=>'product/bookmark','controller'=>'action/Product.php'],
+    'product.filter' => ['url'=>'product/filter','controller'=>'FilterProduct_controller.php'],
     //Search
     'search.product' => ['url'=>'search','controller'=>'action/SearchProduct.php'],
     //Admin Panel

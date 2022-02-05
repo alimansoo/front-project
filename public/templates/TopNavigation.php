@@ -2,7 +2,7 @@
     <ul class="list">
         <li class="list_item" id="SidebarIcon"><i class='fas fa-bars'></i></li>
         <li class="list_item"><a href="<?php echo Rout::full_url('home');?>" class="link">خانه</a></li>
-        <li class="list_item"><a href="<?php echo Rout::full_url('home');?>" class="link">محصولات</a></li>
+        <li class="list_item"><a href="<?php echo Rout::full_url('product.filter');?>" class="link">محصولات</a></li>
         <li class="list_item"><a href="" class="link">تماس با ما</a></li>
     </ul>
     <ul class="list">
