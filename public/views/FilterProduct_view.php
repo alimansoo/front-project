@@ -13,7 +13,7 @@ function get_content()
                 <?php
                 foreach ($allproduct as $value) {
                     $product = new Product($value);
-                    Template::Include('ProductCard',['Product'=>$product]);
+                    Template::Include('SimpleProductCart',['Product'=>$product]);
                 }
                 ?>
             </section>
