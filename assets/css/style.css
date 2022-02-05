@@ -15,6 +15,7 @@
 @import url('chat.css');
 @import url('datalist.css');
 @import url('myOrder.css');
+@import url('cart-template.css');
 
 :root {
     --primary : rgb(52, 60, 255);

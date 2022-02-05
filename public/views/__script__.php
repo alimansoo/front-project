@@ -10,5 +10,6 @@
 <script src="<?php echo BASE_URL;?>assets/js/templates/sidebar.js"></script>
 <script src="<?php echo BASE_URL;?>assets/js/templates/card.js"></script>
 <script src="<?php echo BASE_URL;?>assets/js/templates/cartpage.js"></script>
+<script src="<?php echo BASE_URL;?>assets/js/templates/quantity.js"></script>
 <script src="<?php echo BASE_URL;?>assets/js/chat.js"></script>
 <script src="<?php echo BASE_URL;?>assets/js/search.js"></script>
